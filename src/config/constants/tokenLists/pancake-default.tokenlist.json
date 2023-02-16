@@ -1,0 +1,369 @@
+{
+  "name": "KnightSwap Default List",
+  "timestamp": "2022-01-26T11:45:09Z",
+  "version": {
+    "major": 4,
+    "minor": 0,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "/logo.png",
+  "keywords": ["pancake", "default"],
+  "tokens": [
+    {
+      "name": "Wrapped BNB",
+      "symbol": "WBNB",
+      "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c.png"
+    },
+    {
+      "name": "BUSD Token",
+      "symbol": "BUSD",
+      "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56.png"
+    },
+
+    {
+      "name": "Knight Token",
+      "symbol": "KNIGHT",
+      "address": "0xD23811058Eb6e7967D9a00dc3886E75610c4AbBa",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/KNIGHT.png"
+    },
+
+    {
+      "name": "Wizard Token",
+      "symbol": "WIZARD",
+      "address": "0x5066c68cae3b9bdacd6a1a37c90f2d1723559d18",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0x5066c68cae3b9bdacd6a1a37c90f2d1723559d18.png"
+    },
+
+    
+    {
+      "name": "Ethereum Token",
+      "symbol": "ETH",
+      "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0x2170Ed0880ac9A755fd29B2688956BD959F933F8.png"
+    },
+    {
+      "name": "BTCB Token",
+      "symbol": "BTCB",
+      "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c.png"
+    },
+    {
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "address": "0x55d398326f99059fF775485246999027B3197955",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0x55d398326f99059fF775485246999027B3197955.png"
+    },
+    
+    {
+      "name": "Guard",
+      "symbol": "GUARD",
+      "address": "0xF606bd19b1E61574ED625d9ea96C841D4E247A32",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0xF606bd19b1E61574ED625d9ea96C841D4E247A32.png"
+    },
+    {
+      "name": "MicroPets Token",
+      "symbol": "PETS",
+      "address": "0xa77346760341460b42c230ca6d21d4c8e743fa9c",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0xa77346760341460b42c230ca6d21d4c8e743fa9c.png"
+    },
+   
+
+
+    {
+      "name": "Dai Token",
+      "symbol": "DAI",
+      "address": "0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3.png"
+    },
+    {
+      "name": "Fins Token",
+      "symbol": "FINS",
+      "address": "0x1b219Aca875f8C74c33CFF9fF98f3a9b62fCbff5",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0x1b219aca875f8c74c33cff9ff98f3a9b62fcbff5.png"
+    },
+    {
+      "name": "Crush Token",
+      "symbol": "CRUSH",
+      "address": "0x0Ef0626736c2d484A792508e99949736D0AF807e",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0x0Ef0626736c2d484A792508e99949736D0AF807e.png"
+    },
+    {
+      "name": "Sing Token",
+      "symbol": "SING",
+      "address": "0x23894C0ce2d79B79Ea33A4D02e67ae843Ef6e563",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0x23894c0ce2d79b79ea33a4d02e67ae843ef6e563.png"
+    },
+    {
+      "name": "DEAPCOIN",
+      "symbol": "DEP",
+      "address": "0xcaF5191fc480F43e4DF80106c7695ECA56E48B18",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0xcaf5191fc480f43e4df80106c7695eca56e48b18.png"
+    },
+    {
+      "name": "Wolf Pups",
+      "symbol": "WOLFIES",
+      "address": "0x6ad2b6d5d8f96c8e581d3100c12878b2151a0423",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0x6ad2b6d5d8f96c8e581d3100c12878b2151a0423.png"
+    },
+
+    {
+      "name": "Dinosaur Eggs Token Token",
+      "symbol": "DSG",
+      "address": "0x9A78649501BbAAC285Ea4187299471B7ad4ABD35",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0x9a78649501bbaac285ea4187299471b7ad4abd35.png"
+    },
+    {
+      "name": "PixelSQUID",
+      "symbol": "PixelSQUID",
+      "address": "0x5A549cb605F1e651200c22d1A8482929b36330F7",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0x5a549cb605f1e651200c22d1a8482929b36330f7.png"
+    },
+    {
+      "name": "MetaFish",
+      "symbol": "MetaFish",
+      "address": "0xe15176bcb7633be736e94ab6aa2e57a7ed5988ab",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0xe15176bcb7633be736e94ab6aa2e57a7ed5988ab.png"
+    },
+    {
+      "name": "Multiverse Capital",
+      "symbol": "MVC",
+      "address": "0x80d04E44955AA9c3F24041B2A824A20A88E735a8",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0x80d04e44955aa9c3f24041b2a824a20a88e735a8.png"
+    },
+
+    {
+      "name": "JOKE",
+      "symbol": "JOKE",
+      "address": "0x2df0c13487efdf4eb7f6c042273b7aca781b29a0",
+      "chainId": 56,
+      "decimals": 9,
+      "logoURI": "/images/tokens/0x2df0c13487efdf4eb7f6c042273b7aca781b29a0.png"
+    },
+    {
+      "name": "SPARTANS",
+      "symbol": "SPA",
+      "address": "0xbcfe392E778dbB59DcAd624F10f7fa8C4a910B1e",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0xbcfe392e778dbb59dcad624f10f7fa8c4a910b1e.png"
+    },
+    {
+      "name": "THUNDER",
+      "symbol": "THUNDER",
+      "address": "0xCf8F936D880a93E571cC2476C1B65508A918B5F9",
+      "chainId": 56,
+      "decimals": 9,
+      "logoURI": "/images/tokens/0xcf8f936d880a93e571cc2476c1b65508a918b5f9.png"
+
+    },
+
+    {
+      "name": "Padmon",
+      "symbol": "PDM",
+      "address": "0x4F890381abE9917A1cFeD7951B7Eb79900f4830D",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0x4f890381abe9917a1cfed7951b7eb79900f4830d.png"
+
+    },
+    {
+      "name": "DLAUNCH",
+      "symbol": "DLAUNCH",
+      "address": "0xD7D23d89c510f306e4037385EbbEFc6Dd6C41e61",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/0xd7d23d89c510f306e4037385ebbefc6dd6c41e61.png"
+
+    },
+
+    {
+      "name": "DUST",
+      "symbol": "DUST",
+      "address": "0xE36E4CdF538ab62d283d1AE49007EEdFA9020497",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/DUST.png"
+
+    },
+
+    {
+      "name": "FORGE",
+      "symbol": "FORGE",
+      "address": "0x5138868Ed1814Be113227b8c6025cdc46d9D1D16",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/FORGE.png"
+
+    },
+
+    {
+      "name": "LIBERO",
+      "symbol": "LIBERO",
+      "address": "0x0dfcb45eae071b3b846e220560bbcdd958414d78",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/LIBERO.png"
+
+    },
+
+    {
+      "name": "DRYP",
+      "symbol": "DRYP",
+      "address": "0x620Fdd450766c439230e72dF06b5EB9ec4d7fc6b",
+      "chainId": 56,
+      "decimals": 9,
+      "logoURI": "/images/tokens/DRYP.png"
+
+    },
+    {
+      "name": "BPM",
+      "symbol": "BPM",
+      "address": "0x35359f21Abdf0f2B6aE01bFb96814738B515111e",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/BPM.png"
+
+    },
+
+    {
+      "name": "KRONOS Dao",
+      "symbol": "KRONOS",
+      "address": "0xbeC68a941feCC79E57762e258fd1490F29235D75",
+      "chainId": 56,
+      "decimals": 9,
+      "logoURI": "/images/tokens/KRONOS.png"
+
+    },
+
+
+    {
+      "name": "Fantom",
+      "symbol": "FTM",
+      "address": "0xad29abb318791d579433d831ed122afeaf29dcfe",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/FTM.png"
+
+    },
+
+
+    {
+      "name": "MARVIN",
+      "symbol": "MARVIN",
+      "address": "0x71aB195498b6dC1656aBb4D9233f83Ae5F19495B",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/MARVIN.png"
+
+    },
+
+
+    {
+      "name": "MBP",
+      "symbol": "MBP",
+      "address": "0xaF2F53cc6cc0384aba52275b0f715851Fb5AFf94",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/MBP.png"
+
+    },
+    
+    {
+      "name": "USDC",
+      "symbol": "USDC",
+      "address": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/USDC.png"
+
+    },
+     
+    {
+      "name": "Billion Happiness",
+      "symbol": "BHC",
+      "address": "0x6fd7c98458a943f469e1cf4ea85b173f5cd342f4",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/BHC.png"
+
+    },
+
+
+        
+    {
+      "name": "Fortuna",
+      "symbol": "FRTNA",
+      "address": "0x3949D773d188Bb53E67CAE443Aa8e741878b5216",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "/images/tokens/FRTNA.png"
+
+    }
+
+
+    
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+
+
+    
+
+    
+
+
+
+  ]
+}
