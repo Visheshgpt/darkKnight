@@ -55,12 +55,13 @@ const CheckPrizesSection = () => {
           justifyContent="center"
           width="100%"
           borderRadius="36px"
-          background="#1E3156"
+          background="#3D0000"
+          border="2px solid #F0DE93"
           height="200px"
         >
           <Flex mx={['4px', null, '16px']} flexDirection="column" alignItems="center">
-            <Heading textAlign="center">{t('Connect your wallet')}</Heading>
-            <Heading textAlign="center" mb="24px">
+            <Heading textAlign="center" color="primary">{t('Connect your wallet')}</Heading>
+            <Heading textAlign="center" color="primary" mb="24px">
               {t("to check if you've won!")}
             </Heading>
             <ConnectWalletButton width="190px" />
@@ -96,7 +97,7 @@ const CheckPrizesSection = () => {
           height="200px"
         >
           <Flex mx={['4px', null, '16px']} flexDirection="column">
-            <Heading textAlign="center">{t('Congratulations!')}</Heading>
+            <Heading textAlign="center" >{t('Congratulations!')}</Heading>
             <Heading textAlign="center">{t('Why not play again')}</Heading>
           </Flex>
         </Flex>

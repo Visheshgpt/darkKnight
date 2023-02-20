@@ -27,7 +27,8 @@ const StyledCardBody = styled(CardBody)`
   justify-content: center;
   padding-top: 5px;
   border-radius: 0 0 24px 24px;
-  background: #324873;
+  // background: #324873;
+  background:#743333;
   z-index: 10;
 `
 

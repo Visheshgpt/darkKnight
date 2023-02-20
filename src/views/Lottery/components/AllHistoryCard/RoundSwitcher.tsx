@@ -4,7 +4,8 @@ import { useTranslation } from '@pancakeswap/localization'
 
 const StyledInput = styled(Input)`
   font-weight: bold;
-  background: #223356;
+  // background: #223356;
+  // background:#;
   width: 60px;
   height: 100%;
   padding: 4px 16px;

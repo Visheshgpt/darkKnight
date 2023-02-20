@@ -4,12 +4,14 @@ import Container from '../Layout/Container'
 import { PageHeaderProps } from './types'
 
 const Outer = styled(Box)<{ background?: string }>`
-  background: ${({ theme, background }) => background || theme.colors.gradientBubblegum};
+  // background: ${({ theme, background }) => background || theme.colors.gradientBubblegum};
 `
 
 const Inner = styled(Container)`
   padding-top: 32px;
   padding-bottom: 32px;
+  display:flex;
+  justify-content:center;
   position: relative;
 `
 

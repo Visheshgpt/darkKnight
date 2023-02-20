@@ -42,7 +42,7 @@ const Balance: React.FC<React.PropsWithChildren<BalanceProps>> = ({
     >
       {({ countUpRef }) => (
         <Text color={isDisabled ? 'textDisabled' : color} onClick={onClick} {...props}>
-          <span ref={countUpRef} style={{ display: 'block' }} />
+          <span  ref={countUpRef} style={{ display: 'block'}} />
         </Text>
       )}
     </CountUp>

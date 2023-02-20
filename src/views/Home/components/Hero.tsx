@@ -39,8 +39,8 @@ const fading = () => keyframes`
 
 const BgWrapper = styled.div`
 // background-image:url('/images/bg/bg.png');
-background-repeat:no-repeat;
-background-size:100% 100%;
+// background-repeat:no-repeat;
+// background-size:100% 100%;
 // background-position:top;
 // background:red;
   z-index: -1;

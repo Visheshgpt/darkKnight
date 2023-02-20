@@ -260,13 +260,13 @@ const Pools: React.FC<React.PropsWithChildren> = () => {
       <PageHeader>
         <Flex justifyContent="space-between" flexDirection={['column', null, null, 'row']}>
           <Flex flex="1" flexDirection="column" mr={['8px', 0]}>
-            <Heading as="h1" scale="xxl" color="secondary" mb="24px">
+            <Heading as="h1" scale="xxl" color="secondary" mb="24px" textAlign="center">
               Knight Raids
             </Heading>
-            <Heading scale="md" color="text">
+            <Heading scale="md" color="text" textAlign="center">
               {t('Just stake some tokens to earn.')}
             </Heading>
-            <Heading scale="md" color="text">
+            <Heading scale="md" color="text" textAlign="center">
               {t('High APR, low risk.')}
             </Heading>
           </Flex>

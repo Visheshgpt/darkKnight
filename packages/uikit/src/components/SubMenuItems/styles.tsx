@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { Flex, Box } from "../Box";
 
-export const SubMenuItemWrapper = styled(Flex)<{ $isMobileOnly: boolean }>`
+export const SubMenuItemWrapper = styled(Flex) <{ $isMobileOnly: boolean }>`
   ${({ theme }) => theme.mediaQueries.sm} {
     ${({ $isMobileOnly }) => ($isMobileOnly ? "display:none" : "")};
   }

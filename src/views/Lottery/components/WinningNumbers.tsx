@@ -15,8 +15,8 @@ const StyledBalls = styled.div`
   margin: 5px;
   line-height: 0.8;
   padding: 10px;
-  background: linear-gradient(235.42deg, #314773 -29.95%, #1e2b45 104.3%);
-  color: #ff720d;
+  background: linear-gradient(235.42deg, #743434 -29.95%, #3D0000 104.3%);
+     color: primary;
   font-weight: bold;
   font-size: 20px;
   border: 1px solid #ff;

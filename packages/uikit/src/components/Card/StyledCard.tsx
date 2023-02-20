@@ -60,11 +60,13 @@ export const StyledCard = styled.div<StyledCardProps>`
   ${space}
 `;
 
-export const StyledCardInner = styled(Box)<{ background?: string; hasCustomBorder: boolean }>`
+export const StyledCardInner = styled(Box) <{ background?: string; hasCustomBorder: boolean }>`
   width: 100%;
   height: 100%;
   overflow: ${({ hasCustomBorder }) => (hasCustomBorder ? "initial" : "inherit")};
-  background: ${({ theme, background }) => background ?? theme.card.background};
+  // background: ${({ theme, background }) => background ?? theme.card.background};
+  background:linear-gradient(96.95deg, #3D0101 -0.61%, #743434 100.61%);
+
   border-radius: ${({ theme }) => theme.radii.card};
 `;
 

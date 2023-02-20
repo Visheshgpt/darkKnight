@@ -62,8 +62,8 @@ function ConnectModal<T>({ login, onDismiss = () => null, displayCount = 3, t, w
   // Filter out WalletConnect if user is inside TrustWallet built-in browser
   const walletsToShow =
     window.ethereum?.isTrust &&
-    // @ts-ignore
-    !window?.ethereum?.isSafePal
+      // @ts-ignore
+      !window?.ethereum?.isSafePal
       ? sortedConfig.filter((wallet) => wallet.title !== "WalletConnect")
       : sortedConfig;
   const displayListConfig = showMore ? walletsToShow : walletsToShow.slice(0, displayCount);
@@ -94,8 +94,9 @@ function ConnectModal<T>({ login, onDismiss = () => null, displayCount = 3, t, w
           <Button
             as="a"
             href="https://knights.gitbook.io/knightswap/im-new-here/faq"
-            variant="subtle"
+            // variant="subtle"
             width="100%"
+
             {...EXTERNAL_LINK_PROPS}
           >
             {t("Learn How to Connect")}

@@ -14,8 +14,8 @@ import PreviousRoundCardFooter from '../PreviousRoundCard/Footer'
 const StyledCard = styled.div`
   width: 100%;
   border-radius: 36px;
-  background: #1e3156;
-
+  // background: #1e3156;
+  background:#3D0000;
   ${({ theme }) => theme.mediaQueries.md} {
     width: 756px;
   }
@@ -23,7 +23,8 @@ const StyledCard = styled.div`
 
 const StyledCardHeader = styled(CardHeader)`
   z-index: 2;
-  background: #324873;
+  // background: #324873;
+  background:#743333;
   padding-bottom: 0px;
 `
 

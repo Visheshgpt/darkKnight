@@ -59,10 +59,15 @@ const TopBannerContainer = styled.div<{ height: number }>`
   min-height: ${({ height }) => `${height}px`};
   max-height: ${({ height }) => `${height}px`};
   width: 100%;
+  // background:red;
+
 `;
 
 const BodyWrapper = styled(Box)`
   position: relative;
+  background-image:url('/images/bg/mainbg.svg');
+  background-size:100%;
+  background-position:top;
   display: flex;
 `;
 

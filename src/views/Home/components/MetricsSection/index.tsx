@@ -37,9 +37,7 @@ const Styledcard = styled.div`
   // background: #1e2b45;
   border: 5px solid;
   background:linear-gradient(#3D0000,#3D0000,#3D0000) padding-box,
-
   linear-gradient(90deg, #A56A07 5.74%, #FEF3AC 46.94%, #A56A07 94.09%)border-box;
-  
   border-color:transparent;
   padding: 14px;
   margin: 10px;

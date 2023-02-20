@@ -6,7 +6,8 @@ import { LotteryRound } from 'state/types'
 import FooterExpanded from './FooterExpanded'
 
 const StyledCardFooter = styled(CardFooter)`
-  background: #1e3156;
+  // background: #1e3156;
+  background:#3D0000;
   border-radius: 36px;
 `
 

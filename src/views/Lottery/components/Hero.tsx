@@ -10,13 +10,13 @@ import { getBalanceNumber } from 'utils/formatBalance'
 import Balance from 'components/Balance'
 import BuyTicketsButton from './BuyTicketsButton'
 import { TicketPurchaseCard } from '../svgs'
-import LotteryHeroBg from '../../../../public/images/lottery/Lottery-hero.png'
+import LotteryHeroBg from '../../../../public/images/lottery/Lottery-hero.svg'
 import SmallFloatingCard from '../../../../public/images/lottery/small-floating-cards.png'
 // import StyledCardBg from '../../../../public/images/lottery/Styled-card-bg.png'
 // import StyledCardBgsm from '../../../../public/images/lottery/syted-card-bg-small.png'
 // import StyledCardBgMd from '../../../../public/images/lottery/styled-card-bg-md.png'
-import knightLotteryLogo from '../../../../public/images/lottery/Knight-logo.png'
-import LotteryCardBgSVG from '../../../../public/images/lottery/lottery-card.svg'
+import knightLotteryLogo from '../../../../public/images/lottery/darklogo.svg'
+import LotteryCardBgSVG from '../../../../public/images/lottery/lottery-card.png'
 import ViewTicketsModal from './ViewTicketsModal'
 
 // const floatingStarsLeft = keyframes`
@@ -82,6 +82,7 @@ const mainTicketAnimation = keyframes`
 const StyledWrapper = styled(Flex)`
   width: 100%;
   max-width: 1250px;
+  // border:2px solid yellow;
   border-radius: 24px;
   @media only screen and (min-width: 420px) {
     background: url(${LotteryHeroBg.src});
@@ -90,9 +91,11 @@ const StyledWrapper = styled(Flex)`
 
 const StyledCard = styled.div`
   width: 100%;
+  
   max-width: 400px;
   height: 214px;
   background: url(${LotteryCardBgSVG.src});
+  background-size:100% 100%;
   padding: 40px 50px;
   background-repeat: no-repeat;
 
@@ -101,14 +104,14 @@ const StyledCard = styled.div`
   margin: 0px;
   justify-content: flex-start;
   align-items: center;
-  border-radius: 40px;
+  // border-radius: 40px;
   @media only screen and (min-width: 368px) {
     margin: 40px 0;
     background-size: contain;
   }
   @media only screen and (min-width: 768px) {
     height: 250px;
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: 1% 10%;
   }
 `
@@ -119,8 +122,13 @@ const StyledSubCard = styled.div`
   height: 245px;
   display: none;
   border-radius: 35px;
-  background: linear-gradient(141.45deg, #314773 43.23%, #548efe 194.27%);
-  @media only screen and (min-width: 853px) {
+  border: 2px solid;
+
+  background: linear-gradient(135.78deg, #3D0000 -64.48%, #743434 83.36%)padding-box,
+linear-gradient(0.98deg, #B98A2B 1.82%, #F0DE93 103.22%)border-box;
+border-color:transparent;
+
+    @media only screen and (min-width: 853px) {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

@@ -24,7 +24,7 @@ import Balance from 'components/Balance'
 import ViewTicketsModal from './ViewTicketsModal'
 import { dateTimeOptions } from '../helpers'
 import RewardBrackets from './RewardBrackets'
-import LotteryCardBgSVG from '../../../../public/images/lottery/lottery-card.svg'
+import LotteryCardBgSVG from '../../../../public/images/lottery/lottery-card.png'
 import BuyTicketsButton from './BuyTicketsButton'
 
 const KnightDrawWrapper = styled(Flex)`
@@ -41,19 +41,20 @@ const KnightStyledCard = styled.div`
   width: 100%;
   max-width: 577px;
   min-height: 320px;
-  border-radius: 40px;
+  // border-radius: 40px;
   padding: 30px;
   background: url(${LotteryCardBgSVG.src});
-  background-size: cover;
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
   position: relative;
 `
 
 const StyledHeading = styled(Heading)`
-  background: linear-gradient(179.27deg, #ff720d 0.63%, #faff03 234.32%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
+  // background: linear-gradient(179.27deg, #ff720d 0.63%, #faff03 234.32%);
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+  // background-clip: text;
+  // text-fill-color: transparent;
 `
 const StyledCardHeader = styled(Flex)`
   padding-bottom: 10px;
@@ -177,13 +178,13 @@ const KnightNextDraw = () => {
             <Text margin="2px" color="#ccc" fontSize="18px" textAlign="center">
               Next Draw
             </Text>
-            <Text fontSize="18px" textAlign="center">
+            <Text fontSize="18px" textAlign="center" color="primary">
               {currentLotteryId && `#${getNextDrawId()}`} {Boolean(endTime) && getNextDrawDateTime()}
             </Text>
           </StyledCardHeader>
           <Flex flexDirection="column" justifyContent="center" alignItems="center" mt="20px">
-            <Heading scale="lg">Prize Pot</Heading>
-            <StyledHeading scale="xxl" margin="10px 0">
+            <Heading scale="lg" color="primary">Prize Pot</Heading>
+            <StyledHeading scale="xxl" margin="10px 0" color="primary">
               {getPrizeBalances()}
             </StyledHeading>
             <Heading color="#B8CBEF">{getBalanceNumber(amountCollectedInCake)} Knight</Heading>

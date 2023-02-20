@@ -71,14 +71,16 @@ function MyApp(props: AppProps<{ initialReduxState: any }>) {
           content="KnightSwap is the preeminent decentralized exchange (DEX) on Binance Smart Chain (BSC) built for reliable & sustainable yields while providing the highest quality Decentralized Finance (DeFi) experience"
         />
         <meta name="theme-color" content="#1FC7D4" />
-        {/* <meta name="twitter:image" content="https://pancakeswap.finance/images/hero.png" /> */}
+        {/* <meta name="twitter:image" content="/images/home/hero/logo.svg" /> */}
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/home/hero/logo.svg" />
+
         <meta
           name="twitter:description"
           content="KnightSwap is the preeminent decentralized exchange (DEX) on Binance Smart Chain (BSC) built for reliable & sustainable yields while providing the highest quality Decentralized Finance (DeFi) experience"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="KnightSwap - A next evolution DeFi exchange on BNB Smart Chain (BSC)" />
-        <title>KnightSwap</title>
+        <title>Dark Night</title>
         {(Component as NextPageWithLayout).mp && (
           // eslint-disable-next-line @next/next/no-sync-scripts
           <script src="https://public.bnbstatic.com/static/js/mp-webview-sdk/webview-v1.0.0.min.js" id="mp-webview" />

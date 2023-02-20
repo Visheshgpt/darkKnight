@@ -42,7 +42,11 @@ const StyledStepCard = styled(Box)`
   display: flex;
   align-self: baseline;
   position: relative;
-  background: #314773;
+  // background: #314773;
+
+  background:#3D0000;
+
+ border:2px solid #F0DE93;
   padding: 1px 1px 3px 1px;
   border-radius: ${({ theme }) => theme.radii.card};
 `
@@ -50,7 +54,8 @@ const StyledStepCard = styled(Box)`
 const StepCardInner = styled(Box)`
   width: 100%;
   padding: 24px;
-  background: #314773;
+  // background: #314773;
+  background:#3D0000;
   border-radius: ${({ theme }) => theme.radii.card};
 `
 const StyledBalls = styled.div`
@@ -60,15 +65,15 @@ const StyledBalls = styled.div`
   text-align: center;
   border-radius: 50%;
   margin: 5px;
-  color: #ff720d;
+  color: primary;
   font-weight: bold;
-  background: linear-gradient(235.42deg, #314773 -29.95%, #1e2b45 104.3%);
+  background: linear-gradient(235.42deg, #743434 -29.95%, #3D0000 104.3%);
 `
 const StyledAMatchingBalls = styled(StyledBalls)`
   background: none;
 `
 const StyledANonMatchingBalls = styled(StyledAMatchingBalls)`
-  color: #1e2b45;
+  color: #00707F;
 `
 type Step = { title: string; subtitle: string; label: string }
 
@@ -379,7 +384,7 @@ const HowToPlay: React.FC<React.PropsWithChildren> = () => {
       <Divider />
       <Flex justifyContent="center" alignItems="center" flexDirection={['column', 'column', 'row']}>
         <Flex maxWidth="500px" flexDirection="column" alignItems="center">
-          <Heading mb="16px" scale="lg" color="#FF720D">
+          <Heading mb="16px" scale="lg" color="#F0DE93">
             {t('Still got questions?')}
           </Heading>
           <Text>

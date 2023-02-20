@@ -351,7 +351,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
       <PageHeader>
         <FarmFlexWrapper justifyContent="space-between">
           <Box>
-            <FarmH1 as="h1" scale="xxl" color="secondary" mb="24px">
+            <FarmH1 as="h1" scale="xxl" color="secondary" mb="24px" textAlign="center">
               {t('Farms')}
             </FarmH1>
             <FarmH2 scale="lg" color="text">

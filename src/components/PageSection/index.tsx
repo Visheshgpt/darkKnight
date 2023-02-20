@@ -26,7 +26,7 @@ const BackgroundColor = styled(Flex).attrs({ className: 'page-bg' as string }) <
   position: relative;
   flex-direction: column;
   // border:2px solid red;
-  background-image:url('/images/bg/bg.png');
+  // background-image:url('/images/bg/bg.png');
   
 
 
@@ -40,6 +40,7 @@ const ChildrenWrapper = styled(Container)`
   min-height: auto;
   padding-top: 16px;
   padding-bottom: 16px;
+  
   width: 100vw;
 
   ${({ theme }) => theme.mediaQueries.sm} {
