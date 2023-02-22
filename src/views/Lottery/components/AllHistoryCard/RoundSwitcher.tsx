@@ -25,7 +25,7 @@ const StyledIconButton = styled(IconButton)`
       fill: ${({ theme }) => theme.colors.textDisabled};
 
       path {
-        fill: #548efe;
+        fill: #ffffff;
       }
     }
   }

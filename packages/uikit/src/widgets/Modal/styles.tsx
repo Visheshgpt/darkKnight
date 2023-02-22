@@ -15,9 +15,9 @@ export const ModalHeader = styled.div<{ background?: string }>`
   display: flex;
   padding: 12px 24px;
 
-  ${({ theme }) => theme.mediaQueries.md} {
-    background: ${({ background }) => background || "transparent"};
-  }
+  // ${({ theme }) => theme.mediaQueries.md} {
+  //   background: ${({ background }) => background || "transparent"};
+  // }
 `;
 
 export const ModalTitle = styled(Flex)`

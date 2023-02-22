@@ -26,8 +26,8 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
   if (!isActive) {
     return <InactiveButton forwardedAs={as} variant={variant} {...props} />;
   }
-
-  return <Button as={as} variant={variant} {...props} />;
+  // variant={variant} as={as} side me
+  return <Button as={as} {...props} />;
 };
 
 export default ButtonMenuItem;

@@ -51,7 +51,7 @@ const SalesSection: React.FC<React.PropsWithChildren<SalesSectionProps>> = (prop
           alignSelf={['flex-start', null, null, 'center']}
           maxWidth="550px"
         >
-          <Heading color="#FF720D" scale="xxl">
+          <Heading color="#F0DE93" scale="xxl">
             {firstSentence}
           </Heading>
           <Heading scale="xxl">{remainingWord}</Heading>

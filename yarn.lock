@@ -3285,7 +3285,7 @@
   dependencies:
     "@octokit/openapi-types" "^11.2.0"
 
-"@pancakeswap/eslint-config-pancake@file:/home/spearmint/Documents/office-work/Knight-frontend-6592190cc47f9044edc596a3f087adbe9bfaa7e3/packages/eslint-config":
+"@pancakeswap/eslint-config-pancake@file:/home/spearmint/Documents/office-work/DarkKnight-Frontend/packages/eslint-config":
   "resolved" "file:packages/eslint-config"
   "version" "1.2.0"
   dependencies:
@@ -3298,27 +3298,27 @@
     "eslint-plugin-react" "^7.21.5"
     "eslint-plugin-react-hooks" "^4.0.0"
 
-"@pancakeswap/farms@*", "@pancakeswap/farms@file:/home/spearmint/Documents/office-work/Knight-frontend-6592190cc47f9044edc596a3f087adbe9bfaa7e3/packages/farms":
+"@pancakeswap/farms@*", "@pancakeswap/farms@file:/home/spearmint/Documents/office-work/DarkKnight-Frontend/packages/farms":
   "resolved" "file:packages/farms"
   "version" "0.0.1"
 
-"@pancakeswap/hooks@file:/home/spearmint/Documents/office-work/Knight-frontend-6592190cc47f9044edc596a3f087adbe9bfaa7e3/packages/hooks":
+"@pancakeswap/hooks@file:/home/spearmint/Documents/office-work/DarkKnight-Frontend/packages/hooks":
   "resolved" "file:packages/hooks"
   "version" "0.0.1"
   dependencies:
     "react" "^18.2.0"
 
-"@pancakeswap/localization@file:/home/spearmint/Documents/office-work/Knight-frontend-6592190cc47f9044edc596a3f087adbe9bfaa7e3/packages/localization":
+"@pancakeswap/localization@file:/home/spearmint/Documents/office-work/DarkKnight-Frontend/packages/localization":
   "resolved" "file:packages/localization"
   "version" "0.0.1"
   dependencies:
     "react" "^18.2.0"
 
-"@pancakeswap/multicall@file:/home/spearmint/Documents/office-work/Knight-frontend-6592190cc47f9044edc596a3f087adbe9bfaa7e3/packages/multicall":
+"@pancakeswap/multicall@file:/home/spearmint/Documents/office-work/DarkKnight-Frontend/packages/multicall":
   "resolved" "file:packages/multicall"
   "version" "0.0.1"
 
-"@pancakeswap/sdk@*", "@pancakeswap/sdk@file:/home/spearmint/Documents/office-work/Knight-frontend-6592190cc47f9044edc596a3f087adbe9bfaa7e3/packages/swap-sdk":
+"@pancakeswap/sdk@*", "@pancakeswap/sdk@file:/home/spearmint/Documents/office-work/DarkKnight-Frontend/packages/swap-sdk":
   "resolved" "file:packages/swap-sdk"
   "version" "3.1.0"
   dependencies:
@@ -3329,15 +3329,15 @@
     "tiny-warning" "^1.0.3"
     "toformat" "^2.0.0"
 
-"@pancakeswap/token-lists@file:/home/spearmint/Documents/office-work/Knight-frontend-6592190cc47f9044edc596a3f087adbe9bfaa7e3/packages/token-lists":
+"@pancakeswap/token-lists@file:/home/spearmint/Documents/office-work/DarkKnight-Frontend/packages/token-lists":
   "resolved" "file:packages/token-lists"
   "version" "0.0.1"
 
-"@pancakeswap/tokens@*", "@pancakeswap/tokens@file:/home/spearmint/Documents/office-work/Knight-frontend-6592190cc47f9044edc596a3f087adbe9bfaa7e3/packages/tokens":
+"@pancakeswap/tokens@*", "@pancakeswap/tokens@file:/home/spearmint/Documents/office-work/DarkKnight-Frontend/packages/tokens":
   "resolved" "file:packages/tokens"
   "version" "0.0.1"
 
-"@pancakeswap/ui@*", "@pancakeswap/ui@file:/home/spearmint/Documents/office-work/Knight-frontend-6592190cc47f9044edc596a3f087adbe9bfaa7e3/packages/ui":
+"@pancakeswap/ui@*", "@pancakeswap/ui@file:/home/spearmint/Documents/office-work/DarkKnight-Frontend/packages/ui":
   "resolved" "file:packages/ui"
   "version" "0.0.1"
   dependencies:
@@ -3346,7 +3346,7 @@
     "@vanilla-extract/css-utils" "^0.1.2"
     "@vanilla-extract/sprinkles" "^1.4.1"
 
-"@pancakeswap/uikit@*", "@pancakeswap/uikit@file:/home/spearmint/Documents/office-work/Knight-frontend-6592190cc47f9044edc596a3f087adbe9bfaa7e3/packages/uikit":
+"@pancakeswap/uikit@*", "@pancakeswap/uikit@file:/home/spearmint/Documents/office-work/DarkKnight-Frontend/packages/uikit":
   "resolved" "file:packages/uikit"
   "version" "0.63.1"
   dependencies:
@@ -3360,14 +3360,14 @@
     "styled-system" "^5.1.5"
     "tslib" "^2.2.0"
 
-"@pancakeswap/utils@file:/home/spearmint/Documents/office-work/Knight-frontend-6592190cc47f9044edc596a3f087adbe9bfaa7e3/packages/utils":
+"@pancakeswap/utils@file:/home/spearmint/Documents/office-work/DarkKnight-Frontend/packages/utils":
   "resolved" "file:packages/utils"
   "version" "0.0.1"
   dependencies:
     "@pancakeswap/sdk" "*"
     "@pancakeswap/tokens" "*"
 
-"@pancakeswap/wagmi@*", "@pancakeswap/wagmi@file:/home/spearmint/Documents/office-work/Knight-frontend-6592190cc47f9044edc596a3f087adbe9bfaa7e3/packages/wagmi":
+"@pancakeswap/wagmi@*", "@pancakeswap/wagmi@file:/home/spearmint/Documents/office-work/DarkKnight-Frontend/packages/wagmi":
   "resolved" "file:packages/wagmi"
   "version" "0.0.1"
 
@@ -6923,7 +6923,7 @@
   dependencies:
     "fill-range" "^7.0.1"
 
-"bridge@file:/home/spearmint/Documents/office-work/Knight-frontend-6592190cc47f9044edc596a3f087adbe9bfaa7e3/apps/bridge":
+"bridge@file:/home/spearmint/Documents/office-work/DarkKnight-Frontend/apps/bridge":
   "resolved" "file:apps/bridge"
   "version" "0.1.0"
   dependencies:
@@ -10259,7 +10259,7 @@
   "resolved" "https://registry.npmjs.org/fancy-canvas/-/fancy-canvas-0.2.2.tgz"
   "version" "0.2.2"
 
-"farms-api@file:/home/spearmint/Documents/office-work/Knight-frontend-6592190cc47f9044edc596a3f087adbe9bfaa7e3/apis/farms":
+"farms-api@file:/home/spearmint/Documents/office-work/DarkKnight-Frontend/apis/farms":
   "resolved" "file:apis/farms"
   "version" "0.0.0"
   dependencies:
@@ -19121,7 +19121,7 @@
     "glob" "^7.1.4"
     "minimatch" "^3.0.4"
 
-"test@file:/home/spearmint/Documents/office-work/Knight-frontend-6592190cc47f9044edc596a3f087adbe9bfaa7e3/apps/test":
+"test@file:/home/spearmint/Documents/office-work/DarkKnight-Frontend/apps/test":
   "resolved" "file:apps/test"
   "version" "0.1.0"
   dependencies:
@@ -19449,7 +19449,7 @@
     "minimist" "^1.2.6"
     "strip-bom" "^3.0.0"
 
-"tsconfig@*", "tsconfig@file:/home/spearmint/Documents/office-work/Knight-frontend-6592190cc47f9044edc596a3f087adbe9bfaa7e3/packages/tsconfig":
+"tsconfig@*", "tsconfig@file:/home/spearmint/Documents/office-work/DarkKnight-Frontend/packages/tsconfig":
   "resolved" "file:packages/tsconfig"
   "version" "0.0.0"
 

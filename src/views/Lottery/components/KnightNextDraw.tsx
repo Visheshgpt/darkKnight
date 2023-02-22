@@ -40,12 +40,12 @@ const KnightDrawWrapper = styled(Flex)`
 const KnightStyledCard = styled.div`
   width: 100%;
   max-width: 577px;
-  min-height: 320px;
+  min-height: 380px;
   // border-radius: 40px;
   padding: 30px;
   background: url(${LotteryCardBgSVG.src});
   background-size: 100% 100%;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   position: relative;
 `
 
@@ -183,7 +183,9 @@ const KnightNextDraw = () => {
             </Text>
           </StyledCardHeader>
           <Flex flexDirection="column" justifyContent="center" alignItems="center" mt="20px">
-            <Heading scale="lg" color="primary">Prize Pot</Heading>
+            <Heading scale="lg" color="primary">
+              Prize Pot
+            </Heading>
             <StyledHeading scale="xxl" margin="10px 0" color="primary">
               {getPrizeBalances()}
             </StyledHeading>

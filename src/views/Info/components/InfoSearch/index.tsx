@@ -38,7 +38,8 @@ const Menu = styled.div<{ hide: boolean }>`
   padding: 1.5rem;
   padding-bottom: 2.5rem;
   position: absolute;
-  background: ${({ theme }) => theme.colors.background};
+  // background: ${({ theme }) => theme.colors.background};
+  background: #3d0000;
   border-radius: 8px;
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.04),
     0px 24px 32px rgba(0, 0, 0, 0.04);
@@ -158,8 +159,6 @@ const Search = () => {
   const [tokensShown, setTokensShown] = useState(3)
   const [poolsShown, setPoolsShown] = useState(3)
 
-
- 
   useEffect(() => {
     setTokensShown(3)
     setPoolsShown(3)
@@ -202,8 +201,6 @@ const Search = () => {
     router.push(to)
   }
 
-
-
   // get date for watchlist
   const watchListTokenData = useTokenDatasSWR(savedTokens)
   const watchListPoolData = usePoolDatasSWR(savedPools)
@@ -225,11 +222,9 @@ const Search = () => {
     return orderBy(pools, (pool) => pool.volumeUSD, 'desc')
   }, [pools, showWatchlist, watchListPoolData, value])
 
-
-
   useEffect(() => {
     // console.log("GULLU,",{tokens})
-},[tokens])
+  }, [tokens])
   const contentUnderTokenList = () => {
     const isLoading = tokensLoading
     const noTokensFound =

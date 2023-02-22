@@ -3,9 +3,10 @@ import { ContextApi } from '@pancakeswap/localization'
 import { PageMeta } from './types'
 
 export const DEFAULT_META: PageMeta = {
-  title: 'KnightSwap',
-  description:'KnightSwap is the preeminent decentralized exchange (DEX) on Binance Smart Chain (BSC) built for reliable & sustainable yields while providing the highest quality Decentralized Finance (DeFi) experience',
-  image: ''
+  title: 'Dark Knight',
+  description:
+    'KnightSwap is the preeminent decentralized exchange (DEX) on Binance Smart Chain (BSC) built for reliable & sustainable yields while providing the highest quality Decentralized Finance (DeFi) experience',
+  image: '',
 }
 
 interface PathList {

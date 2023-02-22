@@ -44,9 +44,9 @@ const StyledStepCard = styled(Box)`
   position: relative;
   // background: #314773;
 
-  background:#3D0000;
+  background: #3d0000;
 
- border:2px solid #F0DE93;
+  border: 2px solid #f0de93;
   padding: 1px 1px 3px 1px;
   border-radius: ${({ theme }) => theme.radii.card};
 `
@@ -55,7 +55,7 @@ const StepCardInner = styled(Box)`
   width: 100%;
   padding: 24px;
   // background: #314773;
-  background:#3D0000;
+  background: #3d0000;
   border-radius: ${({ theme }) => theme.radii.card};
 `
 const StyledBalls = styled.div`
@@ -67,13 +67,14 @@ const StyledBalls = styled.div`
   margin: 5px;
   color: primary;
   font-weight: bold;
-  background: linear-gradient(235.42deg, #743434 -29.95%, #3D0000 104.3%);
+  background: linear-gradient(235.42deg, #743434 -29.95%, #3d0000 104.3%);
 `
 const StyledAMatchingBalls = styled(StyledBalls)`
   background: none;
 `
 const StyledANonMatchingBalls = styled(StyledAMatchingBalls)`
-  color: #00707F;
+  color: #00707f;
+  // color:red;
 `
 type Step = { title: string; subtitle: string; label: string }
 

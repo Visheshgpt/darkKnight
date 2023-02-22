@@ -26,17 +26,16 @@ const StyledNav = styled.nav`
   align-items: center;
   width: 100%;
   height: ${MENU_HEIGHT}px;
-  border-with: 5px;
-  border-style:solid;
+  border-bottom-width: 5px;
+  border-style: solid;
   // background-color: ${({ theme }) => theme.nav.background};
-  background:linear-gradient(90.02deg, #3D0000 6.98%, #743434 103.5%);
-  // linear-gradient(90deg, #A66C07 2.11%, #F0DE93 38%, #A66C07 60.57%, #F0DE93 99.07%)border-box;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
-  
-  // border-color:transparent;
+  background: linear-gradient(90.02deg, #3d0000 6.98%, #743434 103.5%) padding-box,
+    linear-gradient(90deg, #a66c07 2.11%, #f0de93 38%, #a66c07 60.57%, #f0de93 99.07%) border-box;
+  // border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
 
-// border-image: linear-gradient(90deg, #A66C07 2.11%, #F0DE93 38%, #A66C07 60.57%, #F0DE93 99.07%);
+  border-color: transparent;
 
+  // border-image: linear-gradient(90deg, #A66C07 2.11%, #F0DE93 38%, #A66C07 60.57%, #F0DE93 99.07%);
 
   transform: translate3d(0, 0, 0);
 
@@ -60,14 +59,13 @@ const TopBannerContainer = styled.div<{ height: number }>`
   max-height: ${({ height }) => `${height}px`};
   width: 100%;
   // background:red;
-
 `;
 
 const BodyWrapper = styled(Box)`
   position: relative;
-  background-image:url('/images/bg/mainbg.svg');
-  background-size:100%;
-  background-position:top;
+  background-image: url("/images/bg/mainbg.svg");
+  background-size: 100%;
+  background-position: top;
   display: flex;
 `;
 

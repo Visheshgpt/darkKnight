@@ -71,7 +71,7 @@ const Overview: React.FC<React.PropsWithChildren> = () => {
   return (
     <Page>
       <Heading scale="xl" mb="16px" id="info-overview-title" textAlign="center">
-        <span style={{ color: '#FF720D' }}>Knight</span> Info & Analysis
+        <span style={{ color: '#F0DE93' }}>Knight</span> Info & Analysis
       </Heading>
       <ChartCardsContainer>
         <Card>

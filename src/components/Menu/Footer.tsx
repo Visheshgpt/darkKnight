@@ -8,6 +8,7 @@ const Wrapper = memo(styled.div<{ $isSide: boolean }>`
   width: 100%;
   height: ${({ $isSide }) => ($isSide ? '100%' : 'auto')};
   display: flex;
+
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;

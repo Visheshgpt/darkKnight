@@ -33,17 +33,17 @@ const BannerPlaceHolder = styled.div<{ walletConnected: boolean }>`
     // border: 24px;
     background: url(${herobanner.src});
     background-repeat: no-repeat;
-    background-size:;
+    background-size: ;
     background-position: center;
     @media only screen and (max-width: 576px) {
-      {
-       background: url(${herobanner.src});
-       background-repeat: no-repeat;
-       border:2px solid #F0DE93;
-       background-size: ;
-       background-position: center;
-     }
-   }
+       {
+        background: url(${herobanner.src});
+        background-repeat: no-repeat;
+        border: 2px solid #f0de93;
+        background-size: ;
+        background-position: center;
+      }
+    }
     @media only screen and (min-width: 576px) {
        {
         background: url(${herobanner.src});
@@ -56,7 +56,7 @@ const BannerPlaceHolder = styled.div<{ walletConnected: boolean }>`
        {
         background: url(${herobanner.src});
         background-repeat: no-repeat;
-        background-size:100% 100%;
+        background-size: 100% 100%;
         background-position: center;
       }
     }
@@ -116,8 +116,7 @@ const StyledSwiper = styled(Swiper)`
     }
   }
   .swiper-pagination-bullet {
-    // background-color: #e66000;
-    
+    background-color: #f0de93;
     flex-basis: 108px;
     margin: 0 !important;
     border-radius: 0px;
