@@ -61,8 +61,8 @@ const Logo: React.FC<React.PropsWithChildren<Props>> = ({ isDark, href }) => {
         </StyledLink>
       ) : (
         <StyledLink href={href} as={linkComponent} aria-label="Knightswap home page">
-          {/* {innerLogo} */}
-          <img src="/images/home/hero/logotext.svg" alt="" />
+          {innerLogo}
+          {/* <img src="/images/home/hero/logotext.svg" alt="" /> */}
         </StyledLink>
       )}
     </Flex>
