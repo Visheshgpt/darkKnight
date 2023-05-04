@@ -10,6 +10,7 @@ export enum ChainId {
   GOERLI = 5,
   BSC = 56,
   BSC_TESTNET = 97,
+  FANTOMOPERA = 250,
 }
 
 export enum TradeType {
@@ -26,23 +27,26 @@ export enum Rounding {
 export const FACTORY_ADDRESS = '0xf0bc2E21a76513aa7CC2730C7A1D6deE0790751f'
 
 const FACTORY_ADDRESS_ETH = '0x1097053Fd2ea711dad45caCcc45EfF7548fCB362'
-
+const FACTORY_ADDRESS_FANTOMOPERA = '0x7d82F56ea0820A9d42b01C3C28F1997721732218'
 export const FACTORY_ADDRESS_MAP: Record<number, string> = {
   [ChainId.ETHEREUM]: FACTORY_ADDRESS_ETH,
   [ChainId.RINKEBY]: FACTORY_ADDRESS_ETH,
   [ChainId.GOERLI]: FACTORY_ADDRESS_ETH,
   [ChainId.BSC]: FACTORY_ADDRESS,
   [ChainId.BSC_TESTNET]: '0x6725f303b657a9451d8ba641348b6761a6cc7a17',
+  [ChainId.FANTOMOPERA]: FACTORY_ADDRESS_FANTOMOPERA,
 }
 export const INIT_CODE_HASH = '0x4f28dfdda4977962d01e311877b42e2a192039a7276c57cc348ff240475368ee'
 
 const INIT_CODE_HASH_ETH = '0x57224589c67f3f30a6b0d7a1b54cf3153ab84563bc609ef41dfb34f8b2974d2d'
+const INIT_CODE_HASH_FANTOMOPERA = '0x2e8dbc8cf79694a7ef827213d52da525b45ddf645a4abd477fcb4af09bfb5f0e '
 export const INIT_CODE_HASH_MAP: Record<number, string> = {
   [ChainId.ETHEREUM]: INIT_CODE_HASH_ETH,
   [ChainId.RINKEBY]: INIT_CODE_HASH_ETH,
   [ChainId.GOERLI]: INIT_CODE_HASH_ETH,
   [ChainId.BSC]: INIT_CODE_HASH,
   [ChainId.BSC_TESTNET]: '0xd0d4c4cd0848c93cb4fd1f498d7013ee6bfb25783ea21593d5834f5d250ece66',
+  [ChainId.FANTOMOPERA]: INIT_CODE_HASH_FANTOMOPERA,
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)
@@ -124,12 +128,24 @@ export const WBNB = {
   ),
 }
 
+export const WFANTOM = {
+  [ChainId.FANTOMOPERA]: new Token(
+    ChainId.FANTOMOPERA,
+    '0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',
+    18,
+    'WFANTOM',
+    'Wrapped FANTOM',
+    'https://www.binance.org'
+  ),
+}
+
 export const WNATIVE: Record<number, Token> = {
   [ChainId.ETHEREUM]: WETH9[ChainId.ETHEREUM],
   [ChainId.RINKEBY]: WETH9[ChainId.RINKEBY],
   [ChainId.GOERLI]: WETH9[ChainId.GOERLI],
   [ChainId.BSC]: WBNB[ChainId.BSC],
   [ChainId.BSC_TESTNET]: WBNB[ChainId.BSC_TESTNET],
+  [ChainId.FANTOMOPERA]: WFANTOM[ChainId.FANTOMOPERA],
 }
 
 export const NATIVE: Record<
@@ -151,6 +167,11 @@ export const NATIVE: Record<
   [ChainId.BSC_TESTNET]: {
     name: 'Binance Chain Native Token',
     symbol: 'tBNB',
+    decimals: 18,
+  },
+  [ChainId.FANTOMOPERA]: {
+    name: 'FantomOpera',
+    symbol: 'FTM',
     decimals: 18,
   },
 }

@@ -30,11 +30,9 @@ import { ApprovalState } from 'hooks/useApproveCallback'
 import { Field } from 'state/swap/actions'
 import { useSwapState } from 'state/swap/hooks'
 import { useExpertModeManager, useUserSlippageTolerance } from 'state/user/hooks'
-
 import replaceBrowserHistory from '@pancakeswap/utils/replaceBrowserHistory'
 import { currencyId } from 'utils/currencyId'
 import TradePrice from 'views/Swap/components/TradePrice'
-
 import CurrencyInputHeader from '../../components/CurrencyInputHeader'
 import useRefreshBlockNumberID from '../../hooks/useRefreshBlockNumber'
 import { Wrapper } from '../../components/styleds'
@@ -93,9 +91,7 @@ export default function StableSwapForm({ setIsChartDisplayed, isChartDisplayed }
   } = useSwapState()
   const inputCurrency = useCurrency(inputCurrencyId)
   const outputCurrency = useCurrency(outputCurrencyId)
-
   const stableConfig = useContext(StableConfigContext)
-
   const currencies: { [field in Field]?: Currency } = {
     [Field.INPUT]: inputCurrency ?? undefined,
     [Field.OUTPUT]: outputCurrency ?? undefined,
@@ -114,9 +110,7 @@ export default function StableSwapForm({ setIsChartDisplayed, isChartDisplayed }
   }
 
   const { onSwitchTokens, onCurrencySelection, onUserInput } = useSwapActionHandlers()
-
   const dependentField: Field = independentField === Field.INPUT ? Field.OUTPUT : Field.INPUT
-
   const handleTypeInput = useCallback(
     (value: string) => {
       onUserInput(Field.INPUT, value)

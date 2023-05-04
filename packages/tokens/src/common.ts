@@ -7,7 +7,6 @@ export const CAKE_MAINNET = new Token(
   'KNIGHT',
   'KnightSwap Token',
   'https://knightswap.financial',
-  
 )
 
 export const CAKE_TESTNET = new Token(
@@ -118,12 +117,22 @@ export const BUSD_GOERLI = new Token(
   'https://www.paxos.com/busd/',
 )
 
+export const USDC_FANTOM = new Token(
+  ChainId.FANTOMOPERA,
+  '0x04068DA6C83AFCFA0e13ba15A6696662335D5B75',
+  6,
+  'USDC',
+  ' USDC',
+  'https://www.circle.com/en/usdc',
+)
+
 export const BUSD: Record<ChainId, Token> = {
   [ChainId.ETHEREUM]: BUSD_ETH,
   [ChainId.RINKEBY]: BUSD_RINKEBY,
   [ChainId.GOERLI]: BUSD_GOERLI,
   [ChainId.BSC]: BUSD_BSC,
   [ChainId.BSC_TESTNET]: BUSD_TESTNET,
+  [ChainId.FANTOMOPERA]: USDC_FANTOM,
 }
 
 export const CAKE = {
@@ -137,6 +146,7 @@ export const USDC = {
   [ChainId.ETHEREUM]: USDC_ETH,
   [ChainId.RINKEBY]: USDC_RINKEBY,
   [ChainId.GOERLI]: USDC_GOERLI,
+  [ChainId.FANTOMOPERA]: USDC_FANTOM,
 }
 
 export const USDT = {
