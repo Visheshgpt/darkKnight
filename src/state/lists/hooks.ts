@@ -15,7 +15,6 @@ import UNSUPPORTED_TOKEN_LIST from '../../config/constants/tokenLists/pancake-un
 import WARNING_TOKEN_LIST from '../../config/constants/tokenLists/pancake-warning.tokenlist.json'
 import { listsAtom } from './lists'
 
-// use ordering of default list of lists to assign priority
 function sortByListPriority(urlA: string, urlB: string) {
   const first = DEFAULT_LIST_OF_LISTS.includes(urlA) ? DEFAULT_LIST_OF_LISTS.indexOf(urlA) : Number.MAX_SAFE_INTEGER
   const second = DEFAULT_LIST_OF_LISTS.includes(urlB) ? DEFAULT_LIST_OF_LISTS.indexOf(urlB) : Number.MAX_SAFE_INTEGER
@@ -30,9 +29,6 @@ function enumKeys<O extends object, K extends keyof O = keyof O>(obj: O): K[] {
   return Object.keys(obj).filter((k) => Number.isNaN(+k)) as K[]
 }
 
-// -------------------------------------
-//   Selectors
-// -------------------------------------
 const selectorActiveUrlsAtom = atom((get) => get(listsAtom)?.activeListUrls ?? [])
 export const selectorByUrlsAtom = atom((get) => get(listsAtom)?.byUrl ?? {})
 
@@ -49,23 +45,20 @@ const combineTokenMapsWithDefault = (lists: ListsState['byUrl'], urls: string[])
 
 const combineTokenMaps = (lists: ListsState['byUrl'], urls: string[]) => {
   if (!urls) return EMPTY_LIST
-  return (
-    urls
-      .slice()
-      // sort by priority so top priority goes last
-      .sort(sortByListPriority)
-      .reduce((allTokens, currentUrl) => {
-        const current = lists[currentUrl]?.current
-        if (!current) return allTokens
-        try {
-          const newTokens = Object.assign(listToTokenMap(current))
-          return combineMaps(allTokens, newTokens)
-        } catch (error) {
-          console.error('Could not show token list due to error', error)
-          return allTokens
-        }
-      }, EMPTY_LIST)
-  )
+  return urls
+    .slice()
+    .sort(sortByListPriority)
+    .reduce((allTokens, currentUrl) => {
+      const current = lists[currentUrl]?.current
+      if (!current) return allTokens
+      try {
+        const newTokens = Object.assign(listToTokenMap(current))
+        return combineMaps(allTokens, newTokens)
+      } catch (error) {
+        console.error('Could not show token list due to error', error)
+        return allTokens
+      }
+    }, EMPTY_LIST)
 }
 
 export const combinedTokenMapFromActiveUrlsAtom = atom((get) => {

@@ -28,6 +28,7 @@ const mapWithoutUrls = (tokenMap: TokenAddressMap, chainId: number) =>
 /**
  * Returns all tokens that are from active urls and user added tokens
  */
+
 export function useAllTokens(): { [address: string]: Token } {
   const { chainId } = useActiveWeb3React()
   const tokenMap = useAtomValue(combinedTokenMapFromActiveUrlsAtom)
@@ -36,15 +37,10 @@ export function useAllTokens(): { [address: string]: Token } {
     return (
       userAddedTokens
         // reduce into all ALL_TOKENS filtered by the current chain
-        .reduce<{ [address: string]: Token }>(
-          (tokenMap_, token) => {
-            tokenMap_[token.address] = token
-            return tokenMap_
-          },
-          // must make a copy because reduce modifies the map, and we do not
-          // want to make a copy in every iteration
-          mapWithoutUrls(tokenMap, chainId),
-        )
+        .reduce<{ [address: string]: Token }>((tokenMap_, token) => {
+          tokenMap_[token.address] = token
+          return tokenMap_
+        }, mapWithoutUrls(tokenMap, chainId))
     )
   }, [userAddedTokens, tokenMap, chainId])
 }
@@ -118,9 +114,6 @@ function parseStringOrBytes32(str: string | undefined, bytes32: string | undefin
     : defaultValue
 }
 
-// undefined if invalid or does not exist
-// null if loading
-// otherwise returns the token
 export function useToken(tokenAddress?: string): Token | undefined | null {
   const { chainId } = useActiveWeb3React()
   const tokens = useAllTokens()

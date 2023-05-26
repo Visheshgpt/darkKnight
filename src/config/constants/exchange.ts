@@ -9,7 +9,7 @@ export const ROUTER_ADDRESS: ChainMap<string> = {
   [ChainId.GOERLI]: '0xEfF92A263d31888d860bD50809A8D171709b7b1c',
   [ChainId.BSC]: '0x05E61E0cDcD2170a76F9568a110CEe3AFdD6c46f',
   [ChainId.BSC_TESTNET]: '0xD99D1c33F9fC3444f8101754aBC46c52416550D1',
-  [ChainId.FANTOMOPERA]: '0x045312C737a6b7a115906Be0aD0ef53A6AA38106',
+  [ChainId.fantomOpera]: '0x045312C737a6b7a115906Be0aD0ef53A6AA38106',
 }
 
 // used to construct intermediary pairs for trading
@@ -27,7 +27,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     bscTokens.usdc,
   ],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
-  [ChainId.FANTOMOPERA]: [FantomTokens.wfantom],
+  [ChainId.fantomOpera]: [FantomTokens.wfantom, FantomTokens.usdc, FantomTokens.usdt, FantomTokens.cake],
 }
 
 /**
@@ -48,6 +48,7 @@ export const ADDITIONAL_BASES: { [chainId in ChainId]?: { [tokenAddress: string]
  */
 export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: Token[] } } = {
   [ChainId.BSC]: {},
+  [ChainId.fantomOpera]: {},
 }
 
 // used for display in the default list when adding liquidity
@@ -57,7 +58,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
   [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
   [ChainId.BSC]: [bscTokens.busd, bscTokens.cake, bscTokens.btcb],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
-  [ChainId.FANTOMOPERA]: [FantomTokens.wfantom],
+  [ChainId.fantomOpera]: [FantomTokens.wfantom, FantomTokens.usdc, FantomTokens.dknight],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
@@ -67,7 +68,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
   [ChainId.BSC]: [bscTokens.wbnb, bscTokens.dai, bscTokens.busd, bscTokens.usdt, bscTokens.cake],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
-  [ChainId.FANTOMOPERA]: [FantomTokens.wfantom],
+  [ChainId.fantomOpera]: [FantomTokens.wfantom, FantomTokens.usdc, FantomTokens.cake],
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
@@ -81,6 +82,7 @@ export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } 
     [bscTokens.busd, bscTokens.usdt],
     [bscTokens.dai, bscTokens.usdt],
   ],
+  [ChainId.fantomOpera]: [[FantomTokens.usdc, FantomTokens.wfantom]],
 }
 
 export const BIG_INT_ZERO = JSBI.BigInt(0)

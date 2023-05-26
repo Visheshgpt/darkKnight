@@ -4,7 +4,6 @@ import { Currency } from '../currency'
 import { Token } from '../token'
 import { Fraction } from './fraction'
 import _Big from 'big.js'
-
 import toFormat from 'toformat'
 import { BigintIsh, Rounding, MaxUint256 } from '../../constants'
 

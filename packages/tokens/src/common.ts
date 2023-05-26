@@ -9,6 +9,15 @@ export const CAKE_MAINNET = new Token(
   'https://knightswap.financial',
 )
 
+// export const CAKE_MAINNET = new Token(
+//   ChainId.fantomOpera,
+//   '0x6cc0E0AedbbD3C35283e38668D959F6eb3034856',
+//   18,
+//   'dKNIGHT',
+//   'DarkKnightSwap Token',
+//   'https://knightswap.financial',
+// )
+
 export const CAKE_TESTNET = new Token(
   ChainId.BSC_TESTNET,
   '0xFa60D973F7642B748046464e165A65B7323b0DEE',
@@ -24,6 +33,15 @@ export const USDC_BSC = new Token(
   18,
   'USDC',
   'Binance-Peg USD Coin',
+  'https://www.centre.io/usdc',
+)
+
+export const USDC_FTM = new Token(
+  ChainId.fantomOpera,
+  '0x04068DA6C83AFCFA0e13ba15A6696662335D5B75',
+  6,
+  'USDC',
+  'USD Coin',
   'https://www.centre.io/usdc',
 )
 
@@ -58,6 +76,15 @@ export const USDT_BSC = new Token(
   ChainId.BSC,
   '0x55d398326f99059fF775485246999027B3197955',
   18,
+  'USDT',
+  'Tether USD',
+  'https://tether.to/',
+)
+
+export const USDT_FTM = new Token(
+  ChainId.fantomOpera,
+  '0x1B27A9dE6a775F98aaA5B90B62a4e2A0B84DbDd9',
+  6,
   'USDT',
   'Tether USD',
   'https://tether.to/',
@@ -118,7 +145,7 @@ export const BUSD_GOERLI = new Token(
 )
 
 export const USDC_FANTOM = new Token(
-  ChainId.FANTOMOPERA,
+  ChainId.fantomOpera,
   '0x04068DA6C83AFCFA0e13ba15A6696662335D5B75',
   6,
   'USDC',
@@ -132,7 +159,7 @@ export const BUSD: Record<ChainId, Token> = {
   [ChainId.GOERLI]: BUSD_GOERLI,
   [ChainId.BSC]: BUSD_BSC,
   [ChainId.BSC_TESTNET]: BUSD_TESTNET,
-  [ChainId.FANTOMOPERA]: USDC_FANTOM,
+  [ChainId.fantomOpera]: USDC_FANTOM,
 }
 
 export const CAKE = {
@@ -146,11 +173,12 @@ export const USDC = {
   [ChainId.ETHEREUM]: USDC_ETH,
   [ChainId.RINKEBY]: USDC_RINKEBY,
   [ChainId.GOERLI]: USDC_GOERLI,
-  [ChainId.FANTOMOPERA]: USDC_FANTOM,
+  [ChainId.fantomOpera]: USDC_FANTOM,
 }
 
 export const USDT = {
   [ChainId.BSC]: USDT_BSC,
+  [ChainId.fantomOpera]: USDT_FTM,
   [ChainId.ETHEREUM]: USDT_ETH,
 }
 

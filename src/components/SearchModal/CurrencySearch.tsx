@@ -85,26 +85,16 @@ function CurrencySearch({
 }: CurrencySearchProps) {
   const { t } = useTranslation()
   const { chainId } = useActiveWeb3React()
-
-  // refs for fixed size lists
   const fixedList = useRef<FixedSizeList>()
-
   const [searchQuery, setSearchQuery] = useState<string>('')
   const debouncedQuery = useDebounce(searchQuery, 200)
-
   const [invertSearchOrder] = useState<boolean>(false)
-
   const allTokens = useAllTokens()
-
-  // if they input an address, use it
   const searchToken = useToken(debouncedQuery)
   const searchTokenIsAdded = useIsUserAddedToken(searchToken)
-
   const { isMobile } = useMatchBreakpoints()
   const [audioPlay] = useAudioModeManager()
-
   const native = useNativeCurrency()
-
   const showNative: boolean = useMemo(() => {
     const s = debouncedQuery.toLowerCase().trim()
     return native && native.symbol?.toLowerCase?.()?.indexOf(s) !== -1
