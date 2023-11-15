@@ -9,14 +9,14 @@ export const CAKE_MAINNET = new Token(
   'https://knightswap.financial',
 )
 
-// export const CAKE_MAINNET = new Token(
-//   ChainId.fantomOpera,
-//   '0x6cc0E0AedbbD3C35283e38668D959F6eb3034856',
-//   18,
-//   'dKNIGHT',
-//   'DarkKnightSwap Token',
-//   'https://knightswap.financial',
-// )
+export const DK_MAINNET = new Token(
+  ChainId.fantomOpera,
+  '0x6cc0E0AedbbD3C35283e38668D959F6eb3034856',
+  18,
+  'dKNIGHT',
+  'DarkKnightSwap Token',
+  'https://knightswap.financial',
+)
 
 export const CAKE_TESTNET = new Token(
   ChainId.BSC_TESTNET,

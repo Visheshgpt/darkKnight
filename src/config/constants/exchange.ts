@@ -27,7 +27,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     bscTokens.usdc,
   ],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
-  [ChainId.fantomOpera]: [FantomTokens.wfantom, FantomTokens.usdc, FantomTokens.usdt, FantomTokens.cake],
+  [ChainId.fantomOpera]: [FantomTokens.wfantom, FantomTokens.usdc, FantomTokens.usdt, FantomTokens.dknight],
 }
 
 /**
@@ -68,7 +68,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
   [ChainId.BSC]: [bscTokens.wbnb, bscTokens.dai, bscTokens.busd, bscTokens.usdt, bscTokens.cake],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
-  [ChainId.fantomOpera]: [FantomTokens.wfantom, FantomTokens.usdc, FantomTokens.cake],
+  [ChainId.fantomOpera]: [FantomTokens.wfantom, FantomTokens.usdc, FantomTokens.dknight],
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {

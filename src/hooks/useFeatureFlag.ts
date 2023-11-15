@@ -2,7 +2,13 @@ import { FLAG_FARM } from 'config/flag'
 import { Atom, useAtomValue } from 'jotai'
 import { atomWithStorage, createJSONStorage } from 'jotai/utils'
 
-const storage = createJSONStorage(() => sessionStorage)
+const storage = createJSONStorage(() => {
+  if (typeof window !== 'undefined') {
+    return sessionStorage
+  }
+  return null // Return a default storage or null if window is not defined
+})
+// const storage = createJSONStorage(() => sessionStorage)
 export const featureFarmApiAtom = atomWithStorage<typeof FLAG_FARM>(
   'feature-farm-api',
   FLAG_FARM,

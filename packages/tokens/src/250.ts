@@ -1,5 +1,5 @@
 import { ChainId, Token, WBNB, WFANTOM } from '@pancakeswap/sdk'
-import { BUSD_BSC, CAKE_MAINNET, USDT_BSC, USDC_FANTOM, USDT_FTM } from './common'
+import { BUSD_BSC, DK_MAINNET, USDT_BSC, USDC_FANTOM, USDT_FTM } from './common'
 
 export const FantomTokens = {
   wfantom: WFANTOM[ChainId.fantomOpera],
@@ -8,5 +8,5 @@ export const FantomTokens = {
   // cake: CAKE_MAINNET,
   usdc: USDC_FANTOM,
   usdt: USDT_FTM,
-  // dknight: CAKE_MAINNET,
+  dknight: DK_MAINNET,
 }

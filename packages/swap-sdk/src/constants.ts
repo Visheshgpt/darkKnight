@@ -41,6 +41,7 @@ export const INIT_CODE_HASH = '0x4f28dfdda4977962d01e311877b42e2a192039a7276c57c
 
 const INIT_CODE_HASH_ETH = '0x57224589c67f3f30a6b0d7a1b54cf3153ab84563bc609ef41dfb34f8b2974d2d'
 const INIT_CODE_HASH_fantomOpera = '0x2e8dbc8cf79694a7ef827213d52da525b45ddf645a4abd477fcb4af09bfb5f0e'
+
 export const INIT_CODE_HASH_MAP: Record<number, string> = {
   [ChainId.ETHEREUM]: INIT_CODE_HASH_ETH,
   [ChainId.RINKEBY]: INIT_CODE_HASH_ETH,
