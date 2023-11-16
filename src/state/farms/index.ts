@@ -40,8 +40,8 @@ const fetchFetchPublicDataOld = async ({ pids, chainId }): Promise<[SerializedFa
     fetchMasterChefFarmPoolLength(chainId),
     multicall(masterchefABI, [
       {
-        // BSC only
-        address: getMasterChefAddress(ChainId.BSC),
+        // fantomOpera only
+        address: getMasterChefAddress(ChainId.fantomOpera),
         name: 'cakePerBlock',
         params: [true],
       },
@@ -205,14 +205,12 @@ async function getBoostedFarmsStakeValue(farms, account, chainId, proxyAddress) 
 }
 
 async function getNormalFarmsStakeValue(farms, account, chainId) {
-
   const [userFarmAllowances, userFarmTokenBalances, userStakedBalances, userFarmEarnings] = await Promise.all([
     fetchFarmUserAllowances(account, farms, chainId),
     fetchFarmUserTokenBalances(account, farms, chainId),
     fetchFarmUserStakedBalances(account, farms, chainId),
     fetchFarmUserEarnings(account, farms, chainId),
   ])
-
 
   const normalFarmAllowances = userFarmAllowances.map((_, index) => {
     return {
@@ -236,8 +234,7 @@ export const fetchFarmUserDataAsync = createAsyncThunk<
 >(
   'farms/fetchFarmUserDataAsync',
   async ({ account, pids, proxyAddress, chainId }, config) => {
-   
-    const poolLength = config.getState().farms.poolLength ?? (await fetchMasterChefFarmPoolLength(ChainId.BSC))
+    const poolLength = config.getState().farms.poolLength ?? (await fetchMasterChefFarmPoolLength(ChainId.fantomOpera))
     const farmsConfig = await getFarmConfig(chainId)
     const farmsCanFetch = farmsConfig.filter(
       (farmConfig) => pids.includes(farmConfig.pid) && poolLength > farmConfig.pid,
@@ -324,19 +321,18 @@ export const farmsSlice = createSlice({
 
     // Update farms with user data
     builder.addCase(fetchFarmUserDataAsync.fulfilled, (state, action) => {
-      console.log("qw1shah")
+      console.log('qw1shah')
       const userDataMap = fromPairs(action.payload.map((userDataEl) => [userDataEl.pid, userDataEl]))
-  
+
       const data = state.data.map((farm) => {
-        
         const userDataEl = userDataMap[farm.pid]
         if (userDataEl) {
           return { ...farm, userData: userDataEl }
         }
         return farm
       })
-      state.data = data;
-      console.log("qw1shah111")
+      state.data = data
+      console.log('qw1shah111')
 
       state.userDataLoaded = true
     })

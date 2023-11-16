@@ -192,7 +192,7 @@ const DepositModal: React.FC<React.PropsWithChildren<DepositModalProps>> = ({
             <Skeleton width={60} />
           )}
         </Flex>
-        {chainId !== ChainId.BSC && chainId !== ChainId.BSC_TESTNET && (
+        {chainId !== ChainId.fantomOpera && chainId !== ChainId.BSC_TESTNET && (
           <Box mt="15px">
             <Message variant="warning">
               <MessageText>{crossChainWarningText}</MessageText>

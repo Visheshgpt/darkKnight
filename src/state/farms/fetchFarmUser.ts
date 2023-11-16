@@ -29,7 +29,7 @@ export const fetchFarmUserAllowances = async (
     return new BigNumber(lpBalance).toJSON()
   })
 
-  console.log({parsedLpAllowances})
+  console.log({ parsedLpAllowances })
   return parsedLpAllowances
 }
 
@@ -84,7 +84,7 @@ export const fetchFarmUserStakedBalances = async (
 
 export const fetchFarmUserEarnings = async (account: string, farmsToFetch: SerializedFarmConfig[], chainId: number) => {
   const isBscNetwork = verifyBscNetwork(chainId)
-  const multiCallChainId = farmFetcher.isTestnet(chainId) ? ChainId.BSC_TESTNET : ChainId.BSC
+  const multiCallChainId = farmFetcher.isTestnet(chainId) ? ChainId.BSC_TESTNET : ChainId.fantomOpera
   const userAddress = isBscNetwork ? account : await fetchCProxyAddress(account, multiCallChainId)
   const masterChefAddress = getMasterChefAddress(multiCallChainId)
 

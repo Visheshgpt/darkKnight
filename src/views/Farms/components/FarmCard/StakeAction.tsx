@@ -2,7 +2,7 @@ import { useTranslation } from '@pancakeswap/localization'
 import { AddIcon, Button, Flex, IconButton, MinusIcon, useModal, useToast } from '@pancakeswap/uikit'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import useCatchTxError from 'hooks/useCatchTxError'
-import { useCallback, useContext, useMemo } from 'react'
+import { useCallback, useContext, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { TransactionResponse } from '@ethersproject/providers'
 import { useRouter } from 'next/router'
@@ -70,6 +70,7 @@ const StakeAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
   const addTransaction = useTransactionAdder()
   const { account, chainId } = useActiveWeb3React()
   const { tokenBalance, stakedBalance } = userData
+  const [IsApproved, setIsApproved] = useState(isApproved)
   const cakePrice = usePriceCakeBusd()
   const router = useRouter()
   const { toastSuccess } = useToast()
@@ -77,11 +78,13 @@ const StakeAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
   const { boosterState } = useContext(YieldBoosterStateContext)
   const pendingFarm = useNonBscFarmPendingTransaction(lpAddress)
 
-  console.log("qwrrrrrr",isApproved,pid)
+  console.log('qwrrrrrr', isApproved, pid)
   const isStakeReady = useMemo(() => {
     return ['history', 'archived'].some((item) => router.pathname.includes(item)) || pendingFarm.length > 0
   }, [pendingFarm, router])
 
+  console.log('vault pid', vaultPid)
+  console.log('token Balance', Number(tokenBalance))
   const handleStake = async (amount: string) => {
     if (vaultPid) {
       await handleNonBscStake(amount)
@@ -212,6 +215,7 @@ const StakeAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
       return onApprove()
     })
     if (receipt?.status) {
+      setIsApproved(true)
       toastSuccess(t('Contract Enabled'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
       onDone()
     }
@@ -264,7 +268,7 @@ const StakeAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
   }
 
   // TODO: Move this out to prevent unnecessary re-rendered
-  if (!isApproved) {
+  if (!IsApproved) {
     return (
       <Button mt="8px" width="100%" disabled={pendingTx} onClick={handleApprove}>
         {t('Enable Contract')}
