@@ -145,4 +145,9 @@ const nativeStableLpMap = {
     wNative: 'WBNB',
     stable: 'BUSD',
   },
+  250: {
+    address: '0xB733654453404AAb46d34E68fF24415F5f588C21',
+    wNative: 'WFTM',
+    stable: 'USDC',
+  },
 }

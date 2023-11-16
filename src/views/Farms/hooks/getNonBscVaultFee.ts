@@ -11,7 +11,7 @@ export enum MessageTypes {
 
 enum Chains {
   EVM = 0,
-  BSC = 1,
+  fantomOpera = 1,
 }
 
 interface CalculateTotalFeeProps {
@@ -49,7 +49,7 @@ export const getNonBscVaultContractFee = async ({
     const [encodeMessage, hasFirstTime, estimateGaslimit] = await Promise.all([
       nonBscVaultContract.encodeMessage(userAddress, pid, amount, messageType, nonce),
       crossFarmingAddress.is1st(userAddress),
-      crossFarmingAddress.estimateGaslimit(Chains.BSC, userAddress, messageType),
+      crossFarmingAddress.estimateGaslimit(Chains.fantomOpera, userAddress, messageType),
     ])
     const calcFee = await nonBscVaultContract.calcFee(encodeMessage)
 

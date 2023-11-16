@@ -57,13 +57,18 @@ export const usePollFarmsWithUserData = () => {
     ? ['farmsWithUserData', account, proxyAddress, chainId]
     : ['farmsWithUserData', account, chainId]
 
+  console.log('proxy contract loaded', isProxyContractLoading)
+  console.log('proxy created', proxyCreated)
+  console.log('name', name)
   useSWRImmutable(
-    account && chainId && !isProxyContractLoading ? name : null,
+    account && chainId && isProxyContractLoading ? name : null,
     async () => {
+      console.log('happening')
       const farmsConfig = await getFarmConfig(chainId)
       const pids = farmsConfig.map((farmToFetch) => farmToFetch.pid)
       const params = proxyCreated ? { account, pids, proxyAddress, chainId } : { account, pids, chainId }
 
+      console.log('params', params)
       dispatch(fetchFarmUserDataAsync(params))
     },
     {

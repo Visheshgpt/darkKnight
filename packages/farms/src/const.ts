@@ -10,6 +10,7 @@ export const FIXED_TEN_IN_POWER_18 = FixedNumber.from(getFullDecimalMultiplier(1
 export const masterChefAddresses = {
   97: '0xB4A466911556e39210a6bB2FaECBB59E4eB7E43d',
   56: '0xE50cb76A71b0c52Ab091860cD61b9BA2FA407414',
+  250: '0xb02e3A4B5ebC315137753e24b6Eb6aEF7D602E40',
 }
 
 export const nonBSCVaultAddresses = {

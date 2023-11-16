@@ -22,7 +22,7 @@ export function useNetworkConnectorUpdater() {
   useEffect(() => {
     if (loading || !router.isReady) return
     const parsedQueryChainId = Number(router.query.chainId)
-    if (!parsedQueryChainId && chainId === ChainId.BSC) return
+    if (!parsedQueryChainId && chainId === ChainId.fantomOpera) return
     if (parsedQueryChainId !== chainId && isChainSupported(chainId)) {
       const removeQueriesFromPath =
         EXCHANGE_PAGE_PATHS.some((item) => {

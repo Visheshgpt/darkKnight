@@ -33,7 +33,6 @@ export async function farmV2FetchFarms({
 }: FetchFarmsParams) {
   const stableFarms = farms.filter(isStableFarm)
 
- 
   const [stableFarmsResults, poolInfos, lpDataResults] = await Promise.all([
     fetchStableFarmData(stableFarms, chainId, multicallv2),
     fetchMasterChefData(farms, isTestnet, multicallv2, masterChefAddress),
@@ -82,15 +81,12 @@ export async function farmV2FetchFarms({
         token0Decimals: farm.token.decimals,
         token1Decimals: farm.quoteToken.decimals,
         totalRegularAllocPoint,
-        
       })
       throw error
     }
   })
 
-
-
-  const farmsDataWithPrices =await getFarmsPrices(farmsData, chainId);
+  const farmsDataWithPrices = await getFarmsPrices(farmsData, chainId)
   return farmsDataWithPrices
 }
 
@@ -369,7 +365,7 @@ export const fetchMasterChefData = async (
     const masterChefMultiCallResult = await multicallv2({
       abi: masterChefV2Abi,
       calls: masterChefAggregatedCalls,
-      chainId: isTestnet ? ChainId.BSC_TESTNET : ChainId.BSC,
+      chainId: isTestnet ? ChainId.BSC_TESTNET : ChainId.fantomOpera,
     })
 
     let masterChefChunkedResultCounter = 0
@@ -397,7 +393,9 @@ export const fetchMasterChefV2Data = async ({
   masterChefAddress: string
 }) => {
   try {
-    const [[poolLength], [totalRegularAllocPoint],  [cakePerBlock]] = await multicallv2<[[BigNumber], [BigNumber], [BigNumber]]>({
+    const [[poolLength], [totalRegularAllocPoint], [cakePerBlock]] = await multicallv2<
+      [[BigNumber], [BigNumber], [BigNumber]]
+    >({
       abi: masterChefV2Abi,
       calls: [
         {
@@ -413,10 +411,9 @@ export const fetchMasterChefV2Data = async ({
           name: 'KnightPerBlock',
         },
       ],
-      chainId: isTestnet ? ChainId.BSC_TESTNET : ChainId.BSC,
+      chainId: isTestnet ? ChainId.BSC_TESTNET : ChainId.fantomOpera,
     })
- 
-    
+
     return {
       poolLength,
       totalRegularAllocPoint,
@@ -522,11 +519,7 @@ interface FarmAllocationParams {
   totalRegularAllocPoint: BigNumber
 }
 
-const getFarmAllocation = ({
-  allocPoint,
-  isRegular,
-  totalRegularAllocPoint,
-}: FarmAllocationParams) => {
+const getFarmAllocation = ({ allocPoint, isRegular, totalRegularAllocPoint }: FarmAllocationParams) => {
   const _allocPoint = allocPoint ? FixedNumber.from(allocPoint) : FIXED_ZERO
   const totalAlloc = totalRegularAllocPoint
   const poolWeight =

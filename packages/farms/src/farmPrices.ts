@@ -147,50 +147,50 @@ export type FarmWithPrices = FarmData & {
   tokenPriceBusd: string
   quoteTokenPriceBusd: string
   lpTokenPrice: string
-  lpAPY:number
+  lpAPY: number
 }
 
-const getLpData = async (address1: string, address2: string) => {
-  // const URL = `https://api.KnightSwap.financial/api/v2/trades/${address1}_${address2}`
-  // const apReq = await fetch(URL);
-  // const data = await apReq.json();
+// const getLpData = async (address1: string, address2: string) => {
+// const URL = `https://api.KnightSwap.financial/api/v2/trades/${address1}_${address2}`
+// const apReq = await fetch(URL);
+// const data = await apReq.json();
 
-  // const .reduce(function(acc, val){
-  //   return acc.pendingAmount + val.pendingAmount;
-  // }, {pendingAmount: 0});
+// const .reduce(function(acc, val){
+//   return acc.pendingAmount + val.pendingAmount;
+// }, {pendingAmount: 0});
 
-  // console.log({apirResp:data})
-  // console.log({URL})
-  // const query = `{
+// console.log({apirResp:data})
+// console.log({URL})
+// const query = `{
 
-  //   pairDayDatas(
-  //     orderBy:date,
-  //     orderDirection:desc,
-  //     first:1,
-  //     where:{pairAddress:"${address.toLowerCase()}"}) {
-  //     date
-  //     dailyVolumeUSD
-  //     reserveUSD
-  //   }
-  // }
-  // `
+//   pairDayDatas(
+//     orderBy:date,
+//     orderDirection:desc,
+//     first:1,
+//     where:{pairAddress:"${address.toLowerCase()}"}) {
+//     date
+//     dailyVolumeUSD
+//     reserveUSD
+//   }
+// }
+// `
 
-  // const _apiResponse = await fetch('https://api.thegraph.com/subgraphs/name/knightswap-dex/knightgraph', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   },
-  //   body: JSON.stringify({
-  //     query,
-  //   }),
-  // })
+// const _apiResponse = await fetch('https://api.thegraph.com/subgraphs/name/knightswap-dex/knightgraph', {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+//   body: JSON.stringify({
+//     query,
+//   }),
+// })
 
-  // const apiResponse = await _apiResponse.json()
+// const apiResponse = await _apiResponse.json()
 
-  // const data = apiResponse.data.pairDayDatas[0]
-  // return { dailyVolume: Number(data.dailyVolumeUSD), totalLiquidity: Number(data.reserveUSD) }
-}
-export const getFarmsPrices = async (farms: FarmData[], chainId: number):Promise<FarmWithPrices[]> =>   {
+// const data = apiResponse.data.pairDayDatas[0]
+// return { dailyVolume: Number(data.dailyVolumeUSD), totalLiquidity: Number(data.reserveUSD) }
+// }
+export const getFarmsPrices = async (farms: FarmData[], chainId: number): Promise<FarmWithPrices[]> => {
   if (!nativeStableLpMap[chainId]) {
     throw new Error(`chainId ${chainId} not supported`)
   }
@@ -201,7 +201,7 @@ export const getFarmsPrices = async (farms: FarmData[], chainId: number):Promise
       ? FIXED_ONE.divUnsafe(FixedNumber.from(nativeStableFarm.tokenPriceVsQuote))
       : FIXED_ZERO
 
-  const farmsWithPricesP =  farms.map(async (farm) => {
+  const farmsWithPricesP = farms.map(async (farm) => {
     const quoteTokenFarm = getFarmFromTokenAddress(farms, farm.quoteToken.address, [
       nativeStableLpMap[chainId].wNative,
       nativeStableLpMap[chainId].stable,
@@ -239,20 +239,16 @@ export const getFarmsPrices = async (farms: FarmData[], chainId: number):Promise
           tokenPriceBusd,
         )
 
-   
-
-
-  
     return {
       ...farm,
       tokenPriceBusd: tokenPriceBusd.toString(),
       quoteTokenPriceBusd: quoteTokenPriceBusd.toString(),
       lpTokenPrice: lpTokenPrice.toString(),
-      lpAPY:0,
+      lpAPY: 0,
     }
   })
 
-  const farmsWithPrices = await Promise.all(farmsWithPricesP);
+  const farmsWithPrices = await Promise.all(farmsWithPricesP)
 
   return farmsWithPrices
 }
@@ -277,5 +273,10 @@ const nativeStableLpMap = {
     address: '0x4E96D2e92680Ca65D58A0e2eB5bd1c0f44cAB897',
     wNative: 'WBNB',
     stable: 'BUSD',
+  },
+  [ChainId.fantomOpera]: {
+    address: '0xB733654453404AAb46d34E68fF24415F5f588C21',
+    wNative: 'WFTM',
+    stable: 'USDC',
   },
 }

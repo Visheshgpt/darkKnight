@@ -71,11 +71,11 @@ const fetchFarmCalls = (farm: SerializedFarmPublicData, masterChefAddress: strin
 
 export const fetchPublicFarmsData = async (
   farms: SerializedFarmConfig[],
-  chainId = ChainId.BSC,
+  chainId = ChainId.fantomOpera,
   multicall: MultiCallV2,
   masterChefAddress: string,
 ): Promise<any[]> => {
-  console.log("fetchPublicFarmsData")
+  console.log('fetchPublicFarmsData')
   try {
     const farmCalls = farms.flatMap((farm) => fetchFarmCalls(farm, masterChefAddress, nonBSCVaultAddresses[chainId]))
     const chunkSize = farmCalls.length / farms.length

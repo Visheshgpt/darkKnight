@@ -43,7 +43,8 @@ const CardActions: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
   const { earnings } = farm.userData || {}
   const { shouldUseProxyFarm } = useContext(YieldBoosterStateContext)
   const isReady = farm.multiplier !== undefined
-  const { stakedBalance, tokenBalance, proxy,allowance } = farm.userData
+  const { stakedBalance, tokenBalance, proxy, allowance } = farm.userData
+  console.log('ACCOUNT', account)
   return (
     <Action>
       <Flex>
