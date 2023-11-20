@@ -268,7 +268,7 @@ const StakeAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
   }
 
   // TODO: Move this out to prevent unnecessary re-rendered
-  if (!isApproved) {
+  if (!IsApproved) {
     return (
       <Button mt="8px" width="100%" disabled={pendingTx} onClick={handleApprove}>
         {t('Enable Contract')}
