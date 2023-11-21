@@ -48,6 +48,7 @@ interface TokenQueryResponse {
 const TOKEN_AT_BLOCK = (chainName: MultiChainName, block: number | undefined, tokens: string[]) => {
   const addressesString = `["${tokens.join('","')}"]`
   const blockString = block ? `block: {number: ${block}}` : ``
+  // derived${multiChainQueryMainToken[chainName]}
   return `tokens(
       where: {id_in: ${addressesString}}
       ${blockString}
@@ -57,7 +58,7 @@ const TOKEN_AT_BLOCK = (chainName: MultiChainName, block: number | undefined, to
       id
       symbol
       name
-      derived${multiChainQueryMainToken[chainName]}
+      derivedETH
       derivedUSD
       tradeVolumeUSD
       totalTransactions
@@ -75,7 +76,7 @@ const fetchTokenData = async (
   tokenAddresses: string[],
 ) => {
   try {
-    const weeksQuery = chainName === 'BSC' ? `twoWeeksAgo: ${TOKEN_AT_BLOCK(chainName, block14d, tokenAddresses)}` : ''
+    const weeksQuery = chainName === 'FTM' ? `twoWeeksAgo: ${TOKEN_AT_BLOCK(chainName, block14d, tokenAddresses)}` : ''
     const query = gql`
       query tokens {
         now: ${TOKEN_AT_BLOCK(chainName, null, tokenAddresses)}

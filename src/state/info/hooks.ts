@@ -63,9 +63,11 @@ export const useProtocolTransactionsSWR = (): Transaction[] | undefined => {
 
 export const useAllPoolDataSWR = () => {
   const chainName = useGetChainName()
+  console.log('ChainName', chainName)
   const [t24h, t48h, t7d, t14d] = getDeltaTimestamps()
   const { blocks } = useBlockFromTimeStampSWR([t24h, t48h, t7d, t14d])
-  const type =  'swap'
+  const type = 'swap'
+  console.log('Blocks', blocks)
   const { data } = useSWRImmutable(
     blocks && chainName && [`info/pool/data/${type}`, chainName],
     () => fetchAllPoolData(blocks, chainName),
@@ -123,7 +125,6 @@ export const useAllTokenDataSWR = (): {
 
   return data ?? {}
 }
-
 
 export const useAllTokenDataSWRC = (): {
   [address: string]: { data?: TokenData }
@@ -236,7 +237,7 @@ export const useGetChainName = () => {
 
   const getChain = useCallback(() => {
     if (path.includes('eth') || path.includes('chainId=1')) return 'ETH'
-    return 'BSC'
+    return 'FTM'
   }, [path])
   const [name, setName] = useState<MultiChainName | null>(getChain())
   const result = useMemo(() => name, [name])

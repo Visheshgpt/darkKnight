@@ -3,50 +3,59 @@ import { INFO_CLIENT, INFO_CLIENT_ETH, BLOCKS_CLIENT, BLOCKS_CLIENT_ETH } from '
 import { ChainId } from '@pancakeswap/sdk'
 import { PCS_V2_START, PCS_ETH_START, ETH_TOKEN_BLACKLIST, TOKEN_BLACKLIST } from 'config/constants/info'
 
-export type MultiChainName = 'BSC' | 'ETH'
+export type MultiChainName = 'FTM' | 'ETH'
 
 export const multiChainQueryMainToken = {
-  BSC: 'BNB',
+  // BSC: 'BNB',
+  FTM: 'FTM',
   ETH: 'ETH',
 }
 
 export const multiChainBlocksClient = {
-  BSC: BLOCKS_CLIENT,
+  // BSC: BLOCKS_CLIENT,
+  FTM: BLOCKS_CLIENT,
   ETH: BLOCKS_CLIENT_ETH,
 }
 
 export const multiChainStartTime = {
-  BSC: PCS_V2_START,
+  // BSC: PCS_V2_START,
+  FTM: PCS_V2_START,
   ETH: PCS_ETH_START,
 }
 
 export const multiChainId = {
-  BSC: ChainId.BSC,
+  // BSC: ChainId.BSC,
   ETH: ChainId.ETHEREUM,
+  FTM: ChainId.fantomOpera,
 }
 
 export const multiChainPaths = {
-  [ChainId.BSC]: '',
+  // [ChainId.BSC]: '',
+  [ChainId.fantomOpera]: '',
   [ChainId.ETHEREUM]: '/eth',
 }
 
 export const multiChainQueryClient = {
-  BSC: infoClient,
+  // BSC: infoClient,
+  FTM: infoClient,
   ETH: infoClientETH,
 }
 
 export const multiChainQueryEndPoint = {
-  BSC: INFO_CLIENT,
+  // BSC: INFO_CLIENT,
+  FTM: INFO_CLIENT,
   ETH: INFO_CLIENT_ETH,
 }
 
 export const multiChainScan = {
-  BSC: 'BscScan',
+  // BSC: 'BscScan',
+  FTM: 'Ftmscan',
   ETH: 'EtherScan',
 }
 
 export const multiChainTokenBlackList = {
-  BSC: TOKEN_BLACKLIST,
+  // BSC: TOKEN_BLACKLIST,
+  FTM: TOKEN_BLACKLIST,
   ETH: ETH_TOKEN_BLACKLIST,
 }
 

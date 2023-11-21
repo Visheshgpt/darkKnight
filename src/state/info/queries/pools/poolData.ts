@@ -57,10 +57,11 @@ interface PoolsQueryResponse {
 const POOL_AT_BLOCK = (chainName: MultiChainName, block: number | null, pools: string[]) => {
   const blockString = block ? `block: {number: ${block}}` : ``
   const addressesString = `["${pools.join('","')}"]`
+  // orderBy: trackedReserve${multiChainQueryMainToken[chainName]}
   return `pairs(
     where: { id_in: ${addressesString} }
     ${blockString}
-    orderBy: trackedReserve${multiChainQueryMainToken[chainName]}
+    orderBy: trackedReserveETH
     orderDirection: desc
   ) {
     id
@@ -89,9 +90,9 @@ export const fetchPoolData = async (
   block7d: number,
   block14d: number,
   poolAddresses: string[],
-  chainName: 'ETH' | 'BSC' = 'BSC',
+  chainName: 'ETH' | 'FTM' = 'FTM',
 ) => {
-  const weeksQuery = chainName === 'BSC' ? `twoWeeksAgo: ${POOL_AT_BLOCK(chainName, block14d, poolAddresses)}` : ''
+  const weeksQuery = chainName === 'FTM' ? `twoWeeksAgo: ${POOL_AT_BLOCK(chainName, block14d, poolAddresses)}` : ''
   try {
     const query = gql`
       query pools {
@@ -257,8 +258,6 @@ export const fetchAllPoolData = async (blocks: Block[], chainName: MultiChainNam
     poolAddresses,
     chainName,
   )
-
-
 
   const formattedPoolData = parsePoolData(data?.now)
   const formattedPoolData24h = parsePoolData(data?.oneDayAgo)
