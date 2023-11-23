@@ -165,6 +165,7 @@ export const BUSD: Record<ChainId, Token> = {
 export const CAKE = {
   [ChainId.BSC]: CAKE_MAINNET,
   [ChainId.BSC_TESTNET]: CAKE_TESTNET,
+  [ChainId.fantomOpera]: DK_MAINNET,
 }
 
 export const USDC = {

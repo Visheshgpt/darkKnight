@@ -33,7 +33,6 @@ import FarmTabButtons from './components/FarmTabButtons'
 import { FarmWithStakedValue } from './components/types'
 import { BCakeBoosterCard } from './components/BCakeBoosterCard'
 
-
 const ControlContainer = styled.div`
   display: flex;
   width: 100%;
@@ -152,6 +151,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
   const { data: rawFarms, userDataLoaded, poolLength, regularCakePerBlock } = useFarms()
   const cakePrice = usePriceCakeBusd()
 
+  console.log('cakePrice', Number(cakePrice))
   const [_query, setQuery] = useState('')
   const normalizedUrlSearch = useMemo(() => (typeof urlQuery?.search === 'string' ? urlQuery.search : ''), [urlQuery])
   const query = normalizedUrlSearch && !_query ? normalizedUrlSearch : _query
@@ -176,9 +176,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
 
   const [stakedOnly, setStakedOnly] = useUserFarmStakedOnly(isActive)
   const [boostedOnly, setBoostedOnly] = useState(false)
-  const farmsLP = rawFarms.filter(
-    (farm) => farm.isToken !== true,
-  )
+  const farmsLP = rawFarms.filter((farm) => farm.isToken !== true)
 
   const farmAddresses = farmsLP.map((farm) => {
     return farm.lpAddress
@@ -186,12 +184,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
 
   const poolData = usePoolDatasSWR(farmAddresses)
 
-
- 
-
-  const activeFarms = farmsLP.filter(
-    (farm) => farm.multiplier !== '0X' && (!poolLength || poolLength > farm.pid),
-  )
+  const activeFarms = farmsLP.filter((farm) => farm.multiplier !== '0X' && (!poolLength || poolLength > farm.pid))
   const inactiveFarms = farmsLP.filter((farm) => farm.multiplier === '0X')
   const archivedFarms = farmsLP
 
@@ -233,21 +226,19 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
               regularCakePerBlock,
             )
           : { cakeRewardsApr: 0, lpRewardsApr: 0 }
-        
+
         const lpData = poolData.find((pool) => {
           if (pool.address === farm.lpAddress.toLowerCase()) {
             return pool
           }
           return null
         })
-        let lpAPR = 0;
-        if (lpData ) {
-          lpAPR = getDailyLpFeesAndApr(lpData.volumeUSD, lpData.liquidityUSD);
-          
+        let lpAPR = 0
+        if (lpData) {
+          lpAPR = getDailyLpFeesAndApr(lpData.volumeUSD, lpData.liquidityUSD)
         }
-        
-        
-        return { ...farm, apr: cakeRewardsApr, lpRewardsApr:lpAPR, liquidity: totalLiquidity }
+
+        return { ...farm, apr: cakeRewardsApr, lpRewardsApr: lpAPR, liquidity: totalLiquidity }
       })
 
       if (query) {
@@ -259,7 +250,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
 
       return farmsToDisplayWithAPR
     },
-    [query, isActive, chainId, cakePrice, regularCakePerBlock,poolData],
+    [query, isActive, chainId, cakePrice, regularCakePerBlock, poolData],
   )
 
   const handleChangeQuery = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -436,7 +427,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
             </LabelWrapper>
           </FilterContainer>
         </ControlContainer>
-        
+
         {viewMode === ViewMode.TABLE ? (
           <Table farms={chosenFarmsMemoized} cakePrice={cakePrice} userDataReady={userDataReady} />
         ) : (

@@ -38,7 +38,7 @@ export const FantomTokens = {
     'fDLAUNCH Token',
     '#',
   ),
-  dep: new Token(ChainId.fantomOpera, '0xef393310b708761e3b6b59813ef41fe45d853cec', 18, 'DEP', 'DEAP Coin', '#'),
+  dep: new Token(ChainId.fantomOpera, '0x8dFDC61c7c7551D0DEec950A2822eB59cddb8f59', 18, 'DEP', 'DEAP Coin', '#'),
   sing: new Token(ChainId.fantomOpera, '0x53D831e1db0947c74e8a52618f662209ec5dE0cE', 18, 'SING', 'Singular', '#'),
   duo: new Token(ChainId.fantomOpera, '0x779d5AECf90c724347B6A5a92083DaF57296459E', 18, 'DUO', 'DUO', '#'),
   dfy: new Token(ChainId.fantomOpera, '0x84b0b7718f8480A9eDa3133Fd385D7EDf2b1d1c4', 18, 'DFY', 'DefySwap', '#'),

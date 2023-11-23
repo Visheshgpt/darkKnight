@@ -12,6 +12,7 @@ import ProxyFarmContainer, {
 const ProxyFarmCardContainer = ({ farm }) => {
   const { account } = useWeb3React()
   const cakePrice = usePriceCakeBusd()
+  console.log('cakePrice', cakePrice)
 
   const { proxyFarm, shouldUseProxyFarm } = useContext(YieldBoosterStateContext)
   const finalFarm = shouldUseProxyFarm ? proxyFarm : farm

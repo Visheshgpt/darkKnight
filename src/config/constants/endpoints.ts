@@ -21,7 +21,7 @@ export const GRAPH_API_PREDICTION_V1 = 'https://api.thegraph.com/subgraphs/name/
 export const INFO_CLIENT = 'https://api.thegraph.com/subgraphs/name/shahzeb8285/dark-knight-subgraph'
 
 export const INFO_CLIENT_ETH = 'https://api.thegraph.com/subgraphs/name/pancakeswap/exhange-eth'
-export const BLOCKS_CLIENT = 'https://api.thegraph.com/subgraphs/name/pancakeswap/blocks'
+export const BLOCKS_CLIENT = 'https://api.thegraph.com/subgraphs/name/ducquangkstn/fantom-blocks'
 export const BLOCKS_CLIENT_ETH = 'https://api.thegraph.com/subgraphs/name/blocklytics/ethereum-blocks'
 export const STABLESWAP_SUBGRAPH_CLIENT = 'https://api.thegraph.com/subgraphs/name/pancakeswap/exchange-stableswap'
 export const GRAPH_API_NFTMARKET = 'https://api.thegraph.com/subgraphs/name/pancakeswap/nft-market'
@@ -46,6 +46,6 @@ export const INFO_CLIENT_WITH_CHAIN = {
 
 export const BLOCKS_CLIENT_WITH_CHAIN = {
   [ChainId.BSC]: 'https://api.thegraph.com/subgraphs/name/pancakeswap/blocks',
-  [ChainId.fantomOpera]: 'https://api.thegraph.com/subgraphs/name/pancakeswap/blocks',
+  [ChainId.fantomOpera]: 'https://api.thegraph.com/subgraphs/name/ducquangkstn/fantom-blocks',
   [ChainId.ETHEREUM]: 'https://api.thegraph.com/subgraphs/name/blocklytics/ethereum-blocks',
 }

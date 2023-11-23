@@ -13,12 +13,11 @@ interface TokenPairImageProps extends Omit<UIKitTokenPairImageProps, 'primarySrc
 
 const getImageUrlFromToken = (token: Token) => {
   const address = token?.isNative ? token.wrapped.address : token.address
-  if (token.chainId !== ChainId.BSC) {
+  if (token.chainId !== ChainId.fantomOpera) {
     return `/images/${token.chainId}/tokens/${address}.png`
   }
-  if (token.symbol === "WBNB") {
+  if (token.symbol === 'WFTM') {
     return `/images/tokens/${token.symbol.toLowerCase()}.png`
-
   }
   return `/images/tokens/${token.symbol}.png`
 }

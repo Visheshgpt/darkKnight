@@ -136,6 +136,7 @@ export const fetchCakePoolUserDataAsync = (account: string) => async (dispatch) 
 export const fetchPoolsPublicDataAsync =
   (currentBlockNumber: number, chainId: number) => async (dispatch, getState) => {
     try {
+      console.log('PublicPoolData')
       const [blockLimits, totalStakings, profileRequirements, currentBlock] = await Promise.all([
         fetchPoolsBlockLimits(),
         fetchPoolsTotalStaking(),
@@ -165,14 +166,14 @@ export const fetchPoolsPublicDataAsync =
       const poolsWithDifferentFarmToken =
         activePriceHelperLpsConfig.length > 0 ? await fetchFarms(priceHelperLpsConfig, chainId) : []
       const farmsData = getState().farms.data
-      const bnbBusdFarm =farmsData.find((farm) => farm.token.symbol === 'BUSD' && farm.quoteToken.symbol === 'WBNB')
-      
+      const bnbBusdFarm = farmsData.find((farm) => farm.token.symbol === 'USDC' && farm.quoteToken.symbol === 'WFTM')
+
       const farmsWithPricesOfDifferentTokenPools = bnbBusdFarm
         ? getFarmsPrices([bnbBusdFarm, ...poolsWithDifferentFarmToken], chainId)
         : []
 
       const prices = getTokenPricesFromFarm([...farmsData, ...farmsWithPricesOfDifferentTokenPools])
-      console.log({prices})
+      console.log('Prices', { prices })
       const liveData = poolsConfig.map((pool) => {
         const blockLimit = blockLimitsSousIdMap[pool.sousId]
         const totalStaking = totalStakingsSousIdMap[pool.sousId]
@@ -182,6 +183,7 @@ export const fetchPoolsPublicDataAsync =
 
         const stakingTokenAddress = isAddress(pool.stakingToken.address)
         const stakingTokenPrice = stakingTokenAddress ? prices[stakingTokenAddress] : 0
+        console.log('stakingTokenPrice', stakingTokenPrice)
 
         const earningTokenAddress = isAddress(pool.earningToken.address)
         const earningTokenPrice = earningTokenAddress ? prices[earningTokenAddress] : 0
@@ -194,7 +196,6 @@ export const fetchPoolsPublicDataAsync =
             )
           : 0
 
-     
         const profileRequirement = profileRequirements[pool.sousId] ? profileRequirements[pool.sousId] : undefined
         return {
           ...blockLimit,

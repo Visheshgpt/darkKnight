@@ -54,6 +54,7 @@ export const useFetchPublicPoolsData = () => {
   const dispatch = useAppDispatch()
   const { chainId } = useActiveWeb3React()
   const farmFlag = useFeatureFlag(featureFarmApiAtom)
+  console.log('FetchUserPublicData')
 
   useSlowRefreshEffect(
     (currentBlock) => {
@@ -91,6 +92,7 @@ export const useDeserializedPoolByVaultKey = (vaultKey) => {
 export const usePoolsPageFetch = () => {
   const { account } = useWeb3React()
   const dispatch = useAppDispatch()
+  console.log('CallingPublicPoolData')
   useFetchPublicPoolsData()
 
   useFastRefreshEffect(() => {

@@ -24,9 +24,11 @@ const BLOCKS_CLIENT_WITH_CHAIN = {
   [ChainId.BSC_TESTNET]: '',
   [ChainId.GOERLI]: '',
   [ChainId.RINKEBY]: '',
+  [ChainId.fantomOpera]: 'https://api.thegraph.com/subgraphs/name/ducquangkstn/fantom-blocks',
 }
 
 const INFO_CLIENT_WITH_CHAIN = {
+  [ChainId.fantomOpera]: 'https://api.thegraph.com/subgraphs/name/shahzeb8285/dark-knight-subgraph',
   [ChainId.BSC]: 'https://api.thegraph.com/subgraphs/name/shahzeb8285/knight-new-graph',
   [ChainId.ETHEREUM]: 'https://api.thegraph.com/subgraphs/name/pancakeswap/exhange-eth',
   [ChainId.BSC_TESTNET]: '',
@@ -55,7 +57,7 @@ const getWeekAgoTimestamp = () => {
   return getUnixTime(weekAgo)
 }
 
-const getBlockAtTimestamp = async (timestamp: number, chainId = ChainId.BSC) => {
+const getBlockAtTimestamp = async (timestamp: number, chainId = ChainId.fantomOpera) => {
   try {
     const { blocks } = await blockClientWithChain(chainId).request<BlockResponse>(
       `query getBlock($timestampGreater: Int!, $timestampLess: Int!) {
@@ -148,7 +150,7 @@ function splitNormalAndStableFarmsReducer(result: SplitFarmResult, farm: any): S
   }
 }
 
-export const BLOCKS_PER_DAY = (60 / 3) * 60 * 24
+export const BLOCKS_PER_DAY = 60 * 60 * 24
 
 const getAprsForStableFarm = async (stableFarm: any): Promise<BigNumber> => {
   const stableSwapAddress = stableFarm?.stableSwapAddress

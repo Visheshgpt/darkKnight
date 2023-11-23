@@ -206,6 +206,7 @@ const Pools: React.FC<React.PropsWithChildren> = () => {
   }, [openPoolsWithStartBlockFilter])
   const hasStakeInFinishedPools = stakedOnlyFinishedPools.length > 0
 
+  console.log('Here')
   usePoolsPageFetch()
 
   useEffect(() => {
