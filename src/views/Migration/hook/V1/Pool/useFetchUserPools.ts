@@ -6,7 +6,7 @@ import { transformPool } from 'state/pools/helpers'
 import { getCakeContract } from 'utils/contractHelpers'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { PoolCategory } from 'config/constants/types'
-import { bscTokens } from '@pancakeswap/tokens'
+import { bscTokens, FantomTokens } from '@pancakeswap/tokens'
 import { fetchUserStakeBalances, fetchUserPendingRewards } from './fetchPoolsUser'
 
 export interface PoolsState {
@@ -24,6 +24,7 @@ const initialData = {
     contractAddress: {
       97: '0x1d32c2945C8FDCBc7156c553B7cEa4325a17f4f9',
       56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
+      250: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
     },
     poolCategory: PoolCategory.CORE,
     tokenPerBlock: '10',

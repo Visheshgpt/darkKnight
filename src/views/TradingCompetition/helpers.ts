@@ -1,7 +1,7 @@
 import { getBalanceNumber } from 'utils/formatBalance'
 import { easterPrizes, PrizesConfig } from 'config/constants/trading-competition/prizes'
 import BigNumber from 'bignumber.js'
-import  { useCakeBusdPrice } from 'hooks/useBUSDPrice'
+import { useCakeBusdPrice } from 'hooks/useBUSDPrice'
 import { multiplyPriceByAmount } from 'utils/prices'
 
 export const localiseTradingVolume = (value: number, decimals = 0) => {
@@ -55,7 +55,7 @@ export const useFanTokenCompetitionRewards = ({
     lazioReward: lazioBalance,
     portoReward: portoBalance,
     santosReward: santosBalance,
-    dollarValueOfTokensReward:null,
+    dollarValueOfTokensReward: null,
   }
 }
 
@@ -73,7 +73,7 @@ export const useMoboxCompetitionRewards = ({
   const moboxBalance = getBalanceNumber(moboxAsBigNumber)
   // const cakePriceBusd = useCakeBusdPrice()
 
-  const dollarValueOfTokensReward =null
+  const dollarValueOfTokensReward = null
 
   return {
     cakeReward: cakeBalance,
@@ -84,6 +84,7 @@ export const useMoboxCompetitionRewards = ({
 
 export const useModCompetitionRewards = ({
   userCakeRewards,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   userDarRewards,
 }: {
   userCakeRewards: string | number
@@ -96,7 +97,7 @@ export const useModCompetitionRewards = ({
   // const darBalance = getBalanceNumber(darAsBigNumber, bscTokens.dar.decimals)
   // const cakePriceBusd = useCakeBusdPrice()
 
-  const dollarValueOfTokensReward =null
+  const dollarValueOfTokensReward = null
 
   return {
     cakeReward: cakeBalance,

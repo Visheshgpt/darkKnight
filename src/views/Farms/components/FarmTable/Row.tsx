@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import { useEffect, useState, createElement, useRef } from 'react'
 import styled from 'styled-components'
 import { Box, Flex, useMatchBreakpoints, Skeleton } from '@pancakeswap/uikit'
@@ -131,6 +132,7 @@ const Row: React.FunctionComponent<React.PropsWithChildren<RowPropsWithLoading>>
                 )
               case 'details':
                 return (
+                  // eslint-disable-next-line jsx-a11y/control-has-associated-label
                   <td key={key}>
                     <CellInner>
                       <CellLayout>

@@ -67,7 +67,7 @@ export const StepperWrapper = styled.div<{ finished: boolean; active: boolean }>
       left: 30px;
       transition: 0.3s background-color ease-in-out;
       will-change: background-color;
-      background-color: ${({ theme, finished }) => (finished ? theme.colors.textSubtle : theme.colors.disabled)};
+      background-color: ${({ theme, finished }) => (finished ? theme.colors.textSubtle : theme.colors.textSubtle)};
     }
     ${({ theme }) => theme.mediaQueries.md} {
       &::before {
@@ -76,11 +76,11 @@ export const StepperWrapper = styled.div<{ finished: boolean; active: boolean }>
     }
   }
   ${StepperCircle} {
-    background: ${({ theme, finished }) => (finished ? theme.colors.textSubtle : theme.colors.disabled)};
+    background: ${({ theme, finished }) => (finished ? theme.colors.textSubtle : theme.colors.textSubtle)};
   }
   ${StepperText} {
     color: ${({ theme, active, finished }) =>
-      active ? theme.colors.primary : finished ? theme.colors.textSubtle : theme.colors.disabled};
+      active ? theme.colors.primary : finished ? theme.colors.textSubtle : theme.colors.textSubtle};
   }
 `
 

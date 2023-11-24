@@ -7,12 +7,12 @@ const Tag: React.FC<React.PropsWithChildren<TagProps>> = ({ startIcon, endIcon, 
     {React.isValidElement(startIcon) &&
       React.cloneElement(startIcon, {
         mr: "0.5em",
-      })}
+      } as any)}
     {children}
     {React.isValidElement(endIcon) &&
       React.cloneElement(endIcon, {
         ml: "0.5em",
-      })}
+      } as any)}
   </StyledTag>
 );
 

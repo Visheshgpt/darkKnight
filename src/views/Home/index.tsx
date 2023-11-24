@@ -30,11 +30,10 @@ const StyledSalesSection = styled(Box)`
   // background: linear-gradient(91.59deg, #192949 4.59%, #314773 87.26%);
   border: 5px solid;
 
-  background: linear-gradient(96.95deg, #3D0101 -0.61%, #743434 100.61%)padding-box,
+  background: linear-gradient(96.95deg, #3d0101 -0.61%, #743434 100.61%) padding-box,
+    linear-gradient(90deg, #a66c07 2.04%, #f0de93 50.39%, #b98a2b 94.81%) border-box;
 
-linear-gradient(90deg, #A66C07 2.04%, #F0DE93 50.39%, #B98A2B 94.81%)border-box;
-
-border-color:transparent;
+  border-color: transparent;
   padding: 50px;
   border-radius: 24px;
   @media only screen and (max-width: 368px) {
@@ -86,7 +85,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
   return (
     <>
       <PageMeta />
-      <style jsx global>{`
+      <style>{`
         #home-1 .page-bg {
           background: linear-gradient(139.73deg, #e6fdff 0%, #f3efff 100%);
         }

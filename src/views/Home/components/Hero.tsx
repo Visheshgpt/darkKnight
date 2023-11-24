@@ -38,11 +38,11 @@ const fading = () => keyframes`
 `
 
 const BgWrapper = styled.div`
-// background-image:url('/images/bg/bg.png');
-// background-repeat:no-repeat;
-// background-size:100% 100%;
-// background-position:top;
-// background:red;
+  // background-image:url('/images/bg/bg.png');
+  // background-repeat:no-repeat;
+  // background-size:100% 100%;
+  // background-position:top;
+  // background:red;
   z-index: -1;
   overflow: hidden;
   position: absolute;
@@ -103,7 +103,7 @@ const Hero = () => {
 
   return (
     <>
-      <style jsx global>
+      <style>
         {`
           .slide-svg-dark {
             display: none;
@@ -137,11 +137,17 @@ const Hero = () => {
           <Heading scale="xl" color="#fff">
             Brave Knights,
           </Heading>
-          <Heading scale="xxl" color="secondary" mb="24px" style={{
-            backgroundImage: "linear-gradient(93.23deg, #B98A2B 0.6%, #F0DE93 29.61%, #B98A2B 56.82%, #F0DE93 84.74%)",
-            WebkitTextFillColor: "transparent",
-            WebkitBackgroundClip: "text"
-          }}>
+          <Heading
+            scale="xxl"
+            color="secondary"
+            mb="24px"
+            style={{
+              backgroundImage:
+                'linear-gradient(93.23deg, #B98A2B 0.6%, #F0DE93 29.61%, #B98A2B 56.82%, #F0DE93 84.74%)',
+              WebkitTextFillColor: 'transparent',
+              WebkitBackgroundClip: 'text',
+            }}
+          >
             {t('It’s time to don your shining armor!')}
           </Heading>
           <Heading scale="md" mb="24px">
