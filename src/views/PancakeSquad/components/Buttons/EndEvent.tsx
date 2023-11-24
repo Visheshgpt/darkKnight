@@ -27,7 +27,7 @@ const EndEventButtons: React.FC<React.PropsWithChildren<EndEventProps>> = ({
   return (
     <Flex flexDirection={['column', null, null, 'row']}>
       {canViewMarket && (
-        <Button mb={['4px', null, null, '0']} mr={[0, null, null, '4px']}>
+        <Button mb={['4px', null, null, '0']} mr={['0', null, null, '4px']}>
           <NextLinkFromReactRouter to="/nfts">{t('View market')}</NextLinkFromReactRouter>
         </Button>
       )}
