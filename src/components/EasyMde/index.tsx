@@ -6,7 +6,7 @@ import merge from 'lodash/merge'
 import 'easymde/dist/easymde.min.css'
 
 interface SimpleMdeProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'onChange'> {
-  options?: EasyMde.Options
+  options?: any | EasyMde.Options
   onTextChange: (value: string) => void
 }
 
