@@ -38,7 +38,7 @@ const Footer: React.FC<React.PropsWithChildren<FooterProps>> = ({ pool, account,
     'Rewards are distributed and included into your staking balance automatically. There’s no need to manually compound your rewards.',
   )
 
-  const { targetRef, tooltip, tooltipVisible } = useTooltip(manualTooltipText, {
+  const { targetRef, tooltip, tooltipVisible } = useTooltip(vaultKey ? autoTooltipText : manualTooltipText, {
     placement: 'bottom',
   })
 
@@ -46,7 +46,7 @@ const Footer: React.FC<React.PropsWithChildren<FooterProps>> = ({ pool, account,
     <CardFooter>
       <ExpandableButtonWrapper>
         <Flex alignItems="center">
-          {/* {vaultKey ? <CompoundingPoolTag /> : <ManualPoolTag />} */}
+          {vaultKey ? <CompoundingPoolTag /> : <ManualPoolTag />}
           {tooltipVisible && tooltip}
           <Flex ref={targetRef}>
             <HelpIcon ml="4px" width="20px" height="20px" color="textSubtle" />

@@ -86,7 +86,6 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
       balance: { cakeAsBigNumber, cakeAsNumberBalance },
     },
   } = useVaultPoolByKey(pool.vaultKey)
-
   const { t } = useTranslation()
   const { theme } = useTheme()
   const { toastSuccess } = useToast()
@@ -154,6 +153,10 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
     const receipt = await fetchWithCatchTxError(() => {
       // .toString() being called to fix a BigNumber error in prod
       // as suggested here https://github.com/ChainSafe/web3.js/issues/2077
+      // return isWithdrawingAll
+      //   ? callWithGasPrice(vaultPoolContract, 'withdrawAll', undefined, callOptions)
+      //   : callWithGasPrice(vaultPoolContract, 'withdrawByAmount', [convertedStakeAmount.toString()], callOptions)
+
       if (isWithdrawingAll) {
         return callWithGasPrice(vaultPoolContract, 'withdrawAll', undefined, callOptions)
       }
@@ -232,7 +235,7 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
       <Flex alignItems="center" justifyContent="space-between" mb="8px">
         <Text bold>{isRemovingStake ? t('Unstake') : t('Stake')}:</Text>
         <Flex alignItems="center" minWidth="70px">
-          <Image src={`/images/tokens/${stakingToken.symbol}.png`} width={24} height={24} alt={stakingToken.symbol} />
+          <Image src={`/images/tokens/${stakingToken.address}.png`} width={24} height={24} alt={stakingToken.symbol} />
           <Text ml="4px" bold>
             {stakingToken.symbol}
           </Text>

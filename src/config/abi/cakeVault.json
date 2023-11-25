@@ -274,7 +274,7 @@
   },
   {
     "inputs": [],
-    "name": "calculateTotalPendingCakeRewards",
+    "name": "calculateTotalPendingKnightRewards",
     "outputs": [
       {
         "internalType": "uint256",
@@ -602,7 +602,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "cakeAtLastUserAction",
+        "name": "knightAtLastUserAction",
         "type": "uint256"
       },
       {

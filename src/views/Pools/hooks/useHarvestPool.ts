@@ -17,14 +17,12 @@ const harvestPoolBnb = async (sousChefContract, gasPrice) => {
   return sousChefContract.deposit({ ...options, value: BIG_ZERO, gasPrice })
 }
 
-const harvestMasterChefPool = async (sousChefContract, gasPrice) => {
-  console.log("ssasasasa")
-
-  return sousChefContract.deposit("3",'0',{  gasPrice })
-}
+// const harvestMasterChefPool = async (sousChefContract, gasPrice) => {
+//   return sousChefContract.deposit('3', '0', { gasPrice })
+// }
 
 const useHarvestPool = (sousId, isUsingBnb = false) => {
-  const masterChef = useMasterchef()
+  // const masterChef = useMasterchef()
   const sousChefContract = useSousChef(sousId)
   const gasPrice = useGasPrice()
 
@@ -32,9 +30,9 @@ const useHarvestPool = (sousId, isUsingBnb = false) => {
     if (isUsingBnb) {
       return harvestPoolBnb(sousChefContract, gasPrice)
     }
-    if (sousId === 0) {
-      return harvestMasterChefPool(masterChef,gasPrice)
-    }
+    // if (sousId === 0) {
+    //   return harvestMasterChefPool(masterChef, gasPrice)
+    // }
 
     return harvestPool(sousChefContract, gasPrice)
   }, [isUsingBnb, sousChefContract, gasPrice])

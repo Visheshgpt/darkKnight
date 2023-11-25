@@ -31,12 +31,12 @@ const AutoEarningsCell: React.FC<React.PropsWithChildren<AutoEarningsCellProps>>
 
   const vaultData = useVaultPoolByKey(vaultKey)
   const {
-    userData: { userShares, cakeAtLastUserAction, isLoading },
+    userData: { userShares, knightAtLastUserAction, isLoading },
     pricePerFullShare,
   } = vaultData
   const { hasAutoEarnings, autoCakeToDisplay, autoUsdToDisplay } = getCakeVaultEarnings(
     account,
-    cakeAtLastUserAction,
+    knightAtLastUserAction,
     userShares,
     pricePerFullShare,
     earningTokenPrice,
@@ -47,7 +47,7 @@ const AutoEarningsCell: React.FC<React.PropsWithChildren<AutoEarningsCellProps>>
       : null,
   )
 
-  const labelText = t('Recent CAKE profit')
+  const labelText = t('Recent KNIGHT profit')
   const earningTokenBalance = autoCakeToDisplay
   const hasEarnings = hasAutoEarnings
   const earningTokenDollarBalance = autoUsdToDisplay

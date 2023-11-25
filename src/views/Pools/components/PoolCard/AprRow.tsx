@@ -29,7 +29,7 @@ const AprRow: React.FC<React.PropsWithChildren<AprRowProps>> = ({
   return (
     <Flex alignItems="center" justifyContent="space-between">
       {tooltipVisible && tooltip}
-      <TooltipText ref={targetRef}>{`${t('APR')}:`}</TooltipText>
+      <TooltipText ref={targetRef}>{vaultKey ? `${t('APY')}:` : `${t('APR')}:`}</TooltipText>
       <Apr pool={pool} stakedBalance={stakedBalance} performanceFee={performanceFee} showIcon={showIcon} />
     </Flex>
   )

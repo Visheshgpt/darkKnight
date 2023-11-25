@@ -30,8 +30,8 @@ const PoolCard: React.FC<React.PropsWithChildren<{ pool: DeserializedPool; accou
     >
       <PoolCardHeader isStaking={accountHasStakedBalance} isFinished={isFinished && sousId !== 0}>
         <PoolCardHeaderTitle
-          title={ t('Earn %asset%', { asset: earningToken.symbol })}
-          subTitle={ t('Stake %symbol%', { symbol: stakingToken.symbol })}
+          title={isCakePool ? t('Manual') : t('Earn %asset%', { asset: earningToken.symbol })}
+          subTitle={isCakePool ? t('Earn CAKE, stake CAKE') : t('Stake %symbol%', { symbol: stakingToken.symbol })}
         />
         <TokenPairImage primaryToken={earningToken} secondaryToken={stakingToken} width={64} height={64} />
       </PoolCardHeader>

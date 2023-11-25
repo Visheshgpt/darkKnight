@@ -23,12 +23,12 @@ const AutoHarvestAction: React.FunctionComponent<React.PropsWithChildren<Deseria
 
   const vaultData = useVaultPoolByKey(vaultKey)
   const {
-    userData: { userShares, cakeAtLastUserAction },
+    userData: { userShares, knightAtLastUserAction },
     pricePerFullShare,
   } = vaultData
   const { hasAutoEarnings, autoCakeToDisplay, autoUsdToDisplay } = getCakeVaultEarnings(
     account,
-    cakeAtLastUserAction,
+    knightAtLastUserAction,
     userShares,
     pricePerFullShare,
     earningTokenPrice,
@@ -52,7 +52,7 @@ const AutoHarvestAction: React.FunctionComponent<React.PropsWithChildren<Deseria
 
   const actionTitle = (
     <Text fontSize="12px" bold color="secondary" as="span" textTransform="uppercase">
-      {t('Recent CAKE profit')}
+      {t('Recent KNIGHT profit')}
     </Text>
   )
 

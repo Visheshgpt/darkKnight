@@ -14,7 +14,7 @@ const RecentCakeProfitCountdownRow = ({ pool }: { pool: DeserializedPool }) => {
   const cakePriceBusd = usePriceCakeBusd()
   const { hasAutoEarnings, autoCakeToDisplay } = getCakeVaultEarnings(
     account,
-    userData.cakeAtLastUserAction,
+    userData.knightAtLastUserAction,
     userData.userShares,
     pricePerFullShare,
     cakePriceBusd.toNumber(),

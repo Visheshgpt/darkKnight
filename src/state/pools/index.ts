@@ -17,10 +17,10 @@ import { BIG_ZERO } from 'utils/bigNumber'
 import cakeAbi from 'config/abi/cake.json'
 import { getCakeVaultAddress, getCakeFlexibleSideVaultAddress } from 'utils/addressHelpers'
 import { multicallv2 } from 'utils/multicall'
-import { bscTokens } from '@pancakeswap/tokens'
+import { bscTokens, FantomTokens } from '@pancakeswap/tokens'
 import { isAddress } from 'utils'
 import { getBalanceNumber } from 'utils/formatBalance'
-import { bscRpcProvider } from 'utils/providers'
+import { bscRpcProvider, ftmRpcProvider } from 'utils/providers'
 import { getPoolsPriceHelperLpFiles } from 'config/constants/priceHelperLps/index'
 import fetchFarms from '../farms/fetchFarms'
 import getFarmsPrices from '../farms/getFarmsPrices'
@@ -55,7 +55,7 @@ export const initialPoolVaultState = Object.freeze({
   userData: {
     isLoading: true,
     userShares: null,
-    cakeAtLastUserAction: null,
+    knightAtLastUserAction: null,
     lastDepositedTime: null,
     lastUserActionTime: null,
     credit: null,
@@ -110,12 +110,12 @@ export const fetchCakePoolPublicDataAsync = () => async (dispatch, getState) => 
 
 export const fetchCakePoolUserDataAsync = (account: string) => async (dispatch) => {
   const allowanceCall = {
-    address: bscTokens.cake.address,
+    address: FantomTokens.dknight.address,
     name: 'allowance',
     params: [account, cakeVaultAddress],
   }
   const balanceOfCall = {
-    address: bscTokens.cake.address,
+    address: FantomTokens.dknight.address,
     name: 'balanceOf',
     params: [account],
   }
@@ -136,12 +136,11 @@ export const fetchCakePoolUserDataAsync = (account: string) => async (dispatch) 
 export const fetchPoolsPublicDataAsync =
   (currentBlockNumber: number, chainId: number) => async (dispatch, getState) => {
     try {
-      console.log('PublicPoolData')
       const [blockLimits, totalStakings, profileRequirements, currentBlock] = await Promise.all([
         fetchPoolsBlockLimits(),
         fetchPoolsTotalStaking(),
         fetchPoolsProfileRequirement(),
-        currentBlockNumber ? Promise.resolve(currentBlockNumber) : bscRpcProvider.getBlockNumber(),
+        currentBlockNumber ? Promise.resolve(currentBlockNumber) : ftmRpcProvider.getBlockNumber(),
       ])
 
       const blockLimitsSousIdMap = fromPairs(blockLimits.map((entry) => [entry.sousId, entry]))
@@ -166,14 +165,13 @@ export const fetchPoolsPublicDataAsync =
       const poolsWithDifferentFarmToken =
         activePriceHelperLpsConfig.length > 0 ? await fetchFarms(priceHelperLpsConfig, chainId) : []
       const farmsData = getState().farms.data
-      const bnbBusdFarm = farmsData.find((farm) => farm.token.symbol === 'USDC' && farm.quoteToken.symbol === 'WFTM')
+      const bnbBusdFarm = farmsData.find((farm) => farm.token.symbol === 'BUSD' && farm.quoteToken.symbol === 'WFTM')
 
       const farmsWithPricesOfDifferentTokenPools = bnbBusdFarm
         ? getFarmsPrices([bnbBusdFarm, ...poolsWithDifferentFarmToken], chainId)
         : []
 
       const prices = getTokenPricesFromFarm([...farmsData, ...farmsWithPricesOfDifferentTokenPools])
-      console.log('Prices', { prices })
       const liveData = poolsConfig.map((pool) => {
         const blockLimit = blockLimitsSousIdMap[pool.sousId]
         const totalStaking = totalStakingsSousIdMap[pool.sousId]
@@ -183,7 +181,6 @@ export const fetchPoolsPublicDataAsync =
 
         const stakingTokenAddress = isAddress(pool.stakingToken.address)
         const stakingTokenPrice = stakingTokenAddress ? prices[stakingTokenAddress] : 0
-        console.log('stakingTokenPrice', stakingTokenPrice)
 
         const earningTokenAddress = isAddress(pool.earningToken.address)
         const earningTokenPrice = earningTokenAddress ? prices[earningTokenAddress] : 0

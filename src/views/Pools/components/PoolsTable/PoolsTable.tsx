@@ -33,12 +33,21 @@ const PoolsTable: React.FC<React.PropsWithChildren<PoolsTableProps>> = ({ pools,
     <StyledTableBorder>
       <StyledTable id="pools-table" role="table" ref={tableWrapperEl}>
         {pools.map((pool) =>
-          <PoolRow
-          initialActivity={urlSearch.toLowerCase() === pool.earningToken.symbol?.toLowerCase()}
-          key={pool.sousId}
-          sousId={pool.sousId}
-          account={account}
-        />
+          pool.vaultKey ? (
+            <VaultPoolRow
+              initialActivity={urlSearch.toLowerCase() === pool.earningToken.symbol?.toLowerCase()}
+              key={pool.vaultKey}
+              vaultKey={pool.vaultKey}
+              account={account}
+            />
+          ) : (
+            <PoolRow
+              initialActivity={urlSearch.toLowerCase() === pool.earningToken.symbol?.toLowerCase()}
+              key={pool.sousId}
+              sousId={pool.sousId}
+              account={account}
+            />
+          ),
         )}
       </StyledTable>
     </StyledTableBorder>

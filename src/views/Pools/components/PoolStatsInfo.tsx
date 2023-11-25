@@ -112,12 +112,7 @@ const PoolStatsInfo: React.FC<React.PropsWithChildren<ExpandedFooterProps>> = ({
       )}
       {vaultKey && <PerformanceFee userData={userData} performanceFeeAsDecimal={performanceFeeAsDecimal} />}
       <Flex mb="2px" justifyContent={alignLinksToRight ? 'flex-end' : 'flex-start'}>
-        <LinkExternal
-          // href={`/info/tokens/${earningToken.address}`}
-          href={`https://info.knightswap.financial/token/${earningToken.address}`}
-          bold={false}
-          small
-        >
+        <LinkExternal href={`/info/tokens/${earningToken.address.toLowerCase()}`} bold={false} small>
           {t('See Token Info')}
         </LinkExternal>
       </Flex>
@@ -128,13 +123,13 @@ const PoolStatsInfo: React.FC<React.PropsWithChildren<ExpandedFooterProps>> = ({
           </LinkExternal>
         </Flex>
       )}
-      {/* {vaultKey && (
+      {vaultKey && (
         <Flex mb="2px" justifyContent={alignLinksToRight ? 'flex-end' : 'flex-start'}>
-          <LinkExternal href="https://docs.pancakeswap.finance/products/syrup-pool/new-cake-pool" bold={false} small>
+          <LinkExternal href="https://knights.gitbook.io/knightswap/" bold={false} small>
             {t('View Tutorial')}
           </LinkExternal>
         </Flex>
-      )} */}
+      )}
       {poolContractAddress && (
         <Flex mb="2px" justifyContent={alignLinksToRight ? 'flex-end' : 'flex-start'}>
           <LinkExternal

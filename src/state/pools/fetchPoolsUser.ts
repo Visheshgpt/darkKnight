@@ -3,16 +3,19 @@ import sousChefABI from 'config/abi/sousChef.json'
 import erc20ABI from 'config/abi/erc20.json'
 import multicall from 'utils/multicall'
 import { getAddress } from 'utils/addressHelpers'
-import { bscRpcProvider } from 'utils/providers'
+import { bscRpcProvider, ftmRpcProvider } from 'utils/providers'
 import BigNumber from 'bignumber.js'
 import uniq from 'lodash/uniq'
 import fromPairs from 'lodash/fromPairs'
-import { fetchUserStakeBalances as fetchV1UserStakeBalances, fetchUserPendingRewards as fetchV1UserPendingRewards  } from "views/Migration/hook/V1/Pool/fetchPoolsUser";
+import {
+  fetchUserStakeBalances as fetchV1UserStakeBalances,
+  fetchUserPendingRewards as fetchV1UserPendingRewards,
+} from 'views/Migration/hook/V1/Pool/fetchPoolsUser'
 
 // Pool 0, Cake / Cake is a different kind of contract (master chef)
 // BNB pools use the native BNB token (wrapping ? unwrapping is done at the contract level)
-const nonBnbPools = poolsConfig.filter((pool) => pool.stakingToken.symbol !== 'BNB')
-const bnbPools = poolsConfig.filter((pool) => pool.stakingToken.symbol === 'BNB')
+const nonBnbPools = poolsConfig.filter((pool) => pool.stakingToken.symbol !== 'FTM')
+const bnbPools = poolsConfig.filter((pool) => pool.stakingToken.symbol === 'FTM')
 const nonMasterPools = poolsConfig.filter((pool) => pool.sousId !== 0)
 
 export const fetchPoolsAllowance = async (account) => {
@@ -36,7 +39,7 @@ export const fetchUserBalances = async (account) => {
   }))
   const [tokenBalancesRaw, bnbBalance] = await Promise.all([
     multicall(erc20ABI, calls),
-    bscRpcProvider.getBalance(account),
+    ftmRpcProvider.getBalance(account),
   ])
   const tokenBalances = fromPairs(tokens.map((token, index) => [token, tokenBalancesRaw[index]]))
 
@@ -63,14 +66,14 @@ export const fetchUserStakeBalances = async (account) => {
     params: [account],
   }))
   const userInfo = await multicall(sousChefABI, calls)
-  const data =  fromPairs(
+  const data = fromPairs(
     nonMasterPools.map((pool, index) => [pool.sousId, new BigNumber(userInfo[index].amount._hex).toJSON()]),
   )
   const knightPoolData = await fetchV1UserStakeBalances(account)
-  
-  data["0"] = knightPoolData;
 
-  return { ...data}
+  data['0'] = knightPoolData
+
+  return { ...data }
 }
 
 export const fetchUserPendingRewards = async (account) => {
@@ -82,7 +85,6 @@ export const fetchUserPendingRewards = async (account) => {
   const res = await multicall(sousChefABI, calls)
   const data = fromPairs(nonMasterPools.map((pool, index) => [pool.sousId, new BigNumber(res[index]).toJSON()]))
   const knightPoolData = await fetchV1UserPendingRewards(account)
-  data["0"] = knightPoolData;
-  console.log({knightPoolData})
+  data['0'] = knightPoolData
   return { ...data }
 }

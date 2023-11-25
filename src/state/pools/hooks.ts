@@ -44,7 +44,7 @@ const getActiveFarms = async (chainId: number) => {
     .filter(
       ({ token, pid, quoteToken }) =>
         pid !== 0 &&
-        ((token.symbol === 'BUSD' && quoteToken.symbol === 'WBNB') ||
+        ((token.symbol === 'BUSD' && quoteToken.symbol === 'WFTM') ||
           lPoolAddresses.find((poolAddress) => poolAddress === token.address)),
     )
     .map((farm) => farm.pid)
@@ -54,7 +54,6 @@ export const useFetchPublicPoolsData = () => {
   const dispatch = useAppDispatch()
   const { chainId } = useActiveWeb3React()
   const farmFlag = useFeatureFlag(featureFarmApiAtom)
-  console.log('FetchUserPublicData')
 
   useSlowRefreshEffect(
     (currentBlock) => {
@@ -92,7 +91,6 @@ export const useDeserializedPoolByVaultKey = (vaultKey) => {
 export const usePoolsPageFetch = () => {
   const { account } = useWeb3React()
   const dispatch = useAppDispatch()
-  console.log('CallingPublicPoolData')
   useFetchPublicPoolsData()
 
   useFastRefreshEffect(() => {

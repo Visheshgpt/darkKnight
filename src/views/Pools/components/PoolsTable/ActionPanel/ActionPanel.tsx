@@ -148,7 +148,7 @@ const ActionPanel: React.FC<React.PropsWithChildren<ActionPanelProps>> = ({ acco
     targetRef: tagTargetRef,
     tooltip: tagTooltip,
     tooltipVisible: tagTooltipVisible,
-  } = useTooltip( manualTooltipText, {
+  } = useTooltip(vaultKey ? autoTooltipText : manualTooltipText, {
     placement: 'bottom-start',
   })
 

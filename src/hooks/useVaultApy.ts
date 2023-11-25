@@ -39,7 +39,7 @@ const _getBoostFactor = (boostWeight: BigNumber, duration: number, durationFacto
 const getLockedApy = (flexibleApy: string, boostFactor: FixedNumber) =>
   FixedNumber.from(flexibleApy).mulUnsafe(boostFactor.addUnsafe(FixedNumber.from('1')))
 
-const cakePoolPID = 0
+const cakePoolPID = 28
 
 export function useVaultApy({ duration = MAX_LOCK_DURATION }: { duration?: number } = {}) {
   const {
@@ -55,8 +55,7 @@ export function useVaultApy({ duration = MAX_LOCK_DURATION }: { duration?: numbe
     const calls = [
       {
         address: masterChefAddress,
-        name: 'cakePerBlock',
-        params: [false],
+        name: 'KnightPerBlock',
       },
       {
         address: masterChefAddress,
@@ -65,17 +64,17 @@ export function useVaultApy({ duration = MAX_LOCK_DURATION }: { duration?: numbe
       },
       {
         address: masterChefAddress,
-        name: 'totalSpecialAllocPoint',
+        name: 'totalAllocPoint',
       },
     ]
 
-    const [[specialFarmsPerBlock], cakePoolInfo, [totalSpecialAllocPoint]] = await multicallv2({
+    const [[specialFarmsPerBlock], cakePoolInfo, [totalAllocPoint]] = await multicallv2({
       abi: masterChefAbi,
       calls,
     })
 
     const cakePoolSharesInSpecialFarms = FixedNumber.from(cakePoolInfo.allocPoint).divUnsafe(
-      FixedNumber.from(totalSpecialAllocPoint),
+      FixedNumber.from(totalAllocPoint),
     )
     return FixedNumber.from(specialFarmsPerBlock)
       .mulUnsafe(FixedNumber.from(BLOCKS_PER_YEAR))

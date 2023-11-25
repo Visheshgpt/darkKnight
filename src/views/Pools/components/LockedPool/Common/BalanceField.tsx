@@ -70,9 +70,9 @@ const BalanceField: React.FC<React.PropsWithChildren<PropsType>> = ({
     <>
       <Flex alignItems="center" justifyContent="space-between" mb="8px">
         <Text color="textSubtle" textTransform="uppercase" bold fontSize="12px">
-          {t('CAKE to lock')}
+          {t('KNIGHT to lock')}
         </Text>
-        <Flex alignItems="center" minWidth="70px">
+        <Flex alignItems="center" minWidth="90px">
           <Image src={`/images/tokens/${stakingAddress}.png`} width={24} height={24} alt={stakingSymbol} />
           <Text ml="4px" bold>
             {stakingSymbol}

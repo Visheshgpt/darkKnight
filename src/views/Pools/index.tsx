@@ -26,7 +26,7 @@ import { useInitialBlock } from 'state/block/hooks'
 import { BSC_BLOCK_TIME } from 'config'
 import ScrollToTopButton from 'components/ScrollToTopButton/ScrollToTopButtonV2'
 import PoolCard from './components/PoolCard'
-// import CakeVaultCard from './components/CakeVaultCard'
+import CakeVaultCard from './components/CakeVaultCard'
 import PoolTabButtons from './components/PoolTabButtons'
 import PoolsTable from './components/PoolsTable/PoolsTable'
 import { getCakeVaultEarnings } from './helpers'
@@ -113,7 +113,7 @@ const sortPools = (account: string, sortOption: string, pools: DeserializedPool[
             }
             return getCakeVaultEarnings(
               account,
-              userData.cakeAtLastUserAction,
+              userData.knightAtLastUserAction,
               userData.userShares,
               pricePerFullShare,
               pool.earningTokenPrice,
@@ -201,12 +201,15 @@ const Pools: React.FC<React.PropsWithChildren> = () => {
   )
   const stakedOnlyOpenPools = useCallback(() => {
     return openPoolsWithStartBlockFilter.filter((pool) => {
+      if (pool.vaultKey) {
+        const vault = pool as DeserializedPoolVault
+        return vault.userData.userShares.gt(0)
+      }
       return pool.userData && new BigNumber(pool.userData.stakedBalance).isGreaterThan(0)
     })
   }, [openPoolsWithStartBlockFilter])
   const hasStakeInFinishedPools = stakedOnlyFinishedPools.length > 0
 
-  console.log('Here')
   usePoolsPageFetch()
 
   useEffect(() => {
@@ -248,9 +251,13 @@ const Pools: React.FC<React.PropsWithChildren> = () => {
 
   const cardLayout = (
     <CardLayout>
-      {chosenPools.map((pool) => (
-        <PoolCard key={pool.sousId} pool={pool} account={account} />
-      ))}
+      {chosenPools.map((pool) =>
+        pool.vaultKey ? (
+          <CakeVaultCard key={pool.vaultKey} pool={pool} showStakedOnly={stakedOnly} />
+        ) : (
+          <PoolCard key={pool.sousId} pool={pool} account={account} />
+        ),
+      )}
     </CardLayout>
   )
 
@@ -261,13 +268,13 @@ const Pools: React.FC<React.PropsWithChildren> = () => {
       <PageHeader>
         <Flex justifyContent="space-between" flexDirection={['column', null, null, 'row']}>
           <Flex flex="1" flexDirection="column" mr={['8px', 0]}>
-            <Heading as="h1" scale="xxl" color="secondary" mb="24px" textAlign="center">
+            <Heading as="h1" scale="xxl" color="secondary" mb="24px">
               Knight Raids
             </Heading>
-            <Heading scale="md" color="text" textAlign="center">
+            <Heading scale="md" color="text">
               {t('Just stake some tokens to earn.')}
             </Heading>
-            <Heading scale="md" color="text" textAlign="center">
+            <Heading scale="md" color="text">
               {t('High APR, low risk.')}
             </Heading>
           </Flex>
@@ -323,16 +330,16 @@ const Pools: React.FC<React.PropsWithChildren> = () => {
             </LabelWrapper>
           </FilterContainer>
         </PoolControls>
-        {/* {showFinishedPools && (
-          <FinishedTextContainer>
+        {/* {showFinishedPools && ( */}
+        {/* <FinishedTextContainer>
             <Text fontSize={['16px', null, '20px']} color="failure" pr="4px">
-              {t('Looking for v1 CAKE syrup pools?')}
+              {t('Looking for v1 KNIGHT raid pool?')}
             </Text>
-            <FinishedTextLink href="/migration" fontSize={['16px', null, '20px']} color="failure">
+            <FinishedTextLink href="http://v1.knightswap.financial/pools" fontSize={['16px', null, '20px']} color="failure">
               {t('Go to migration page')}.
             </FinishedTextLink>
-          </FinishedTextContainer>
-        )} */}
+          </FinishedTextContainer> */}
+        {/* )} */}
         {account && !userDataLoaded && stakedOnly && (
           <Flex justifyContent="center" mb="4px">
             <Loading />

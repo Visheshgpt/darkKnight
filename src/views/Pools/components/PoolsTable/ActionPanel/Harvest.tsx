@@ -9,7 +9,7 @@ import { BIG_ZERO } from 'utils/bigNumber'
 import { DeserializedPool } from 'state/types'
 
 import { ActionContainer, ActionTitles, ActionContent } from './styles'
-import CollectModal from '../../Modals/CollectModal'
+import CollectModal from '../../PoolCard/Modals/CollectModal'
 
 const HarvestAction: React.FunctionComponent<React.PropsWithChildren<DeserializedPool>> = ({
   sousId,
@@ -28,6 +28,7 @@ const HarvestAction: React.FunctionComponent<React.PropsWithChildren<Deserialize
   const hasEarnings = earnings.gt(0)
   const fullBalance = getFullDisplayBalance(earnings, earningToken.decimals)
   const formattedBalance = formatNumber(earningTokenBalance, 3, 3)
+  const isCompoundPool = sousId === 0
   const isBnbPool = poolCategory === PoolCategory.BINANCE
 
   const [onPresentCollect] = useModal(
@@ -38,6 +39,7 @@ const HarvestAction: React.FunctionComponent<React.PropsWithChildren<Deserialize
       earningsDollarValue={earningTokenDollarBalance}
       sousId={sousId}
       isBnbPool={isBnbPool}
+      isCompoundPool={isCompoundPool}
     />,
   )
 
@@ -58,7 +60,7 @@ const HarvestAction: React.FunctionComponent<React.PropsWithChildren<Deserialize
         <ActionTitles>{actionTitle}</ActionTitles>
         <ActionContent>
           <Heading>0</Heading>
-          <Button disabled>{t('Harvest')}</Button>
+          <Button disabled>{isCompoundPool ? t('Collect') : t('Harvest')}</Button>
         </ActionContent>
       </ActionContainer>
     )
@@ -107,7 +109,7 @@ const HarvestAction: React.FunctionComponent<React.PropsWithChildren<Deserialize
           </>
         </Flex>
         <Button disabled={!hasEarnings} onClick={onPresentCollect}>
-          {t('Harvest')}
+          {isCompoundPool ? t('Collect') : t('Harvest')}
         </Button>
       </ActionContent>
     </ActionContainer>

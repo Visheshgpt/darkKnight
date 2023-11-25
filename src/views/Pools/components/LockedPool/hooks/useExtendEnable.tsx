@@ -26,7 +26,6 @@ export const useExtendEnable = () => {
   const trade = useTradeExactOut(Native.onChain(ChainId.fantomOpera), parsedAmount)
 
   const swapCalls = useSwapCallArguments(trade, INITIAL_ALLOWED_SLIPPAGE, null)
-
   const { callback: swapCallback } = useSwapCallback(trade, INITIAL_ALLOWED_SLIPPAGE, null, swapCalls)
 
   useEffect(() => {

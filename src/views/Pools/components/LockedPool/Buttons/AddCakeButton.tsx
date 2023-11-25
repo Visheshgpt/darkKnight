@@ -4,7 +4,7 @@ import { useTranslation } from '@pancakeswap/localization'
 import { usePool } from 'state/pools/hooks'
 import AddAmountModal from '../Modals/AddAmountModal'
 import { AddButtonProps } from '../types'
-import NotEnoughTokensModal from '../../Modals/NotEnoughTokensModal'
+import NotEnoughTokensModal from '../../PoolCard/Modals/NotEnoughTokensModal'
 
 const AddCakeButton: React.FC<React.PropsWithChildren<AddButtonProps>> = ({
   currentBalance,
@@ -42,7 +42,7 @@ const AddCakeButton: React.FC<React.PropsWithChildren<AddButtonProps>> = ({
 
   return userDataLoaded ? (
     <Button onClick={handleClicked} width="100%" style={{ whiteSpace: 'nowrap', paddingLeft: 0, paddingRight: 0 }}>
-      {t('Add CAKE')}
+      {t('Add KNIGHT')}
     </Button>
   ) : (
     <Skeleton height={48} />

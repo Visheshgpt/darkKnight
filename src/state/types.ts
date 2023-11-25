@@ -81,7 +81,7 @@ export interface DeserializedFarm extends DeserializedFarmConfig {
   lpTokenPrice?: BigNumber
   tokenPriceVsQuote?: BigNumber
   poolWeight?: BigNumber
-  isToken?:boolean
+  isToken?: boolean
   userData?: DeserializedFarmUserData
   boosted?: boolean
   isStable?: boolean
@@ -182,7 +182,7 @@ export interface DeserializedVaultFees extends SerializedVaultFees {
 export interface SerializedVaultUser {
   isLoading: boolean
   userShares: SerializedBigNumber
-  cakeAtLastUserAction: SerializedBigNumber
+  knightAtLastUserAction: SerializedBigNumber
   lastDepositedTime: string
   lastUserActionTime: string
 }
@@ -200,7 +200,7 @@ export interface SerializedLockedVaultUser extends SerializedVaultUser {
 export interface DeserializedVaultUser {
   isLoading: boolean
   userShares: BigNumber
-  cakeAtLastUserAction: BigNumber
+  knightAtLastUserAction: BigNumber
   lastDepositedTime: string
   lastUserActionTime: string
   balance: {
@@ -702,6 +702,65 @@ export interface PotteryWithdrawAbleData {
   balanceOf: string
 }
 
+export interface PaladinGraphUserEntity {
+  account?: string
+  mintAmount?: string
+  superior?: string
+  redeemReserveAmount?: string
+  redeemRecieveAmount?: string
+  redeemFeeAmount?: string
+  redeemBurnAmount?: string
+  creditDebt?: string
+  credit?: string
+}
+
+export interface PaladinRedeemEntity {
+  id?: string
+  user?: string
+  timestamp?: string
+  redeemAmount?: string
+  redeemFee?: string
+}
+
+export interface PaladinMintEntity {
+  id?: string
+  user?: string
+  timestamp?: string
+  mintAmount?: string
+  superior?: string
+}
+
+export interface PaladinEventsTable {
+  mints: PaladinMintEntity[]
+  redeems: PaladinRedeemEntity[]
+}
+
+export interface PaladinGlobalData {
+  burnAmount: string
+  feeAmount: string
+  mintAmount: string
+  redeemAmount: string
+  tokenPerBlock: string
+  reserveAmount: string
+  totalDonate: string
+  totalUser: string
+  totalFeesCollectedDay?: number
+}
+
+export interface PaladinContractData {
+  totalSupply: string
+  totalStakingPower: string
+  alpha: string
+  knightPerBlock: string
+}
+
+export interface PaladinState {
+  userPaladinData?: PaladinGraphUserEntity
+  events: PaladinEventsTable
+  info: PaladinGlobalData
+  contractInfo?: PaladinContractData
+}
+
 // Global state
 
 export interface State {
@@ -711,4 +770,5 @@ export interface State {
   predictions: PredictionsState
   lottery: LotteryState
   pottery: PotteryState
+  paladin: PaladinState
 }
