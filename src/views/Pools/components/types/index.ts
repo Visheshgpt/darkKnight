@@ -73,7 +73,7 @@ export interface LockedModalBodyPropsType {
   editAmountOnly?: React.ReactElement
   prepConfirmArg?: PrepConfirmArg
   validator?: (arg: ValidatorArg) => ModalValidator
-  customOverview?: ({ isValidDuration: boolean, duration: number }) => React.ReactElement
+  customOverview?: ({ isValidDuration, duration }) => React.ReactElement
 }
 
 export interface ExtendDurationButtonPropsType {

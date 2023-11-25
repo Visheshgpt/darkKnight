@@ -12,9 +12,9 @@ export interface InjectedProps {
 }
 
 export interface ModalProps extends InjectedProps, Omit<BoxProps, "title"> {
-  title: React.ReactNode;
-  hideCloseButton?: boolean;
+  title: any;
+  hideCloseButton?: any;
   onBack?: () => void;
-  bodyPadding?: string;
-  headerBackground?: string;
+  bodyPadding?: any;
+  headerBackground?: any;
 }

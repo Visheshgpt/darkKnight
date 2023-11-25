@@ -9,7 +9,7 @@ import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 import { SafeConnector } from '@gnosis.pm/safe-apps-wagmi'
 
-const CHAINS = [bsc, fantomOpera]
+const CHAINS = [fantomOpera]
 
 const getNodeRealUrl = (networkName: string) => {
   let host = null

@@ -67,7 +67,7 @@ export const usePancakeBunnyOnSaleNfts = (
       return [bunnyId, direction, pageIndex, 'pancakeBunnyOnSaleNfts']
     },
     async (id, sortDirection, page) => {
-      const { newNfts, isPageLast } = await fetchMarketDataNfts(id, nftMetadata, sortDirection, page, itemsPerPage)
+      const { newNfts, isPageLast } = await fetchMarketDataNfts(id.toString(), nftMetadata, 'asc', 0, itemsPerPage)
       isLastPage.current = isPageLast
       const nftsMarketTokenIds = newNfts.map((marketData) => marketData.tokenId)
       const updatedMarketData = await getNftsUpdatedMarketData(pancakeBunniesAddress.toLowerCase(), nftsMarketTokenIds)

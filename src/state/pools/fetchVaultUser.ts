@@ -60,7 +60,7 @@ export const fetchFlexibleSideVaultUser = async (account: string): Promise<Seria
       userShares: new BigNumber(userContractResponse.shares.toString()).toJSON(),
       lastDepositedTime: userContractResponse.lastDepositedTime.toString(),
       lastUserActionTime: userContractResponse.lastUserActionTime.toString(),
-      knightAtLastUserAction: new BigNumber(userContractResponse.cakeAtLastUserAction.toString()).toJSON(),
+      knightAtLastUserAction: new BigNumber(userContractResponse.knightAtLastUserAction.toString()).toJSON(),
     }
   } catch (error) {
     return {

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { ReactNode, useCallback } from 'react'
 import { Currency, CurrencyAmount, Fraction, Percent, Token } from '@pancakeswap/sdk'
 import { InjectedModalProps, Button } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
@@ -92,13 +92,15 @@ const ConfirmAddLiquidityModal: React.FC<
     )
   }, [noLiquidity, onAdd, t])
 
-  const confirmationContent = useCallback(() => {
-    if (liquidityErrorMessage) {
-      return <TransactionErrorContent onDismiss={onDismiss} message={liquidityErrorMessage} />
-    }
-    return <ConfirmationModalContent topContent={() => modalHeader()} bottomContent={() => modalBottom()} />
-  }, [onDismiss, modalBottom, modalHeader, liquidityErrorMessage])
-
+  const confirmationContent: any = useCallback(
+    () =>
+      liquidityErrorMessage ? (
+        <TransactionErrorContent onDismiss={onDismiss} message={liquidityErrorMessage} />
+      ) : (
+        <ConfirmationModalContent topContent={modalHeader} bottomContent={modalBottom} />
+      ),
+    [onDismiss, modalBottom, modalHeader, liquidityErrorMessage],
+  )
   return (
     <TransactionConfirmationModal
       minWidth={['100%', , '420px']}
