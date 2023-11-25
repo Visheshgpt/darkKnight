@@ -183,6 +183,7 @@ export interface SerializedVaultUser {
   isLoading: boolean
   userShares: SerializedBigNumber
   knightAtLastUserAction: SerializedBigNumber
+  cakeAtLastUserAction?: SerializedBigNumber
   lastDepositedTime: string
   lastUserActionTime: string
 }
@@ -201,6 +202,7 @@ export interface DeserializedVaultUser {
   isLoading: boolean
   userShares: BigNumber
   knightAtLastUserAction: BigNumber
+  cakeAtLastUserAction?: BigNumber
   lastDepositedTime: string
   lastUserActionTime: string
   balance: {

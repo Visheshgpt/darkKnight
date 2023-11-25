@@ -76,7 +76,7 @@ interface ActionPanelProps {
 const ActionPanel: React.FC<React.PropsWithChildren<ActionPanelProps>> = ({ pool, account, expanded }) => {
   const { vaultPoolData } = useVaultPoolByKeyV1(pool.vaultKey)
   const { totalCakeInVault, pricePerFullShare } = vaultPoolData
-  const { cakeAtLastUserAction, userShares } = vaultPoolData.userData
+  const { cakeAtLastUserAction, userShares } = vaultPoolData?.userData
 
   const vaultPools = {
     [VaultKey.CakeVaultV1]: useVaultPoolByKeyV1(VaultKey.CakeVaultV1).vaultPoolData,

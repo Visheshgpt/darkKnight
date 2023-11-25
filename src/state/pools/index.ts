@@ -56,6 +56,7 @@ export const initialPoolVaultState = Object.freeze({
     isLoading: true,
     userShares: null,
     knightAtLastUserAction: null,
+    cakeAtLastUserAction: null,
     lastDepositedTime: null,
     lastUserActionTime: null,
     credit: null,
