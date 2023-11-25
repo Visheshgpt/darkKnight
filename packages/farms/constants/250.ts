@@ -3,29 +3,29 @@ import { FantomTokens } from '@pancakeswap/tokens'
 
 const farms: SerializedFarmConfig[] = [
   {
-    pid: 0,
-    lpSymbol: 'USDC-Knight LP',
-    lpAddress: '0x68D47D67b893c44A72BCAC39b1b658D4Cbdf87CA',
+    pid: 30,
+    lpSymbol: 'USDC-dKnight LP',
+    lpAddress: '0x0d587c8780E9611f825A84148EA7BA54Cc0B1878',
     token: FantomTokens.dknight,
     quoteToken: FantomTokens.usdc,
   },
   {
     pid: 1,
-    lpSymbol: 'Knight-WFTM LP',
+    lpSymbol: 'dKnight-WFTM LP',
     lpAddress: '0xD519AE779eb7987cdddA63be2CEffE0C35759E04',
     token: FantomTokens.dknight,
     quoteToken: FantomTokens.wfantom,
   },
   {
-    pid: 2,
+    pid: 29,
     lpSymbol: 'USDC-WFTM LP',
-    lpAddress: '0xB733654453404AAb46d34E68fF24415F5f588C21',
+    lpAddress: '0xc50cF35ea4AB37cb71382de5a4c1D72a7667F0E3',
     token: FantomTokens.usdc,
     quoteToken: FantomTokens.wfantom,
   },
   {
     pid: 3,
-    lpSymbol: 'KNIGHT',
+    lpSymbol: 'dKNIGHT',
     lpAddress: '0x6cc0E0AedbbD3C35283e38668D959F6eb3034856',
     isToken: true,
     token: FantomTokens.dknight,
@@ -40,7 +40,7 @@ const farms: SerializedFarmConfig[] = [
   },
   {
     pid: 5,
-    lpSymbol: 'fUSDT-KNIGHT LP',
+    lpSymbol: 'fUSDT-dKNIGHT LP',
     lpAddress: '0xb459DFcA113E55842d4f9577D896F4EFF6Ddb11F',
     token: FantomTokens.dknight,
     quoteToken: FantomTokens.fusdt,
@@ -197,6 +197,20 @@ const farms: SerializedFarmConfig[] = [
     lpSymbol: 'WFTM-BNB LP',
     lpAddress: '0xe0CCAdEA043e82A1d4461167D395D17755C2dA85',
     token: FantomTokens.bnb,
+    quoteToken: FantomTokens.wfantom,
+  },
+  {
+    pid: 0,
+    lpSymbol: 'USDC-Knight LP',
+    lpAddress: '0x68D47D67b893c44A72BCAC39b1b658D4Cbdf87CA',
+    token: FantomTokens.dknight,
+    quoteToken: FantomTokens.usdc,
+  },
+  {
+    pid: 2,
+    lpSymbol: 'USDC-WFTM LP',
+    lpAddress: '0xB733654453404AAb46d34E68fF24415F5f588C21',
+    token: FantomTokens.usdc,
     quoteToken: FantomTokens.wfantom,
   },
 ].map((p) => ({ ...p, token: p.token.serialize, quoteToken: p.quoteToken.serialize }))

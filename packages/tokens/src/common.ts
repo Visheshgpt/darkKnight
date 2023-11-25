@@ -38,7 +38,7 @@ export const USDC_BSC = new Token(
 
 export const USDC_FTM = new Token(
   ChainId.fantomOpera,
-  '0x04068DA6C83AFCFA0e13ba15A6696662335D5B75',
+  '0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf',
   6,
   'USDC',
   'USD Coin',
@@ -146,7 +146,7 @@ export const BUSD_GOERLI = new Token(
 
 export const USDC_FANTOM = new Token(
   ChainId.fantomOpera,
-  '0x04068DA6C83AFCFA0e13ba15A6696662335D5B75',
+  '0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf',
   6,
   'USDC',
   ' USDC',

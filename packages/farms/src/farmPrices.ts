@@ -275,7 +275,7 @@ const nativeStableLpMap = {
     stable: 'BUSD',
   },
   [ChainId.fantomOpera]: {
-    address: '0xB733654453404AAb46d34E68fF24415F5f588C21',
+    address: '0xc50cF35ea4AB37cb71382de5a4c1D72a7667F0E3',
     wNative: 'WFTM',
     stable: 'USDC',
   },
