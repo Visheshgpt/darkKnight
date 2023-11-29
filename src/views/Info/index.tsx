@@ -39,7 +39,6 @@ export const InfoPageLayout = ({ children }) => {
         />
       )} */}
 
-      <InfoNav isStableSwap={isStableSwap} />
       {children}
     </>
   )

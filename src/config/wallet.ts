@@ -32,18 +32,18 @@ export const wallets: WalletConfig<ConnectorNames>[] = [
     priority: 1,
     href: 'https://metamask.app.link/dapp/pancakeswap.finance/',
   },
-  {
-    title: 'Binance Wallet',
-    icon: BinanceChainIcon,
-    installed: typeof window !== 'undefined' && Boolean(window.BinanceChain),
-    connectorId: ConnectorNames.BSC,
-    priority: 2,
-  },
+  // {
+  //   title: 'Binance Wallet',
+  //   icon: BinanceChainIcon,
+  //   installed: typeof window !== 'undefined' && Boolean(window.BinanceChain),
+  //   connectorId: ConnectorNames.BSC,
+  //   priority: 2,
+  // },
   {
     title: 'Coinbase Wallet',
     icon: CoinbaseWalletIcon,
     connectorId: ConnectorNames.WalletLink,
-    priority: 3,
+    priority: 2,
   },
   {
     title: 'Trust Wallet',
@@ -64,7 +64,7 @@ export const wallets: WalletConfig<ConnectorNames>[] = [
     title: 'WalletConnect',
     icon: WalletConnectIcon,
     connectorId: ConnectorNames.WalletConnect,
-    priority: 5,
+    priority: 3,
   },
   {
     title: 'Opera Wallet',

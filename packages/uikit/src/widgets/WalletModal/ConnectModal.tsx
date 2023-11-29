@@ -62,8 +62,8 @@ function ConnectModal<T>({ login, onDismiss = () => null, displayCount = 3, t, w
   // Filter out WalletConnect if user is inside TrustWallet built-in browser
   const walletsToShow =
     window.ethereum?.isTrust &&
-      // @ts-ignore
-      !window?.ethereum?.isSafePal
+    // @ts-ignore
+    !window?.ethereum?.isSafePal
       ? sortedConfig.filter((wallet) => wallet.title !== "WalletConnect")
       : sortedConfig;
   const displayListConfig = showMore ? walletsToShow : walletsToShow.slice(0, displayCount);
@@ -89,17 +89,16 @@ function ConnectModal<T>({ login, onDismiss = () => null, displayCount = 3, t, w
         </WalletWrapper>
         <Box p="24px">
           <Text textAlign="center" color="textSubtle" as="p" mb="16px">
-            {t("Haven’t got a crypto wallet yet?")}
+            {t("Learn how to get a Wallet and Connect.")}
           </Text>
           <Button
             as="a"
-            href="https://knights.gitbook.io/knightswap/im-new-here/faq"
+            href="https://knights.gitbook.io/darkknight/getting-started/faqs-and-troubleshooting#how-do-i-set-up-my-wallet-on-fantom-opera-network"
             // variant="subtle"
             width="100%"
-
             {...EXTERNAL_LINK_PROPS}
           >
-            {t("Learn How to Connect")}
+            {t("Learn")}
           </Button>
         </Box>
       </ModalBody>

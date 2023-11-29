@@ -52,7 +52,7 @@ const RewardBracketDetail: React.FC<React.PropsWithChildren<RewardBracketDetailP
           <>
             <Balance fontSize="20px" bold value={getBalanceNumber(cakeAmount)} decimals={5} />
             <Text fontSize="20px" fontWeight="bold">
-              Knight
+              dKnight
             </Text>
           </>
         )}
@@ -73,7 +73,7 @@ const RewardBracketDetail: React.FC<React.PropsWithChildren<RewardBracketDetailP
           <>
             {numberWinners !== '0' && (
               <Text fontSize="12px" color="textSubtle">
-                {getFullDisplayBalance(cakeAmount.div(parseInt(numberWinners, 10)), 18, 2)} Knight {t('each')}
+                {getFullDisplayBalance(cakeAmount.div(parseInt(numberWinners, 10)), 18, 2)} dKnight {t('each')}
               </Text>
             )}
             <Text fontSize="12px" color="textSubtle">

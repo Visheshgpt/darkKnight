@@ -36,7 +36,6 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
         <StyledIconMobileContainer display={["block", null, "none"]}>
           {/* <LogoWithTextIcon isDark width="130px" /> */}
           <img src="/images/home/hero/logotext.svg" alt="" />
-
         </StyledIconMobileContainer>
         <Flex
           order={[2, null, 1]}
@@ -97,7 +96,7 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
             <Button
               data-theme="light"
               as="a"
-              href="/swap?outputCurrency=0xD23811058Eb6e7967D9a00dc3886E75610c4AbBa&chainId=56"
+              href="https://dark-knight-frontend-five.vercel.app/swap?outputCurrency=0x6cc0e0aedbbd3c35283e38668d959f6eb3034856&chainId=250"
               target="_blank"
               scale="sm"
               endIcon={<ArrowForwardIcon color="backgroundAlt" />}

@@ -123,6 +123,18 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
                   }}
                 />
               </Flex>
+              <Flex justifyContent="space-between" alignItems="center" mb="24px">
+                <Flex alignItems="center">
+                  <Text>{t('Default Transaction Speed (GWEI)')}</Text>
+                  <QuestionHelper
+                    text={t(
+                      'Adjusts the gas price (transaction fee) for your transaction. Higher GWEI = higher speed = higher fees',
+                    )}
+                    placement="top-start"
+                    ml="4px"
+                  />
+                </Flex>
+              </Flex>
               <GasSettings />
             </Flex>
           </>

@@ -75,8 +75,8 @@ const Overview: React.FC<React.PropsWithChildren<OverviewPropsType>> = ({
           </Text>
         </Flex>
         <LightGreyCard>
-          <BalanceRow title={t('KNIGHT to be locked')} value={lockedAmount} newValue={newLockedAmount} decimals={2} />
-          <BalanceRow title="KNIGHT" decimals={2} value={formattediCake} newValue={newFormattediCake} />
+          <BalanceRow title={t('dKNIGHT to be locked')} value={lockedAmount} newValue={newLockedAmount} decimals={2} />
+          <BalanceRow title="dKNIGHT" decimals={2} value={formattediCake} newValue={newFormattediCake} />
           <BalanceRow
             title="apy"
             unit="%"
@@ -113,7 +113,7 @@ const Overview: React.FC<React.PropsWithChildren<OverviewPropsType>> = ({
             newValue={newFormattedRoi}
             prefix="$"
             decimals={2}
-            suffix={<CalculatorButton />}
+            suffix={<CalculatorButton style={{ marginLeft: '5px' }} />}
             tooltipContent={t(
               'Calculated based on current rates and subject to change based on pool conditions. It is an estimate provided for your convenience only, and by no means represents guaranteed returns.',
             )}
@@ -125,7 +125,7 @@ const Overview: React.FC<React.PropsWithChildren<OverviewPropsType>> = ({
           <Message variant="warning">
             <MessageText>
               {t(
-                'You will be able to withdraw the staked KNIGHT and profit only when the staking position is unlocked',
+                'You will be able to withdraw the staked dKNIGHT and profit only when the staking position is unlocked',
               )}
             </MessageText>
           </Message>

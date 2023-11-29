@@ -6,7 +6,8 @@ import twitter from "../../../../../public/images/home/footer/twitter.svg";
 
 const StyledWrapper = styled.div`
   height: 56px;
-  background: #1e2b45;
+  /* background: #1e2b45; */
+  background-color: #3d0000;
   display: flex;
   justify-content: center;
   align-items: center;

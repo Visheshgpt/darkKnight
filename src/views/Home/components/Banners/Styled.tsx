@@ -19,7 +19,7 @@ export const StyledSubheading = styled(Heading)`
 
 export const StyledHeading = styled(Heading)`
   color: #ffffff;
-  background: -webkit-linear-gradient(#7645d9 0%, #452a7a 100%);
+  background: -webkit-linear-gradient(#daa06d 0%, #452a7a 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-stroke: 6px transparent;
@@ -33,7 +33,7 @@ export const StyledHeading = styled(Heading)`
 export const Wrapper = styled.div`
   border-radius: 32px;
   width: 100%;
-  
+
   max-height: max-content;
   overflow: visible;
   ${({ theme }) => theme.mediaQueries.sm} {
@@ -43,7 +43,7 @@ export const Wrapper = styled.div`
 
 export const Inner = styled(Flex)`
   position: relative;
-  
+
   padding: 0px;
   flex-direction: row;
   justify-content: space-between;
@@ -63,7 +63,6 @@ export const LeftWrapper = styled(Flex)`
 `
 
 export const RightWrapper = styled.div`
-
   position: absolute;
   right: -17px;
   opacity: 0.9;

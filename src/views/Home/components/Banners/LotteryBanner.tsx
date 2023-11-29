@@ -187,7 +187,7 @@ const LotteryBanner = () => {
                 </Text> */}
                 <StyledList>
                   <StyledListItems>
-                    <Text>Looking to launch or already have a project on BNB Chain?</Text>
+                    <Text>Looking to launch or already have a project on FTM Chain?</Text>
                   </StyledListItems>
                   <StyledListItems>
                     <Text>
@@ -203,7 +203,7 @@ const LotteryBanner = () => {
                 margin={['10px', '10px', '10px 0']}
                 flexDirection={['row', 'row']}
               >
-                <a href="https://forms.gle/U1vsgCWdqKcF2Ufx6" rel="noreferrer" target="_blank">
+                <a href="https://forms.gle/s7CfSz8gzUADhvY77" rel="noreferrer" target="_blank">
                   <StyledButton scale="sm" marginRight="10px">
                     {isDesktop ? 'Join The Alliance' : 'Join'}
                   </StyledButton>

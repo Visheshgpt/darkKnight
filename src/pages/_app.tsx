@@ -70,7 +70,7 @@ function MyApp(props: AppProps<{ initialReduxState: any }>) {
           name="description"
           content="KnightSwap is the preeminent decentralized exchange (DEX) on Binance Smart Chain (BSC) built for reliable & sustainable yields while providing the highest quality Decentralized Finance (DeFi) experience"
         />
-        <meta name="theme-color" content="#1FC7D4" />
+        <meta name="theme-color" content="#EADDCA" />
         {/* <meta name="twitter:image" content="/images/home/hero/logo.svg" /> */}
         <link rel="icon" type="image/png" sizes="16x16" href="/images/home/hero/logo.svg" />
 

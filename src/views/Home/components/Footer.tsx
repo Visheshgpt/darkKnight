@@ -10,11 +10,10 @@ const StyledContainer = styled.div`
   // background: url(${footer.src});
   border: 5px solid;
 
-  background:linear-gradient(96.95deg, #3D0101 -0.61%, #743434 100.61%)padding-box
-,
-   linear-gradient(90deg, #A66C07 2.04%, #F0DE93 50.39%, #B98A2B 94.81%) border-box;
-  
-border-color:transparent;
+  background: linear-gradient(96.95deg, #3d0101 -0.61%, #743434 100.61%) padding-box,
+    linear-gradient(90deg, #a66c07 2.04%, #f0de93 50.39%, #b98a2b 94.81%) border-box;
+
+  border-color: transparent;
   background-size: cover;
   height: 120px;
   padding: 10px;
@@ -33,7 +32,6 @@ const StyledWrapper = styled.div`
     width: 100%;
     flex-direction: column;
   }
-  
 `
 const Wrapper = styled(Flex)`
   z-index: 1;
@@ -53,11 +51,11 @@ const Footer = () => {
       <StyledContainer>
         <StyledWrapper>
           <Wrapper>
-            <Flex>
+            <Flex style={{ justifyContent: 'center', alignItems: 'center' }}>
               <Heading mb={['10px', null]} mt={['24px', '10px']} scale="xl" color="white" textAlign="center">
                 {t('Start in seconds.')}
               </Heading>
-              {!account && <ConnectWalletButton mt="14px" mx="24px" />}
+              {!account && <ConnectWalletButton mt="" mx="24px" />}
             </Flex>
           </Wrapper>
         </StyledWrapper>

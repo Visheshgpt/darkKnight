@@ -78,7 +78,7 @@ const EarnSection: React.FC<React.PropsWithChildren<EarnSectionProps>> = (props)
             Earn passive income with crypto.
           </Text>
           <Text color="#fff" mb="10px" fontSize="18px">
-            KnightSwap makes it easy.
+            Dark Knight makes it easy.
           </Text>
           <Flex>
             {secondaryButton.external ? (

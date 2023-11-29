@@ -12,7 +12,7 @@ interface PoolsTableProps {
 const StyledTable = styled.div`
   border-radius: ${({ theme }) => theme.radii.card};
   scroll-margin-top: 64px;
-
+  overflow: auto;
   background-color: ${({ theme }) => theme.card.background};
   > div:not(:last-child) {
     border-bottom: 2px solid ${({ theme }) => theme.colors.disabled};

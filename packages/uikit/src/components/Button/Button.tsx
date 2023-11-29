@@ -24,6 +24,8 @@ const Button = <E extends ElementType = "button">(props: ButtonProps<E>): JSX.El
           "linear-gradient(89.51deg, #3D0000 5.77%, #743434 99.57%)padding-box, linear-gradient(90deg, #FEF3AC 4.75%, #B98A2B 43.14%, #FEF3AC 89.95%)border-box",
         border: "2px solid ",
         borderColor: "transparent",
+        paddingLeft: "10px",
+        paddingRight: "10px",
       }}
       $isLoading={isLoading}
       className={classNames.join(" ")}
@@ -49,7 +51,7 @@ const Button = <E extends ElementType = "button">(props: ButtonProps<E>): JSX.El
 Button.defaultProps = {
   isLoading: false,
   external: false,
-  variant: variants.PRIMARY,
+  variant: variants.TERTIARY,
   scale: scales.MD,
   disabled: false,
 };

@@ -12,7 +12,7 @@ import Balance from 'components/Balance'
 import RewardBrackets from '../RewardBrackets'
 
 const NextDrawWrapper = styled(Flex)`
-  background: #1e3156;
+  background: #3d0000;
   padding: 24px;
   flex-direction: column;
 

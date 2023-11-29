@@ -3,7 +3,7 @@ import { SalesSectionProps } from '.'
 
 export const swapSectionData = (t: TranslateFunction): SalesSectionProps => ({
   headingText: t('Trade boutique. No registration, no hassle.'),
-  bodyText: t('Trade exclusive tokens found only on KnightSwap in seconds, just by connecting your wallet!'),
+  bodyText: t('Trade exclusive tokens found only on Dark Knight in seconds, just by connecting your wallet!'),
   reverse: false,
   primaryButton: {
     to: '/swap',
@@ -27,7 +27,7 @@ export const swapSectionData = (t: TranslateFunction): SalesSectionProps => ({
 
 export const earnSectionData = (t: TranslateFunction): SalesSectionProps => ({
   headingText: t('Make your crypto work for you!'),
-  bodyText: t('Earn passive income with crypto. KnightSwap makes it easy.'),
+  bodyText: t('Earn passive income with crypto. Dark Knight makes it easy.'),
   reverse: true,
   primaryButton: {
     to: '/farms',
@@ -35,7 +35,7 @@ export const earnSectionData = (t: TranslateFunction): SalesSectionProps => ({
     external: false,
   },
   secondaryButton: {
-    to: 'https://knights.gitbook.io/knightswap/',
+    to: 'https://knights.gitbook.io/darkknight/products/liquidity-farm-yield-farming',
     text: t('Learn'),
     external: true,
   },
@@ -51,15 +51,15 @@ export const earnSectionData = (t: TranslateFunction): SalesSectionProps => ({
 
 export const cakeSectionData = (t: TranslateFunction): SalesSectionProps => ({
   headingText: t('Knight is protecting the crypto space !'),
-  bodyText: t('Knight token is at the heart of the KnightSwap ecosystem. Buy it, win it, farm it, spend it, stake it'),
+  bodyText: t('dKNIGHT token is at the heart of the Dark Knight DEX. Buy it, win it, farm it, spend it, stake it'),
   reverse: false,
   primaryButton: {
-    to: '/swap?outputCurrency=0xD23811058Eb6e7967D9a00dc3886E75610c4AbBa&chainId=56',
-    text: t('Buy Knight'),
+    to: 'https://dark-knight-frontend-five.vercel.app/swap?outputCurrency=0x6cc0e0aedbbd3c35283e38668d959f6eb3034856&chainId=250',
+    text: t('Buy dKNIGHT'),
     external: false,
   },
   secondaryButton: {
-    to: 'https://knights.gitbook.io/knightswap/',
+    to: 'https://knights.gitbook.io/darkknight/tokenomics/usddknight-token',
     text: t('Learn'),
     external: true,
   },

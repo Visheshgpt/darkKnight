@@ -29,7 +29,7 @@ const NavWrapper = styled(Flex)`
   flex-direction: column;
   gap: 8px;
   ${({ theme }) => theme.mediaQueries.sm} {
-    padding: 20px 40px;
+    padding: 20px 0px;
     flex-direction: row;
   }
 `

@@ -157,7 +157,7 @@ const Hero = () => {
           </Heading>
           <Flex>
             {/* {!account && <ConnectWalletButton mr="8px" />} */}
-            <a href="https://knights.gitbook.io/knightswap/" rel="noreferrer" target="_blank">
+            <a href="https://knights.gitbook.io/darkknight/" rel="noreferrer" target="_blank">
               <Button variant="primary" mr="10px">
                 {t('Learn')}
               </Button>

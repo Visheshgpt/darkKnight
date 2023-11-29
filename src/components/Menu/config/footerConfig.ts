@@ -6,24 +6,24 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
     label: 'Listing',
     items: [
       {
-        label: 'BscScan',
-        href: 'https://bscscan.com/token/0xD23811058Eb6e7967D9a00dc3886E75610c4AbBa',
+        label: 'FTM Scan',
+        href: 'https://ftmscan.com/token/0x6cc0e0aedbbd3c35283e38668d959f6eb3034856',
       },
       {
         label: 'DappRadar',
-        href: 'https://dappradar.com/binance-smart-chain/exchanges/knightswap',
+        href: 'https://dappradar.com/dapp/dark-knight',
       },
       {
         label: 'CoinGecko',
-        href: 'https://www.coingecko.com/en/coins/knightswap',
+        href: 'https://www.coingecko.com/en/coins/darkknight',
       },
       {
         label: 'CoinMarketCap',
-        href: 'https://coinmarketcap.com/currencies/knightswap/',
+        href: 'https://coinmarketcap.com/currencies/darkknight/',
       },
       {
         label: 'Gecko Terminal',
-        href: 'https://geckoterminal.com/bsc/knightswap/pools',
+        href: 'https://www.geckoterminal.com/ftm/darkknight/pools',
       },
     ],
   },
@@ -35,17 +35,17 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
         href: 'https://github.com/Knightswap',
       },
 
-      {
-        label: t('IWO'),
-        href: 'https://knight-swap-farms-build.pages.dev/iwo',
-      },
+      // {
+      //   label: t('IUO'),
+      //   href: 'https://knight-swap-farms-build.pages.dev/iwo',
+      // },
       {
         label: t('Lending'),
         href: 'https://lending.knightswap.financial/',
       },
       {
         label: t('Castle'),
-        href: 'https://www.knightcompounder.com/#/bsc',
+        href: 'https://www.knightcompounder.com/#/fantom',
       },
       {
         label: t('Audit'),
@@ -54,12 +54,12 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
 
       {
         label: 'Docs',
-        href: 'https://knightatbsc.gitbook.io/',
+        href: 'https://knights.gitbook.io/darkknight/',
       },
-      {
-        label: 'NFT Marketplace',
-        href: 'https://www.wizard.financial/marketplace',
-      },
+      // {
+      //   label: 'NFT Marketplace',
+      //   href: 'https://www.wizard.financial/marketplace',
+      // },
 
       {
         label: 'Blog',
@@ -67,7 +67,7 @@ export const footerLinks: (t: ContextApi['t']) => FooterLinkType[] = (t) => [
       },
       {
         label: 'Partnership',
-        href: 'https://forms.gle/K7wsArETN45AAz6i9',
+        href: 'https://forms.gle/s7CfSz8gzUADhvY77',
       },
     ],
   },

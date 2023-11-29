@@ -261,7 +261,7 @@ const HowToPlay: React.FC<React.PropsWithChildren> = () => {
     {
       label: t('Step %number%', { number: 1 }),
       title: t('Buy Tickets'),
-      subtitle: t('Prices are set when the round starts, equal to 5 USD in Knight per ticket.'),
+      subtitle: t('Prices are set when the round starts, equal to 5 USD in dKnight per ticket.'),
     },
     {
       label: t('Step %number%', { number: 2 }),
@@ -347,7 +347,7 @@ const HowToPlay: React.FC<React.PropsWithChildren> = () => {
               <BulletList>
                 <li>
                   <Text display="inline">
-                    {t('100% of the Knight paid by people buying tickets that round goes back into the prize pools.')}
+                    {t('100% of the dKnight paid by people buying tickets that round goes back into the prize pools.')}
                   </Text>
                 </li>
               </BulletList>
@@ -358,19 +358,19 @@ const HowToPlay: React.FC<React.PropsWithChildren> = () => {
                 <li>
                   <Text display="inline">
                     {t(
-                      'After every round, if nobody wins in one of the prize brackets, the unclaimed Knight for that bracket rolls over into the next round and are redistributed among the prize pools.',
+                      'After every round, if nobody wins in one of the prize brackets, the unclaimed dKnight for that bracket rolls over into the next round and are redistributed among the prize pools.',
                     )}
                   </Text>
                 </li>
               </BulletList>
               <Heading my="16px" scale="md">
-                {t('Knight Injections')}
+                {t('dKnight Injections')}
               </Heading>
               <BulletList>
                 <li>
                   <Text display="inline">
                     {t(
-                      'An average total of 35,000 Knight from the treasury is added to lottery rounds over the course of a week. This Knight is of course also included in rollovers! ',
+                      'An average total of 35,000 dKnight from the treasury is added to lottery rounds over the course of a week. This dKnight is of course also included in rollovers! ',
                     )}
                   </Text>
                 </li>
@@ -394,7 +394,7 @@ const HowToPlay: React.FC<React.PropsWithChildren> = () => {
               href="https://medium.com/knight-bsc-dark-knight-ftm/knight-ecosystem-lottery-22c18c0780d"
               color="text"
             >
-              {t('how to play the KnightSwap lottery!')}
+              {t('how to play the lottery!')}
             </InlineLink>
           </Text>
         </Flex>

@@ -25,6 +25,7 @@ const Container = styled.div`
   border-radius: 16px;
   margin: 16px 0px;
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  overflow: auto;
 `
 
 const TableWrapper = styled.div`

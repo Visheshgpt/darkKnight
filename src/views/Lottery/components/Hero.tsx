@@ -91,11 +91,11 @@ const StyledWrapper = styled(Flex)`
 
 const StyledCard = styled.div`
   width: 100%;
-  
+
   max-width: 400px;
   height: 214px;
   background: url(${LotteryCardBgSVG.src});
-  background-size:100% 100%;
+  background-size: 100% 100%;
   padding: 40px 50px;
   background-repeat: no-repeat;
 
@@ -124,11 +124,11 @@ const StyledSubCard = styled.div`
   border-radius: 35px;
   border: 2px solid;
 
-  background: linear-gradient(135.78deg, #3D0000 -64.48%, #743434 83.36%)padding-box,
-linear-gradient(0.98deg, #B98A2B 1.82%, #F0DE93 103.22%)border-box;
-border-color:transparent;
+  background: linear-gradient(135.78deg, #3d0000 -64.48%, #743434 83.36%) padding-box,
+    linear-gradient(0.98deg, #b98a2b 1.82%, #f0de93 103.22%) border-box;
+  border-color: transparent;
 
-    @media only screen and (min-width: 853px) {
+  @media only screen and (min-width: 853px) {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -244,8 +244,8 @@ const Hero = () => {
 
         <StyledCard>
           <Box>
-            <Heading color="#90B6FF" scale="lg">
-              Knight Lottery
+            <Heading color="#DFC884" scale="lg">
+              Dark Knight Lottery
             </Heading>
             <StyledLotteryAmount scale="xxl">{getPrizeBalances()}</StyledLotteryAmount>
             <Heading scale="md">In Prizes</Heading>
@@ -263,7 +263,9 @@ const Hero = () => {
             alt="knight logo"
             style={{ width: '70px', margin: '15px auto', display: 'block' }}
           />
-          <BuyTicketsButton maxWidth="280px" disabled={ticketBuyIsDisabled} margin="10px auto" />
+          <div style={{ paddingLeft: '15px', paddingRight: '15px' }}>
+            <BuyTicketsButton maxWidth="280px" disabled={ticketBuyIsDisabled} margin="10px auto" />
+          </div>
         </StyledSubCard>
         <StyledFlex>
           <StyledFloatingCardTopRight src={SmallFloatingCard.src} alt="floating-card" style={{ width: '100px' }} />

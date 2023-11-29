@@ -125,7 +125,7 @@ const PoolStatsInfo: React.FC<React.PropsWithChildren<ExpandedFooterProps>> = ({
       )}
       {vaultKey && (
         <Flex mb="2px" justifyContent={alignLinksToRight ? 'flex-end' : 'flex-start'}>
-          <LinkExternal href="https://knights.gitbook.io/knightswap/" bold={false} small>
+          <LinkExternal href="https://knights.gitbook.io/darkknight/" bold={false} small>
             {t('View Tutorial')}
           </LinkExternal>
         </Flex>

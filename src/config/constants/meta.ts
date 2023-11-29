@@ -3,9 +3,9 @@ import { ContextApi } from '@pancakeswap/localization'
 import { PageMeta } from './types'
 
 export const DEFAULT_META: PageMeta = {
-  title: 'Dark Knight',
+  title: 'Dark Knight Finance - A next evolution DeFi exchange on Fantom Opera Chain (FTM)',
   description:
-    'KnightSwap is the preeminent decentralized exchange (DEX) on Binance Smart Chain (BSC) built for reliable & sustainable yields while providing the highest quality Decentralized Finance (DeFi) experience',
+    'Dark Knight is the preeminent decentralized exchange (DEX) on Fantom Opera Chain (FTM) built for reliable & sustainable yields while providing the highest quality Decentralized Finance (DeFi) experience',
   image: '',
 }
 

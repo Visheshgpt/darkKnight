@@ -34,7 +34,7 @@ const HoverUpdater = ({ locale, payload, setHoverValue, setHoverDate }) => {
 
 const getChartColors = ({ isChangePositive }) => {
   return isChangePositive
-    ? { gradient1: '#1E2B45', gradient2: '#1E2B45', stroke: '#31D0AA' }
+    ? { gradient1: '#00F666', gradient2: '#00F666', stroke: '#31D0AA' }
     : { gradient1: '#ED4B9E', gradient2: '#ED4B9E', stroke: '#ED4B9E ' }
 }
 

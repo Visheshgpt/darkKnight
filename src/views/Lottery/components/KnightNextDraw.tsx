@@ -58,7 +58,7 @@ const StyledHeading = styled(Heading)`
 `
 const StyledCardHeader = styled(Flex)`
   padding-bottom: 10px;
-  border-bottom: 3px dashed #548efe;
+  border-bottom: 3px dashed #debc7d;
 `
 const NextDrawWrapper = styled.div`
   width: 100%;
@@ -189,7 +189,7 @@ const KnightNextDraw = () => {
             <StyledHeading scale="xxl" margin="10px 0" color="primary">
               {getPrizeBalances()}
             </StyledHeading>
-            <Heading color="#B8CBEF">{getBalanceNumber(amountCollectedInCake)} Knight</Heading>
+            <Heading color="#DEBC7D">{getBalanceNumber(amountCollectedInCake)}dKnight</Heading>
           </Flex>
           <Flex
             flexDirection={['column', 'column', 'row', 'row']}

@@ -94,7 +94,7 @@ const PerpetualBanner = () => {
                 margin={['10px', '10px', '10px 0']}
                 flexDirection={['row', 'row']}
               >
-                <Link href="https://www.knightcompounder.com/#/bsc" external>
+                <Link href="https://www.knightcompounder.com/#/fantom" external>
                   <StyledButton scale="sm" marginRight="10px">
                     {isDesktop ? 'Earn on Autopilot' : 'Earn '}
                   </StyledButton>

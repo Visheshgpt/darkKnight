@@ -289,7 +289,7 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
               }}
             >
               <AnnualRoiDisplay>${formattedAnnualRoi}</AnnualRoiDisplay>
-              <IconButton variant="text" scale="sm">
+              <IconButton ml="5px" variant="text" scale="sm">
                 <CalculateIcon color="textSubtle" width="18px" />
               </IconButton>
             </AnnualRoiContainer>

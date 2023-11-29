@@ -271,10 +271,10 @@ const Pools: React.FC<React.PropsWithChildren> = () => {
             <Heading as="h1" scale="xxl" color="secondary" mb="24px">
               Knight Raids
             </Heading>
-            <Heading scale="md" color="text">
+            <Heading style={{ textAlign: 'center' }} scale="md" color="text">
               {t('Just stake some tokens to earn.')}
             </Heading>
-            <Heading scale="md" color="text">
+            <Heading style={{ textAlign: 'center' }} scale="md" color="text">
               {t('High APR, low risk.')}
             </Heading>
           </Flex>

@@ -475,7 +475,7 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
           <Button
             width="100%"
             onClick={stakingTokenBalance.gt(0) ? onStake : onPresentTokenRequired}
-            variant="secondary"
+            variant="tertiary"
             disabled={isFinished}
           >
             {t('Stake')}

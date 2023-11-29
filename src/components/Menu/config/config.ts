@@ -72,11 +72,11 @@ const config: (
         //   supportChainIds: SUPPORT_ONLY_BSC,
         //   type: DropdownMenuItemType.EXTERNAL_LINK,
         // },
-        {
-          label: t('Bridge'),
-          href: 'https://www.bnbchain.org/en/bridge',
-          type: DropdownMenuItemType.EXTERNAL_LINK,
-        },
+        // {
+        //   label: t('Bridge'),
+        //   href: 'https://www.bnbchain.org/en/bridge',
+        //   type: DropdownMenuItemType.EXTERNAL_LINK,
+        // },
       ].map((item) => addMenuItemSupported(item, chainId)),
     },
     {
@@ -160,18 +160,18 @@ const config: (
           href: '/info',
         },
 
-        {
-          label: t('Lending'),
-          href: 'https://lending.knightswap.financial/',
-        },
+        // {
+        //   label: t('Lending'),
+        //   href: 'https://lending.knightswap.financial/',
+        // },
 
         {
           label: t('Castle'),
-          href: 'https://www.knightcompounder.com/#/bsc',
+          href: 'https://www.knightcompounder.com/#/fantom',
         },
 
         {
-          label: t('IWO'),
+          label: t('IUO'),
           href: 'https://knight-swap-farms-build.pages.dev/iwo',
         },
 
@@ -206,7 +206,7 @@ const config: (
         },
         {
           label: t('Docs'),
-          href: 'https://knightatbsc.gitbook.io/',
+          href: 'https://knights.gitbook.io/darkknight/',
           type: DropdownMenuItemType.EXTERNAL_LINK,
         },
       ].map((item) => addMenuItemSupported(item, chainId)),

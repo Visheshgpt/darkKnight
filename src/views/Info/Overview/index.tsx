@@ -1,5 +1,6 @@
 import { useTranslation } from '@pancakeswap/localization'
 import { Card, Flex, Heading } from '@pancakeswap/uikit'
+import { useRouter } from 'next/router'
 import Page from 'components/Layout/Page'
 import { useMemo } from 'react'
 import {
@@ -16,6 +17,7 @@ import PoolTable from 'views/Info/components/InfoTables/PoolsTable'
 import TokenTable from 'views/Info/components/InfoTables/TokensTable'
 import TransactionTable from 'views/Info/components/InfoTables/TransactionsTable'
 import HoverableChart from '../components/InfoCharts/HoverableChart'
+import InfoNav from '../components/InfoNav'
 
 export const ChartCardsContainer = styled(Flex)`
   justify-content: space-between;
@@ -30,7 +32,7 @@ export const ChartCardsContainer = styled(Flex)`
 
   ${({ theme }) => theme.mediaQueries.md} {
     flex-direction: row;
-  } ;
+  }
 `
 
 const Overview: React.FC<React.PropsWithChildren> = () => {
@@ -67,11 +69,14 @@ const Overview: React.FC<React.PropsWithChildren> = () => {
   const somePoolsAreLoading = useMemo(() => {
     return poolDatas.some((pool) => !pool?.token0Price)
   }, [poolDatas])
+  const router = useRouter()
+  const isStableSwap = router.query.type === 'stableSwap'
 
   return (
     <Page>
+      <InfoNav isStableSwap={isStableSwap} />
       <Heading scale="xl" mb="16px" id="info-overview-title" textAlign="center">
-        <span style={{ color: '#F0DE93' }}>Knight</span> Info & Analysis
+        <span style={{ color: '#F0DE93' }}>Dark Knight</span> Info & Analysis
       </Heading>
       <ChartCardsContainer>
         <Card>

@@ -71,7 +71,7 @@ const YieldSection = () => {
               <Heading color="#F0DE93" margin="10px 0">
                 Farms
               </Heading>
-              <Text>Provide KNIGHT LP tokens to our farms and start earning $KNIGHT tokens & trading fees.</Text>
+              <Text>Provide dKNIGHT LP tokens to our farms and start earning $dKNIGHT tokens & trading fees.</Text>
             </Box>
           </Styledcard>
           <Styledcard>
@@ -80,7 +80,7 @@ const YieldSection = () => {
                 Castle
               </Heading>
               <Text>
-                Stake your assets in KnightSwap Castle vaults to earn on autopilot. Your assets will compound
+                Stake your assets in Dark Knight Castle vaults to earn on autopilot. Your assets will compound
                 automatically daily!
               </Text>
             </Box>
@@ -90,7 +90,7 @@ const YieldSection = () => {
               <Heading color="#F0DE93" margin="10px 0">
                 Raids
               </Heading>
-              <Text>Stake your $KNIGHT tokens to earn $KNIGHT or partner tokens in Raids.</Text>
+              <Text>Stake your $dKNIGHT tokens to earn $dKNIGHT or partner tokens in Raids.</Text>
             </Box>
           </Styledcard>
         </StyledGrid>

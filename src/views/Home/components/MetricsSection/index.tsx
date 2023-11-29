@@ -16,11 +16,10 @@ const StyledMediaSectionWrapper = styled(Flex)`
   // background: linear-gradient(91.59deg, #192949 4.59%, #314773 87.26%);
   border: 5px solid;
 
-  background: linear-gradient(96.95deg, #3D0101 -0.61%, #743434 100.61%) padding-box,
-
-linear-gradient(90deg, #A66C07 2.04%, #F0DE93 50.39%, #B98A2B 94.81%)border-box;
-border-color:transparent;
-border-radius: 36px;
+  background: linear-gradient(96.95deg, #3d0101 -0.61%, #743434 100.61%) padding-box,
+    linear-gradient(90deg, #a66c07 2.04%, #f0de93 50.39%, #b98a2b 94.81%) border-box;
+  border-color: transparent;
+  border-radius: 36px;
   border-radius: 36px;
   margin: 100px auto;
   padding: 50px 0;
@@ -36,9 +35,9 @@ const Styledcard = styled.div`
   border-radius: 24px;
   // background: #1e2b45;
   border: 5px solid;
-  background:linear-gradient(#3D0000,#3D0000,#3D0000) padding-box,
-  linear-gradient(90deg, #A56A07 5.74%, #FEF3AC 46.94%, #A56A07 94.09%)border-box;
-  border-color:transparent;
+  background: linear-gradient(#3d0000, #3d0000, #3d0000) padding-box,
+    linear-gradient(90deg, #a56a07 5.74%, #fef3ac 46.94%, #a56a07 94.09%) border-box;
+  border-color: transparent;
   padding: 14px;
   margin: 10px;
   text-align: center;
@@ -87,7 +86,7 @@ const Stats = () => {
         <span style={{ color: '#FEF3AC' }}>Millions</span>
       </Heading>
       <Text textAlign="center" color="#fff" fontSize="18px" maxWidth={['80%', '80%', '50%']}>
-        KnightSwap is your preeminent DeFi platform on BNB Chain, designed to ensure safe and sustainable yield farming
+        Dark Knight is your preeminent DeFi platform on FTM Chain, designed to ensure safe and sustainable yield farming
         for a community of discerning investors.
       </Text>
       {/* <Flex flexWrap="wrap">

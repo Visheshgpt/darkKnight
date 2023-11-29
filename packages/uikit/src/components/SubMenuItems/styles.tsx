@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { Flex, Box } from "../Box";
 
-export const SubMenuItemWrapper = styled(Flex) <{ $isMobileOnly: boolean }>`
+export const SubMenuItemWrapper = styled(Flex)<{ $isMobileOnly: boolean }>`
   ${({ theme }) => theme.mediaQueries.sm} {
     ${({ $isMobileOnly }) => ($isMobileOnly ? "display:none" : "")};
   }
@@ -54,7 +54,7 @@ export const LeftMaskLayer = styled.div`
   left: 0px;
   background: ${({ theme }) =>
     theme.isDark
-      ? `linear-gradient(90deg, #1e2b45 29.76%, rgba(39,38,44, 0) 100%)`
+      ? `linear-gradient(90deg, #3D0000 29.76%, rgba(39,38,44, 0) 100%)`
       : `linear-gradient(90deg, #ffffff 29.76%, rgba(255, 255, 255, 0) 100%)`};
 `;
 export const RightMaskLayer = styled.div`
@@ -62,7 +62,7 @@ export const RightMaskLayer = styled.div`
   right: 0px;
   background: ${({ theme }) =>
     theme.isDark
-      ? `linear-gradient(270deg, #1e2b45 0%, rgba(39,38,44, 0) 87.5%)`
+      ? `linear-gradient(270deg, #3D0000 0%, rgba(39,38,44, 0) 87.5%)`
       : `linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 87.5%)`};
 `;
 
