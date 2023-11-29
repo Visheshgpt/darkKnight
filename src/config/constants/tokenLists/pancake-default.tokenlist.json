@@ -12,15 +12,23 @@
   "tokens": [
     {
       "name": "WETH Token",
-      "symbol": "WETH",
+      "symbol": "multiWETH",
       "address": "0x74b23882a30290451A17c44f4F05243b6b58C76d",
       "chainId": 250,
       "decimals": 18,
       "logoURI": "/images/Token/0x74b23882a30290451A17c44f4F05243b6b58C76d.png"
     },
     {
+      "name": "WETH Token",
+      "symbol": "lzWETH",
+      "address": "0x695921034f0387eAc4e11620EE91b1b15A6A09fE",
+      "chainId": 250,
+      "decimals": 18,
+      "logoURI": "/images/Token/0x695921034f0387eAc4e11620EE91b1b15A6A09fE.png"
+    },
+    {
       "name": "WBTC Token",
-      "symbol": "WBTC",
+      "symbol": "multiBTC",
       "address": "0x321162cd933e2be498cd2267a90534a804051b11",
       "chainId": 250,
       "decimals": 8,
@@ -44,11 +52,27 @@
     },
     {
       "name": "USD coin",
-      "symbol": "USDC",
+      "symbol": "lzUSDC",
       "address": "0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf",
       "chainId": 250,
       "decimals": 6,
       "logoURI": "/images/Token/0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf.png"
+    },
+    {
+      "name": "USD coin",
+      "symbol": "multiUSDC",
+      "address": "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75",
+      "chainId": 250,
+      "decimals": 6,
+      "logoURI": "/images/Token/0x04068DA6C83AFCFA0e13ba15A6696662335D5B75.png"
+    },
+    {
+      "name": "USD coin",
+      "symbol": "axlUSDC",
+      "address": "0x1B6382DBDEa11d97f24495C9A90b7c88469134a4",
+      "chainId": 250,
+      "decimals": 6,
+      "logoURI": "/images/Token/0x1B6382DBDEa11d97f24495C9A90b7c88469134a4.png"
     },
 
     {

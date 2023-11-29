@@ -148,8 +148,8 @@ export const USDC_FANTOM = new Token(
   ChainId.fantomOpera,
   '0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf',
   6,
-  'USDC',
-  ' USDC',
+  'lzUSDC',
+  'lzUSDC',
   'https://www.circle.com/en/usdc',
 )
 

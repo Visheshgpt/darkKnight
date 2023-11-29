@@ -4,7 +4,7 @@ import { FantomTokens } from '@pancakeswap/tokens'
 const farms: SerializedFarmConfig[] = [
   {
     pid: 30,
-    lpSymbol: 'USDC-dKnight LP',
+    lpSymbol: 'lzUSDC-dKnight LP',
     lpAddress: '0x0d587c8780E9611f825A84148EA7BA54Cc0B1878',
     token: FantomTokens.dknight,
     quoteToken: FantomTokens.usdc,
@@ -18,7 +18,7 @@ const farms: SerializedFarmConfig[] = [
   },
   {
     pid: 29,
-    lpSymbol: 'USDC-WFTM LP',
+    lpSymbol: 'lzUSDC-WFTM LP',
     lpAddress: '0xc50cF35ea4AB37cb71382de5a4c1D72a7667F0E3',
     token: FantomTokens.usdc,
     quoteToken: FantomTokens.wfantom,
@@ -47,7 +47,7 @@ const farms: SerializedFarmConfig[] = [
   },
   {
     pid: 6,
-    lpSymbol: 'WFTM-ETH LP',
+    lpSymbol: 'WFTM-multiWETH LP',
     lpAddress: '0xbE612c02BeE4b9FEb6B38693510c6C2a2028866d',
     token: FantomTokens.weth,
     quoteToken: FantomTokens.wfantom,

@@ -113,7 +113,7 @@ const Overview: React.FC<React.PropsWithChildren<OverviewPropsType>> = ({
             newValue={newFormattedRoi}
             prefix="$"
             decimals={2}
-            suffix={<CalculatorButton style={{ marginLeft: '5px' }} />}
+            suffix={<CalculatorButton />}
             tooltipContent={t(
               'Calculated based on current rates and subject to change based on pool conditions. It is an estimate provided for your convenience only, and by no means represents guaranteed returns.',
             )}
