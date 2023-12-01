@@ -7,7 +7,13 @@ const CalculatorButton = () => {
   const setShowRoiCalculator = useContext(RoiCalculatorModalContext)
 
   return (
-    <IconButton variant="text" scale="sm" mr="-8px" onClick={() => setShowRoiCalculator && setShowRoiCalculator(true)}>
+    <IconButton
+      variant="text"
+      scale="sm"
+      ml="10px"
+      mr="-8px"
+      onClick={() => setShowRoiCalculator && setShowRoiCalculator(true)}
+    >
       <CalculateIcon color="textSubtle" width="18px" />
     </IconButton>
   )

@@ -87,7 +87,7 @@ export const HarvestAction: React.FunctionComponent<React.PropsWithChildren<Harv
 
   const { targetRef, tooltip, tooltipVisible } = useTooltip(
     `${toolTipBalance} ${t(
-      `KNIGHT has been harvested to the farm booster contract and will be automatically sent to your wallet upon the next harvest.`,
+      `dKNIGHT has been harvested to the farm booster contract and will be automatically sent to your wallet upon the next harvest.`,
     )}`,
     {
       placement: 'bottom',

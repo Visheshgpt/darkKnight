@@ -1,29 +1,29 @@
 describe('Add Liquidity', () => {
   it('loads the two correct tokens', () => {
     cy.visit('/add/0xD23811058Eb6e7967D9a00dc3886E75610c4AbBa/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56')
-    cy.get('#add-liquidity-select-tokena #pair').should('contain.text', 'KNIGHT')
+    cy.get('#add-liquidity-select-tokena #pair').should('contain.text', 'dKNIGHT')
     cy.get('#add-liquidity-select-tokenb #pair').should('contain.text', 'BUSD')
     cy.getBySel('choose-pair-next').click({ force: true })
-    cy.get('#add-liquidity-input-tokena #pair').should('contain.text', 'KNIGHT')
+    cy.get('#add-liquidity-input-tokena #pair').should('contain.text', 'dKNIGHT')
     cy.get('#add-liquidity-input-tokenb #pair').should('contain.text', 'BUSD')
   })
 
   it('loads the BNB and tokens', () => {
     cy.visit('/add/BNB/0xD23811058Eb6e7967D9a00dc3886E75610c4AbBa')
     cy.get('#add-liquidity-select-tokena #pair').should('contain.text', 'BNB')
-    cy.get('#add-liquidity-select-tokenb #pair').should('contain.text', 'KNIGHT')
+    cy.get('#add-liquidity-select-tokenb #pair').should('contain.text', 'dKNIGHT')
     cy.getBySel('choose-pair-next').click({ force: true })
     cy.get('#add-liquidity-input-tokena #pair').should('contain.text', 'BNB')
-    cy.get('#add-liquidity-input-tokenb #pair').should('contain.text', 'KNIGHT')
+    cy.get('#add-liquidity-input-tokenb #pair').should('contain.text', 'dKNIGHT')
   })
 
   it('loads the WBNB and tokens', () => {
     cy.visit('/add/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/0xD23811058Eb6e7967D9a00dc3886E75610c4AbBa')
     cy.get('#add-liquidity-select-tokena #pair').should('contain.text', 'WBNB')
-    cy.get('#add-liquidity-select-tokenb #pair').should('contain.text', 'KNIGHT')
+    cy.get('#add-liquidity-select-tokenb #pair').should('contain.text', 'dKNIGHT')
     cy.getBySel('choose-pair-next').click({ force: true })
     cy.get('#add-liquidity-input-tokena #pair').should('contain.text', 'WBNB')
-    cy.get('#add-liquidity-input-tokenb #pair').should('contain.text', 'KNIGHT')
+    cy.get('#add-liquidity-input-tokenb #pair').should('contain.text', 'dKNIGHT')
   })
 
   it('does not crash if BNB is duplicated', () => {
@@ -34,17 +34,17 @@ describe('Add Liquidity', () => {
 
   it('does not crash if address is duplicated', () => {
     cy.visit('/add/0xD23811058Eb6e7967D9a00dc3886E75610c4AbBa/0xD23811058Eb6e7967D9a00dc3886E75610c4AbBa')
-    cy.get('#add-liquidity-select-tokena #pair').should('contain.text', 'KNIGHT')
-    cy.get('#add-liquidity-select-tokenb #pair').should('not.contain.text', 'KNIGHT')
+    cy.get('#add-liquidity-select-tokena #pair').should('contain.text', 'dKNIGHT')
+    cy.get('#add-liquidity-select-tokenb #pair').should('not.contain.text', 'dKNIGHT')
   })
 
   it('token not in storage is loaded', () => {
     cy.visit('/add/0xD74b782E05AA25c50e7330Af541d46E18f36661C/0xD23811058Eb6e7967D9a00dc3886E75610c4AbBa')
     cy.get('#add-liquidity-select-tokena #pair').should('contain.text', 'QUACK')
-    cy.get('#add-liquidity-select-tokenb #pair').should('contain.text', 'KNIGHT')
+    cy.get('#add-liquidity-select-tokenb #pair').should('contain.text', 'dKNIGHT')
     cy.getBySel('choose-pair-next').click({ force: true })
     cy.get('#add-liquidity-input-tokena #pair').should('contain.text', 'QUACK')
-    cy.get('#add-liquidity-input-tokenb #pair').should('contain.text', 'KNIGHT')
+    cy.get('#add-liquidity-input-tokenb #pair').should('contain.text', 'dKNIGHT')
   })
 
   it('single token can be selected', () => {

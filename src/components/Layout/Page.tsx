@@ -38,11 +38,20 @@ export const PageMeta: React.FC<React.PropsWithChildren<{ symbol?: string }>> = 
     pageTitle = [symbol, title].join(' - ')
   }
 
+  const modifiedTitle = 'Dark Knight Finance - A next evolution DeFi exchange on Fantom Opera Chain (FTM)'
+  const modifiedDescription =
+    'Dark Knight is the preeminent decentralized exchange (DEX) on Fantom Opera Chain (FTM) built for reliable & sustainable yields while providing the highest quality Decentralized Finance (DeFi) experience'
   return (
+    // <Head>
+    //   <title>{pageTitle}</title>
+    //   <meta property="og:title" content={title} />
+    //   <meta property="og:description" content={description} />
+    //   <meta property="og:image" content="" />
+    // </Head>
     <Head>
-      <title>{pageTitle}</title>
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <title>{modifiedTitle}</title>
+      <meta property="og:title" content={modifiedTitle} />
+      <meta property="og:description" content={modifiedDescription} />
       <meta property="og:image" content="" />
     </Head>
   )

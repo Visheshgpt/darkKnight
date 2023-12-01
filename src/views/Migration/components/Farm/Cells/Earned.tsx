@@ -21,7 +21,7 @@ export interface EarnedProps {
 const Earned: React.FC<React.PropsWithChildren<EarnedProps>> = ({ earnings }) => {
   const { t } = useTranslation()
   const { isMobile } = useMatchBreakpoints()
-  const labelText = t('%asset% Earned', { asset: 'KNIGHT' })
+  const labelText = t('%asset% Earned', { asset: 'dKNIGHT' })
 
   return (
     <StyledCell role="cell">
