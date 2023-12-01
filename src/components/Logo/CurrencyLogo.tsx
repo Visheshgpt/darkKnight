@@ -26,14 +26,17 @@ export default function CurrencyLogo({
 
   const srcs: string[] = useMemo(() => {
     if (currency?.isNative) return []
+
     if (currency?.isToken) {
       const tokenLogoURL = getTokenLogoURL(currency)
+
       const path = `/images/tokens/${currency.symbol}.png`
+
       if (currency instanceof WrappedTokenInfo) {
         if (!tokenLogoURL) return [path, ...uriLocations]
         return [path, ...uriLocations, tokenLogoURL]
       }
-      if (!tokenLogoURL) return []
+      // if (!tokenLogoURL) return []
       return [path, tokenLogoURL]
     }
     return []
@@ -45,6 +48,5 @@ export default function CurrencyLogo({
     }
     return <StyledLogo size={size} srcs={[`/images/chains/${currency.chainId}.png`]} width={size} style={style} />
   }
-
   return <StyledLogo size={size} srcs={srcs} alt={`${currency?.symbol ?? 'token'} logo`} style={style} />
 }

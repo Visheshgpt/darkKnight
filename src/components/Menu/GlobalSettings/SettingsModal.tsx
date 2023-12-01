@@ -146,7 +146,7 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
                 {t('Swaps & Liquidity')}
               </Text>
               <Flex justifyContent="space-between" alignItems="center" mb="24px">
-                {chainId === ChainId.BSC && <GasSettings />}
+                {chainId === ChainId.fantomOpera && <GasSettings />}
               </Flex>
               <TransactionSettings />
             </Flex>
