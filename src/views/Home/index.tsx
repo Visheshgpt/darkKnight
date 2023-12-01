@@ -9,6 +9,7 @@ import { useTranslation } from '@pancakeswap/localization'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import { ChainId } from '@pancakeswap/sdk'
 import Hero from './components/Hero'
+import Lottery from './components/Lottery'
 
 import { swapSectionData, earnSectionData, cakeSectionData } from './components/SalesSection/data'
 import MetricsSection from './components/MetricsSection'
@@ -360,7 +361,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
           {chainId === ChainId.BSC && <FarmsPoolsRow />}
         </StyledSalesSection>
         <YieldSection />
-        <MainLotteryContainer>
+        {/* <MainLotteryContainer>
           <LotteryTopMainContainer>
             <LotterTopLeftContainer>
               <svg xmlns="http://www.w3.org/2000/svg" width="612" height="322" viewBox="0 0 612 322" fill="none">
@@ -432,10 +433,6 @@ const Home: React.FC<React.PropsWithChildren> = () => {
                     </linearGradient>
                   </defs>
                 </svg>
-
-                {/* <LotteryButton style={{ marginTop: "20px" }}>
-                  <a href='/lottery'> Buy Lottery</a>
-                </LotteryButton> */}
                 <Link href="/lottery" passHref>
                   <LotteryButton style={{ marginTop: '20px' }}>Buy Lottery</LotteryButton>
                 </Link>
@@ -466,7 +463,12 @@ const Home: React.FC<React.PropsWithChildren> = () => {
           <AbsoluteLotteryBackground>
             <img src="images/lotterybg.png" alt="lottery" />
           </AbsoluteLotteryBackground>
-        </MainLotteryContainer>
+        </MainLotteryContainer> */}
+
+        <div>
+          <Lottery />
+        </div>
+
         <StyledKnightSection>
           <SalesSection {...cakeSectionData(t)} />
           <CakeDataRow />
