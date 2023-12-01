@@ -358,7 +358,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
       >
         <StyledSalesSection>
           <EarnSection {...earnSectionData(t)} />
-          {chainId === ChainId.BSC && <FarmsPoolsRow />}
+          {chainId === ChainId.fantomOpera && <FarmsPoolsRow />}
         </StyledSalesSection>
         <YieldSection />
         {/* <MainLotteryContainer>

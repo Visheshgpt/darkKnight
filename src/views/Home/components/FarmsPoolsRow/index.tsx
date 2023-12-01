@@ -72,7 +72,7 @@ const FarmsPoolsRow = () => {
       <Flex flexDirection="column" mt="24px">
         <Flex mb="24px">
           <RowHeading text={showFarms ? t('Top Farms') : t('Top Raids')} />
-          {chainId === ChainId.BSC && (
+          {chainId === ChainId.fantomOpera && (
             <IconButton
               variant="text"
               height="100%"
@@ -100,7 +100,7 @@ const FarmsPoolsRow = () => {
               />
             ))}
           </Grid>
-          {chainId === ChainId.BSC && (
+          {chainId === ChainId.fantomOpera && (
             <Grid>
               {topPools.map((topPool, index) => (
                 <TopFarmPool

@@ -19,7 +19,7 @@ import SwapForm from './components/SwapForm'
 import { StyledInputCurrencyWrapper, StyledSwapContainer } from './styles'
 import SwapTab, { SwapType } from './components/SwapTab'
 
-const CHART_SUPPORT_CHAIN_IDS = [ChainId.BSC]
+const CHART_SUPPORT_CHAIN_IDS = [ChainId.BSC, ChainId.fantomOpera]
 export const ACCESS_TOKEN_SUPPORT_CHAIN_IDS = [ChainId.BSC]
 
 const STABLE_SUPPORT_CHAIN_IDS = [ChainId.BSC_TESTNET, ChainId.BSC]

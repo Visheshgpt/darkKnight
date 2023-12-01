@@ -8,7 +8,7 @@ import { ChainId } from '@pancakeswap/sdk'
 import { useMemo } from 'react'
 import useSWR from 'swr'
 import { BIG_ZERO } from 'utils/bigNumber'
-import { bscRpcProvider } from 'utils/providers'
+import { bscRpcProvider, ftmRpcProvider } from 'utils/providers'
 import { useTokenContract } from './useContract'
 import { useSWRContract } from './useSWRContract'
 
@@ -21,7 +21,7 @@ const useTokenBalance = (tokenAddress: string, forceBSC?: boolean) => {
     () =>
       account
         ? {
-            contract: forceBSC ? contract.connect(bscRpcProvider) : contract,
+            contract: forceBSC ? contract.connect(ftmRpcProvider) : contract,
             methodName: 'balanceOf',
             params: [account],
           }
@@ -43,7 +43,7 @@ const useTokenBalance = (tokenAddress: string, forceBSC?: boolean) => {
 export const useGetBnbBalance = () => {
   const { account } = useWeb3React()
   const { status, data, mutate } = useSWR([account, 'bnbBalance'], async () => {
-    return bscRpcProvider.getBalance(account)
+    return ftmRpcProvider.getBalance(account)
   })
 
   return { balance: data || Zero, fetchStatus: status, refresh: mutate }
@@ -51,7 +51,7 @@ export const useGetBnbBalance = () => {
 
 export const useGetCakeBalance = () => {
   const { chainId } = useWeb3React()
-  const { balance, fetchStatus } = useTokenBalance(CAKE[chainId]?.address || CAKE[ChainId.BSC]?.address, true)
+  const { balance, fetchStatus } = useTokenBalance(CAKE[chainId]?.address || CAKE[ChainId.fantomOpera]?.address, true)
 
   // TODO: Remove ethers conversion once useTokenBalance is converted to ethers.BigNumber
   return { balance: EthersBigNumber.from(balance.toString()), fetchStatus }
