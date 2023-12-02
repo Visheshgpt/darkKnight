@@ -37,7 +37,9 @@ export const PageMeta: React.FC<React.PropsWithChildren<{ symbol?: string }>> = 
   if (symbol) {
     pageTitle = [symbol, title].join(' - ')
   }
-
+  console.log('page metaaaaa', pageMeta)
+  console.log('titleeeeeeeeee', title)
+  console.log('pagetitle', pageTitle)
   const modifiedTitle = 'Dark Knight Finance - A next evolution DeFi exchange on Fantom Opera Chain (FTM)'
   const modifiedDescription =
     'Dark Knight is the preeminent decentralized exchange (DEX) on Fantom Opera Chain (FTM) built for reliable & sustainable yields while providing the highest quality Decentralized Finance (DeFi) experience'
@@ -49,8 +51,8 @@ export const PageMeta: React.FC<React.PropsWithChildren<{ symbol?: string }>> = 
     //   <meta property="og:image" content="" />
     // </Head>
     <Head>
-      <title>{modifiedTitle}</title>
-      <meta property="og:title" content={modifiedTitle} />
+      <title>{pageTitle}</title>
+      <meta property="og:title" content={title} />
       <meta property="og:description" content={modifiedDescription} />
       <meta property="og:image" content="" />
     </Head>

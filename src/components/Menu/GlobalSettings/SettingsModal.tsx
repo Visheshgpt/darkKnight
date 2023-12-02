@@ -123,7 +123,7 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
                   }}
                 />
               </Flex>
-              <Flex justifyContent="space-between" alignItems="center" mb="24px">
+              {/* <Flex justifyContent="space-between" alignItems="center" mb="24px">
                 <Flex alignItems="center">
                   <Text>{t('Default Transaction Speed (GWEI)')}</Text>
                   <QuestionHelper
@@ -134,7 +134,7 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
                     ml="4px"
                   />
                 </Flex>
-              </Flex>
+              </Flex> */}
               <GasSettings />
             </Flex>
           </>

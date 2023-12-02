@@ -45,7 +45,8 @@ const getPathList = (t: ContextApi['t']): PathList => {
       '/pancake-squad': { basePath: true, title: t('Pancake Squad') },
       '/pottery': { basePath: true, title: t('Pottery') },
     },
-    defaultTitleSuffix: t('KnightSwap'),
+    // defaultTitleSuffix: t('KnightSwap'),
+    defaultTitleSuffix: t('Dark Knight Finance - A next evolution DeFi exchange on Fantom Opera Chain (FTM)'),
   }
 }
 
