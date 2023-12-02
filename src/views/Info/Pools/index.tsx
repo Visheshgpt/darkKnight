@@ -1,10 +1,12 @@
 import { useTranslation } from '@pancakeswap/localization'
 import { Card, Heading, Text } from '@pancakeswap/uikit'
 import Page from 'components/Layout/Page'
+import { useRouter } from 'next/router'
 import { useMemo } from 'react'
 import { useAllPoolDataSWR, usePoolDatasSWR } from 'state/info/hooks'
 import { useWatchlistPools } from 'state/user/hooks'
 import PoolTable from 'views/Info/components/InfoTables/PoolsTable'
+import InfoNav from '../components/InfoNav'
 
 const PoolsOverview: React.FC<React.PropsWithChildren> = () => {
   const { t } = useTranslation()
@@ -20,8 +22,12 @@ const PoolsOverview: React.FC<React.PropsWithChildren> = () => {
   const [savedPools] = useWatchlistPools()
   const watchlistPools = usePoolDatasSWR(savedPools)
 
+  const router = useRouter()
+  const isStableSwap = router.query.type === 'stableSwap'
+
   return (
     <Page>
+      <InfoNav isStableSwap={isStableSwap} />
       <Heading scale="lg" mb="16px">
         {t('Your Watchlist')}
       </Heading>

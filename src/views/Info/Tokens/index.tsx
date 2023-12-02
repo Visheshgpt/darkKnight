@@ -1,11 +1,13 @@
 import { useTranslation } from '@pancakeswap/localization'
 import { Card, Heading, Text } from '@pancakeswap/uikit'
 import Page from 'components/Layout/Page'
+import { useRouter } from 'next/router'
 import { useMemo } from 'react'
 import { useAllTokenDataSWR, useTokenDatasSWR } from 'state/info/hooks'
 import { useWatchlistTokens } from 'state/user/hooks'
 import TokenTable from 'views/Info/components/InfoTables/TokensTable'
 import TopTokenMovers from 'views/Info/components/TopTokenMovers'
+import InfoNav from '../components/InfoNav'
 
 const TokensOverview: React.FC<React.PropsWithChildren> = () => {
   const { t } = useTranslation()
@@ -20,9 +22,12 @@ const TokensOverview: React.FC<React.PropsWithChildren> = () => {
 
   const [savedTokens] = useWatchlistTokens()
   const watchListTokens = useTokenDatasSWR(savedTokens)
+  const router = useRouter()
+  const isStableSwap = router.query.type === 'stableSwap'
 
   return (
     <Page>
+      <InfoNav isStableSwap={isStableSwap} />
       <Heading scale="lg" mb="16px">
         {t('Your Watchlist')}
       </Heading>
