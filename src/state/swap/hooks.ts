@@ -279,6 +279,7 @@ export const useFetchPairPrices = ({
   const [pairId, setPairId] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const pairData = useSelector(pairByDataIdSelector({ pairId, timeWindow }))
+
   const derivedPairData = useSelector(derivedPairByDataIdSelector({ pairId, timeWindow }))
   const dispatch = useDispatch()
 
@@ -386,6 +387,7 @@ export const useFetchPairPrices = ({
     normalizedDerivedPairDataWithCurrentSwapPrice && normalizedDerivedPairDataWithCurrentSwapPrice?.length === 0
 
   // undefined is used for loading
+
   let pairPrices = hasNoDirectData && hasNoDerivedData ? [] : undefined
   if (normalizedPairDataWithCurrentSwapPrice && normalizedPairDataWithCurrentSwapPrice?.length > 0) {
     pairPrices = normalizedPairDataWithCurrentSwapPrice
@@ -395,12 +397,15 @@ export const useFetchPairPrices = ({
   ) {
     pairPrices = normalizedDerivedPairDataWithCurrentSwapPrice
   }
+
+  console.log('pairPrices', pairPrices, pairId)
+
   return { pairPrices, pairId }
 }
 
 export const useLPApr = (pair?: Pair) => {
   const { data: poolData } = useSWRImmutable(
-    pair && pair.chainId === ChainId.BSC ? ['LP7dApr', pair.liquidityToken.address] : null,
+    pair && pair.chainId === ChainId.fantomOpera ? ['LP7dApr', pair.liquidityToken.address] : null,
     async () => {
       const timestampsArray = getDeltaTimestamps()
       const blocks = await getBlocksFromTimestamps(timestampsArray, 'desc', 1000)

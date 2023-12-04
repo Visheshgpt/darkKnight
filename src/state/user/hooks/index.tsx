@@ -408,10 +408,10 @@ export function useGasPrice(chainIdOverride?: number): string {
   const userGas = useSelector<AppState, AppState['user']['gasPrice']>((state) => state.user.gasPrice)
   const { data } = useFeeData({
     chainId,
-    enabled: chainId !== ChainId.BSC && chainId !== ChainId.BSC_TESTNET,
+    enabled: chainId !== ChainId.fantomOpera && chainId !== ChainId.BSC_TESTNET,
     watch: true,
   })
-  if (chainId === ChainId.BSC) {
+  if (chainId === ChainId.fantomOpera) {
     return userGas
   }
   if (chainId === ChainId.BSC_TESTNET) {
