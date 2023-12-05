@@ -5,11 +5,32 @@ import { useGasPriceManager } from 'state/user/hooks'
 import { GAS_PRICE_GWEI, GAS_PRICE } from 'state/types'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { ChainId } from '@pancakeswap/sdk'
+import BigNumber from 'bignumber.js'
+import { parseUnits } from '@ethersproject/units'
 
 const GasSettings = () => {
   const { t } = useTranslation()
   const { chainId } = useActiveWeb3React()
   const [gasPrice, setGasPrice] = useGasPriceManager()
+
+  //  const defaultGasPrice = new BigNumber(gasPrice).multipliedBy(0).plus(gasPrice).toFixed(0);
+  //  const fastGasPrice = new BigNumber(gasPrice).multipliedBy(0.4).plus(gasPrice).toFixed(0);
+  //  const instantGasPrice = new BigNumber(gasPrice).multipliedBy(0.8).plus(gasPrice).toFixed(0);
+
+  //  const CURRENT_GAS_PRICE = {
+  //   default:  new BigNumber(defaultGasPrice).div(1e9).toFixed(0),
+  //   fast: new BigNumber(fastGasPrice).div(1e9).toFixed(0),
+  //   instant: new BigNumber(instantGasPrice).div(1e9).toFixed(0),
+  //  }
+
+  //  console.log("gasPrice", gasPrice);
+  //  console.log("defaultGasPrice", defaultGasPrice);
+  //  console.log("fastGasPrice", fastGasPrice);
+  //  console.log("instantGasPrice", instantGasPrice);
+
+  console.log('GAS_PRICE_GWEI', GAS_PRICE_GWEI)
+  console.log('GAS_PRICE', GAS_PRICE)
+  console.log('gasPrice', gasPrice)
 
   return (
     <Flex flexDirection="column">

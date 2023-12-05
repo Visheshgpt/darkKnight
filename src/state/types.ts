@@ -18,8 +18,8 @@ import { NftToken } from './nftMarket/types'
 
 export enum GAS_PRICE {
   default = '50',
-  fast = '100',
-  instant = '150',
+  fast = '200',
+  instant = '300',
   testnet = '10',
 }
 

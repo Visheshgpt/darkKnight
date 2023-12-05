@@ -13,7 +13,7 @@ interface TokenFields {
   id: string
   symbol: string
   name: string
-  derivedBNB: string // Price in BNB per token
+  derivedFTM: string // Price in BNB per token
   derivedETH: string // Price in ETH per token
   derivedUSD: string // Price in USD per token
   tradeVolumeUSD: string
@@ -24,9 +24,9 @@ interface TokenFields {
 interface FormattedTokenFields
   extends Omit<
     TokenFields,
-    'derivedETH' | 'derivedBNB' | 'derivedUSD' | 'tradeVolumeUSD' | 'totalTransactions' | 'totalLiquidity'
+    'derivedETH' | 'derivedFTM' | 'derivedUSD' | 'tradeVolumeUSD' | 'totalTransactions' | 'totalLiquidity'
   > {
-  derivedBNB: number
+  derivedFTM: number
   derivedETH: number
   derivedUSD: number
   tradeVolumeUSD: number
@@ -100,10 +100,12 @@ const parseTokenData = (tokens?: TokenFields[]) => {
     return {}
   }
   return tokens.reduce((accum: { [address: string]: FormattedTokenFields }, tokenData) => {
-    const { derivedBNB, derivedUSD, tradeVolumeUSD, totalTransactions, totalLiquidity, derivedETH } = tokenData
+    console.log('tokenData', tokenData)
+
+    const { derivedUSD, tradeVolumeUSD, totalTransactions, totalLiquidity, derivedETH } = tokenData
     accum[tokenData.id] = {
       ...tokenData,
-      derivedBNB: derivedBNB ? 0 : parseFloat(derivedBNB),
+      derivedFTM: derivedETH ? 0 : parseFloat(derivedETH),
       derivedETH: derivedETH ? 0 : parseFloat(derivedETH),
       derivedUSD: parseFloat(derivedUSD),
       tradeVolumeUSD: parseFloat(tradeVolumeUSD),
@@ -140,6 +142,8 @@ const useFetchedTokenDatas = (chainName: MultiChainName, tokenAddresses: string[
         block14d.number,
         tokenAddresses,
       )
+
+      console.log('fetchTokenDatadata', data)
 
       if (error) {
         setFetchState({ error: true })

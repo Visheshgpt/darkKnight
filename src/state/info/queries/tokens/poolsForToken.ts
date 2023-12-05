@@ -8,25 +8,25 @@ import { MultiChainName, multiChainQueryMainToken, getMultiChainQueryEndPointWit
 const POOLS_FOR_TOKEN = (chainName: MultiChainName) => {
   const transactionGT = chainName === 'ETH' ? 1 : 100
   return gql`
-  query poolsForToken($address: Bytes!){
-    asToken0: pairs(
-      first: 15
-      orderBy: trackedReserve${multiChainQueryMainToken[chainName]}
-      orderDirection: desc
-      where: { totalTransactions_gt: 100, token0: $address }
-    ) {
-      id
+    query poolsForToken($address: Bytes!) {
+      asToken0: pairs(
+        first: 15
+        orderBy: trackedReserveETH
+        orderDirection: desc
+        where: { totalTransactions_gt: 100, token0: $address }
+      ) {
+        id
+      }
+      asToken1: pairs(
+        first: 15
+        orderBy: trackedReserveETH
+        orderDirection: desc
+        where: { totalTransactions_gt: 100, token1: $address }
+      ) {
+        id
+      }
     }
-    asToken1: pairs(
-      first: 15
-      orderBy: trackedReserve${multiChainQueryMainToken[chainName]}
-      orderDirection: desc
-      where: { totalTransactions_gt: 100, token1: $address }
-    ) {
-      id
-    }
-  }
-`
+  `
 }
 
 export interface PoolsForTokenResponse {
@@ -46,7 +46,7 @@ const fetchPoolsForToken = async (
   addresses?: string[]
 }> => {
   try {
-    const add = address.toLowerCase();
+    const add = address.toLowerCase()
     const data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<PoolsForTokenResponse>(
       POOLS_FOR_TOKEN(chainName),
       {

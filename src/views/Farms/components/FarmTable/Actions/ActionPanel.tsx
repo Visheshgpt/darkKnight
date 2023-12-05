@@ -138,7 +138,7 @@ const ActionPanel: React.FunctionComponent<React.PropsWithChildren<ActionPanelPr
   const { lpAddress } = farm
   const bsc = getBlockExploreLink(lpAddress, 'address', chainId)
   // const info = `/info/pools${multiChainPaths[chainId]}/${lpAddress}`
-  const info = `https://dark-knight-frontend-five.vercel.app/info/pools/${lpAddress}`
+  const info = `/info/pools/${lpAddress}`
   const { stakedBalance, tokenBalance, proxy } = farm.userData
 
   return (

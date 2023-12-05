@@ -23,12 +23,23 @@ const BasicChart = ({
 }) => {
   const [timeWindow, setTimeWindow] = useState<PairDataTimeWindowEnum>(0)
 
+  console.log('token0Address', token0Address)
+  console.log('token1Address', token1Address)
+  console.log('isChartExpanded', isChartExpanded)
+  console.log('inputCurrency', inputCurrency)
+  console.log('outputCurrency', outputCurrency)
+  console.log('currentSwapPrice', currentSwapPrice)
+  console.log('timeWindow', timeWindow)
+
   const { pairPrices = [], pairId } = useFetchPairPrices({
     token0Address,
     token1Address,
     timeWindow,
     currentSwapPrice,
   })
+
+  console.log('pairPrices', pairPrices)
+
   const [hoverValue, setHoverValue] = useState<number | undefined>()
   const [hoverDate, setHoverDate] = useState<string | undefined>()
   const valueToDisplay = hoverValue || pairPrices[pairPrices.length - 1]?.value

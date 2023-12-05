@@ -54,7 +54,7 @@ export const cakeSectionData = (t: TranslateFunction): SalesSectionProps => ({
   bodyText: t('dKNIGHT token is at the heart of the Dark Knight DEX. Buy it, win it, farm it, spend it, stake it'),
   reverse: false,
   primaryButton: {
-    to: 'https://dark-knight-frontend-five.vercel.app/swap?outputCurrency=0x6cc0e0aedbbd3c35283e38668d959f6eb3034856&chainId=250',
+    to: '/swap?outputCurrency=0x6cc0e0aedbbd3c35283e38668d959f6eb3034856&chainId=250',
     text: t('Buy dKNIGHT'),
     external: false,
   },
