@@ -61,18 +61,21 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, viewport-fit=cover"
         />
-         <meta
-      name="description"
-      content="KnightSwap is the preeminent decentralized exchange (DEX) on Binance Smart Chain (BSC) built for reliable & sustainable yields while providing the highest quality Decentralized Finance (DeFi) experience"
-    />
+        <meta
+          name="description"
+          content="Dark Knight is the preeminent decentralized exchange (DEX) on Fantom Opera Chain (FTM) built for reliable & sustainable yields while providing the highest quality Decentralized Finance (DeFi) experience"
+        />
         <meta name="theme-color" content="#000000" />
         {/* <meta name="twitter:image" content="https://knightswap.financial/#" /> */}
         <meta
-      name="twitter:description"
-      content="KnightSwap is the preeminent decentralized exchange (DEX) on Binance Smart Chain (BSC) built for reliable & sustainable yields while providing the highest quality Decentralized Finance (DeFi) experience"
-    />
+          name="twitter:description"
+          content="Dark Knight is the preeminent decentralized exchange (DEX) on Fantom Opera Chain (FTM) built for reliable & sustainable yields while providing the highest quality Decentralized Finance (DeFi) experience"
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="⚔ Knight Finance - A next evolution DeFi exchange on Binance Smart Chain (BSC)" />
+        <meta
+          name="twitter:title"
+          content="⚔ Knight Finance - A next evolution DeFi exchange on Binance Smart Chain (BSC)"
+        />
         <title>Knight Finance - A next evolution DeFi exchange on Binance Smart Chain (BSC)</title>
       </Head>
       <NextThemeProvider>

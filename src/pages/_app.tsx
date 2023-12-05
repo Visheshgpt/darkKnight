@@ -68,7 +68,7 @@ function MyApp(props: AppProps<{ initialReduxState: any }>) {
         />
         <meta
           name="description"
-          content="KnightSwap is the preeminent decentralized exchange (DEX) on Binance Smart Chain (BSC) built for reliable & sustainable yields while providing the highest quality Decentralized Finance (DeFi) experience"
+          content="Dark Knight is the preeminent decentralized exchange (DEX) on Fantom Opera Chain (FTM) built for reliable & sustainable yields while providing the highest quality Decentralized Finance (DeFi) experience"
         />
         <meta name="theme-color" content="#EADDCA" />
         {/* <meta name="twitter:image" content="/images/home/hero/logo.svg" /> */}
@@ -76,11 +76,11 @@ function MyApp(props: AppProps<{ initialReduxState: any }>) {
 
         <meta
           name="twitter:description"
-          content="KnightSwap is the preeminent decentralized exchange (DEX) on Binance Smart Chain (BSC) built for reliable & sustainable yields while providing the highest quality Decentralized Finance (DeFi) experience"
+          content="Dark Knight is the preeminent decentralized exchange (DEX) on Fantom Opera Chain (FTM) built for reliable & sustainable yields while providing the highest quality Decentralized Finance (DeFi) experience"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="KnightSwap - A next evolution DeFi exchange on BNB Smart Chain (BSC)" />
-        <title>Dark Knight</title>
+        <title>Dark Knight Finance - A next evolution DeFi exchange on Fantom Opera Chain (FTM)</title>
         {(Component as NextPageWithLayout).mp && (
           // eslint-disable-next-line @next/next/no-sync-scripts
           <script src="https://public.bnbstatic.com/static/js/mp-webview-sdk/webview-v1.0.0.min.js" id="mp-webview" />
