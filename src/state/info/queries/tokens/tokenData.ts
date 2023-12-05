@@ -237,6 +237,17 @@ export const fetchAllTokenDataByAddresses = async (
   const parsed7d = parseTokenData(data?.oneWeekAgo)
   const parsed14d = parseTokenData(data?.twoWeeksAgo)
 
+  const getTokenName = (current: FormattedTokenFields): string => {
+    if (current && current.id === '0x04068da6c83afcfa0e13ba15a6696662335d5b75') {
+      return 'multiUSDC'
+    }
+    if (current && current.id === '0x74b23882a30290451a17c44f4f05243b6b58c76d') {
+      return 'multiWETH'
+    }
+
+    return current ? current.name : ''
+  }
+
   // Calculate data and format
   const formatted = tokenAddresses.reduce((accum: { [address: string]: { data: TokenData } }, address) => {
     const current: FormattedTokenFields | undefined = parsed[address]
@@ -267,7 +278,7 @@ export const fetchAllTokenDataByAddresses = async (
       data: {
         exists: !!current,
         address,
-        name: current ? current.name : '',
+        name: getTokenName(current),
         symbol: current ? current.symbol : '',
         volumeUSD,
         volumeUSDChange,

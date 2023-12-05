@@ -26,7 +26,7 @@ const farms: SerializedFarmConfig[] = [
   {
     pid: 3,
     lpSymbol: 'dKNIGHT',
-    lpAddress: '0x6cc0E0AedbbD3C35283e38668D959F6eb3034856',
+    lpAddress: '0x6cc0e0aedbbd3c35283e38668d959f6eb3034856',
     isToken: true,
     token: FantomTokens.dknight,
     quoteToken: FantomTokens.usdc,

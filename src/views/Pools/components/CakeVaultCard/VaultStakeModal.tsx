@@ -111,7 +111,7 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
     compoundFrequency: 0,
   })
 
-  const annualRoi = interestBreakdown[3] * pool.earningTokenPrice
+  const annualRoi = interestBreakdown[3] * pool.earningTokenPrice ? interestBreakdown[3] * pool.earningTokenPrice : 0
   const formattedAnnualRoi = formatNumber(annualRoi, annualRoi > 10000 ? 0 : 2, annualRoi > 10000 ? 0 : 2)
 
   const getTokenLink = stakingToken.address ? `/swap?outputCurrency=${stakingToken.address}` : '/swap'
@@ -281,6 +281,7 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
           <Text mr="8px" color="textSubtle">
             {t('Annual ROI at current rates')}:
           </Text>
+          {/* {true ? ( */}
           {Number.isFinite(annualRoi) ? (
             <AnnualRoiContainer
               alignItems="center"

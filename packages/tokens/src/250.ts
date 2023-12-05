@@ -4,14 +4,14 @@ import { BUSD_BSC, DK_MAINNET, USDT_BSC, USDC_FANTOM, USDT_FTM, CAKE_MAINNET } f
 export const FantomTokens = {
   wfantom: WFANTOM[ChainId.fantomOpera],
   // bnb here points to the wbnb contract. Wherever the currency BNB is required, conditional checks for the symbol 'BNB' can be used
-  ftm: new Token(ChainId.fantomOpera, '0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83', 18, 'FANTOM', 'FANTOM', '#'),
+  ftm: new Token(ChainId.fantomOpera, '0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83', 18, 'FANTOM', 'FANTOM', '#'),
   cake: CAKE_MAINNET,
   usdc: USDC_FANTOM,
   usdt: USDT_FTM,
   dknight: DK_MAINNET,
   undead: new Token(
     ChainId.fantomOpera,
-    '0x551C61DB482289994e7d426Fc4DB6493918bB81D',
+    '0x551c61db482289994e7d426fc4db6493918bb81d',
     18,
     'UNDEAD',
     'Undead Finance',
@@ -19,7 +19,7 @@ export const FantomTokens = {
   ),
   weth: new Token(
     ChainId.fantomOpera,
-    '0x74b23882a30290451A17c44f4F05243b6b58C76d',
+    '0x74b23882a30290451a17c44f4f05243b6b58c76d',
     18,
     'multiWETH',
     'WETH Token',
@@ -51,7 +51,7 @@ export const FantomTokens = {
   dfy: new Token(ChainId.fantomOpera, '0x84b0b7718f8480A9eDa3133Fd385D7EDf2b1d1c4', 18, 'DFY', 'DefySwap', '#'),
   aod: new Token(ChainId.fantomOpera, '0x632819c470cf8c1b4b09ca12d5d3e0c2d19c987d', 18, 'AOD', 'AOD', '#'),
   flory: new Token(ChainId.fantomOpera, '0x05ce3e76ede285d6ed2507d5472ca1c061ac9a8c', 18, 'FLORY', 'FLORY', '#'),
-  ftmo: new Token(ChainId.fantomOpera, '0x9bD0611610A0f5133e4dd1bFdd71C5479Ee77f37', 18, 'FTMO', 'FTMO', '#'),
+  ftmo: new Token(ChainId.fantomOpera, '0x9bd0611610a0f5133e4dd1bfdd71c5479ee77f37', 18, 'FTMO', 'FTMO', '#'),
   naut: new Token(ChainId.fantomOpera, '0x9c11ca3b1012bb752e1b57f939e3a86af354675c', 18, 'NAUT', 'ASTRONAUT', '#'),
   stable: new Token(ChainId.fantomOpera, '0x14d6111dbfD64CEb9676a494BF86AA9f7DD54acC', 18, '5TABLE', '5TABLE', '#'),
   fast: new Token(ChainId.fantomOpera, '0x0299461eE055bbb6dE11fAfE5a0636A0C3Bd5E8d', 18, 'FAST', 'FAST', '#'),
@@ -59,8 +59,8 @@ export const FantomTokens = {
   wmp: new Token(ChainId.fantomOpera, '0x376d7370347fd8baccfa918362d80fafe7792890', 18, 'WMP', 'Wrapped sMP', '#'),
   proto: new Token(ChainId.fantomOpera, '0xa23c4e69e5Eaf4500F2f9301717f12B578b948FB', 18, 'PROTON', 'PROTON', '#'),
   thunder: new Token(ChainId.fantomOpera, '0x8B7ec83ec7a687Dd81596d0251Bae16d4F005B6c', 18, 'THUNDER', 'THUNDER', '#'),
-  fspa: new Token(ChainId.fantomOpera, '0x63aad0448F58ae1B98d75456CFC6f39235e353F6', 18, 'fSPA', 'fSPA', '#'),
+  fspa: new Token(ChainId.fantomOpera, '0x63aad0448f58ae1b98d75456cfc6f39235e353f6', 18, 'fSPA', 'fSPA', '#'),
   flibero: new Token(ChainId.fantomOpera, '0xC3f069D7439baf6D4D6E9478D9Cc77778E62D147', 18, 'FLIBERO', 'FLIBERO', '#'),
-  asnt: new Token(ChainId.fantomOpera, '0x5B3C1F260E09e653290f24F75abC5e466fD42310', 18, 'ASNT', 'ASNT', '#'),
+  asnt: new Token(ChainId.fantomOpera, '0x5b3c1f260e09e653290f24f75abc5e466fd42310', 18, 'ASNT', 'ASNT', '#'),
   bnb: new Token(ChainId.fantomOpera, '0xD67de0e0a0Fd7b15dC8348Bb9BE742F3c5850454', 18, 'BNB', 'BNB', '#'),
 }

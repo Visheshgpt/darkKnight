@@ -13,10 +13,10 @@
     {
       "name": "WETH Token",
       "symbol": "multiWETH",
-      "address": "0x74b23882a30290451A17c44f4F05243b6b58C76d",
+      "address": "0x74b23882a30290451a17c44f4f05243b6b58c76d",
       "chainId": 250,
       "decimals": 18,
-      "logoURI": "/images/Token/0x74b23882a30290451A17c44f4F05243b6b58C76d.png"
+      "logoURI": "/images/Token/0x74b23882a30290451a17c44f4f05243b6b58c76d.png"
     },
     {
       "name": "WETH Token",
@@ -61,10 +61,10 @@
     {
       "name": "USD coin",
       "symbol": "multiUSDC",
-      "address": "0x04068DA6C83AFCFA0e13ba15A6696662335D5B75",
+      "address": "0x04068da6c83afcfa0e13ba15a6696662335d5b75",
       "chainId": 250,
       "decimals": 6,
-      "logoURI": "/images/Token/0x04068DA6C83AFCFA0e13ba15A6696662335D5B75.png"
+      "logoURI": "/images/Token/0x04068da6c83afcfa0e13ba15a6696662335d5b75.png"
     },
     {
       "name": "USD coin",
@@ -96,19 +96,19 @@
     {
       "name": "DarkKnightSwap Token",
       "symbol": "dKNIGHT",
-      "address": "0x6cc0E0AedbbD3C35283e38668D959F6eb3034856",
+      "address": "0x6cc0e0aedbbd3c35283e38668d959f6eb3034856",
       "chainId": 250,
       "decimals": 18,
-      "logoURI": "/images/Token/0x6cc0E0AedbbD3C35283e38668D959F6eb3034856.png"
+      "logoURI": "/images/Token/0x6cc0e0aedbbd3c35283e38668d959f6eb3034856.png"
     },
 
     {
       "name": "Undead Finance",
       "symbol": "UNDEAD",
-      "address": "0x551C61DB482289994e7d426Fc4DB6493918bB81D",
+      "address": "0x551c61db482289994e7d426fc4db6493918bb81d",
       "chainId": 250,
       "decimals": 18,
-      "logoURI": "/images/Token/0x551C61DB482289994e7d426Fc4DB6493918bB81D.png"
+      "logoURI": "/images/Token/0x551c61db482289994e7d426fc4db6493918bb81d.png"
     },
 
     {
@@ -174,10 +174,10 @@
     {
       "name": "FTMO",
       "symbol": "FTMO",
-      "address": "0x9bD0611610A0f5133e4dd1bFdd71C5479Ee77f37",
+      "address": "0x9bd0611610a0f5133e4dd1bfdd71c5479ee77f37",
       "chainId": 250,
       "decimals": 18,
-      "logoURI": "/images/Token/0x9bD0611610A0f5133e4dd1bFdd71C5479Ee77f37.png"
+      "logoURI": "/images/Token/0x9bd0611610a0f5133e4dd1bfdd71c5479ee77f37.png"
     },
 
     {
@@ -240,7 +240,7 @@
     {
       "name": "fSPA",
       "symbol": "fSPA",
-      "address": "0x63aad0448F58ae1B98d75456CFC6f39235e353F6",
+      "address": "0x63aad0448f58ae1b98d75456cfc6f39235e353f6",
       "chainId": 250,
       "decimals": 18
     },
@@ -254,7 +254,7 @@
     {
       "name": "ASNT",
       "symbol": "ASNT",
-      "address": "0x5B3C1F260E09e653290f24F75abC5e466fD42310",
+      "address": "0x5b3c1f260e09e653290f24f75abc5e466fd42310",
       "chainId": 250,
       "decimals": 18
     },
