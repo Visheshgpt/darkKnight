@@ -10,10 +10,10 @@ const getPriceSubqueries = (chainName: MultiChainName, tokenAddress: string, blo
   blocks.map(
     (block: any) => `
       t${block.timestamp}:token(id:"${tokenAddress}", block: { number: ${block.number} }) { 
-        derived${multiChainQueryMainToken[chainName]}
+        derivedETH
       }
       b${block.timestamp}: bundle(id:"1", block: { number: ${block.number} }) { 
-        ${multiChainQueryMainToken[chainName].toLowerCase()}Price
+        ethPrice
       }
     `,
   )
@@ -48,6 +48,7 @@ const fetchTokenPriceData = async (
   }
   try {
     const blocks = await getBlocksFromTimestamps(timestamps, 'asc', 500, chainName)
+
     if (!blocks || blocks.length === 0) {
       console.error('Error fetching blocks for timestamps', timestamps)
       return {
@@ -62,6 +63,8 @@ const fetchTokenPriceData = async (
       200,
     )
 
+    console.log('prices', address, prices)
+
     console.warn('fetchTokenPriceData', { chainName, prices })
 
     if (!prices) {
@@ -74,11 +77,12 @@ const fetchTokenPriceData = async (
     // format token BNB price results
     const tokenPrices: {
       timestamp: string
-      derivedBNB: number
+      derivedFTM: number
       priceUSD: number
     }[] = []
 
-    const mainToken = multiChainQueryMainToken[chainName]
+    // const mainToken = multiChainQueryMainToken[chainName]
+    const mainToken = 'ETH'
 
     // Get Token prices in BNB
     Object.keys(prices).forEach((priceKey) => {
@@ -87,7 +91,7 @@ const fetchTokenPriceData = async (
       if (timestamp) {
         tokenPrices.push({
           timestamp,
-          derivedBNB: prices[priceKey]?.[`derived${mainToken}`]
+          derivedFTM: prices[priceKey]?.[`derived${mainToken}`]
             ? parseFloat(prices[priceKey][`derived${mainToken}`])
             : 0,
           priceUSD: 0,
@@ -95,21 +99,24 @@ const fetchTokenPriceData = async (
       }
     })
 
-    console.warn('pricesPart1', tokenPrices)
-
     // Go through BNB USD prices and calculate Token price based on it
     Object.keys(prices).forEach((priceKey) => {
       const timestamp = priceKey.split('b')[1]
       // if its Token price e.g. `t123` split('b')[1] will be undefined and skip Token price entry
       if (timestamp) {
         const tokenPriceIndex = tokenPrices.findIndex((tokenPrice) => tokenPrice.timestamp === timestamp)
+
+        console.log('tokenPrices', tokenPrices)
+
         if (tokenPriceIndex >= 0) {
-          const { derivedBNB } = tokenPrices[tokenPriceIndex]
+          const { derivedFTM } = tokenPrices[tokenPriceIndex]
           tokenPrices[tokenPriceIndex].priceUSD =
-            parseFloat(prices[priceKey]?.[`${mainToken.toLowerCase()}Price`] ?? 0) * derivedBNB
+            parseFloat(prices[priceKey]?.[`${mainToken.toLowerCase()}Price`] ?? 0) * derivedFTM
         }
       }
     })
+
+    console.log('tokenPrices', tokenPrices)
 
     // graphql-request does not guarantee same ordering of batched requests subqueries, hence sorting by timestamp from oldest to newest
     const sortedTokenPrices = orderBy(tokenPrices, (tokenPrice) => parseInt(tokenPrice.timestamp, 10))

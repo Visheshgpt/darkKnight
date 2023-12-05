@@ -92,6 +92,8 @@ export const fetchPoolData = async (
   poolAddresses: string[],
   chainName: 'ETH' | 'FTM' = 'FTM',
 ) => {
+  console.log('poolAddresses', poolAddresses)
+
   const weeksQuery = chainName === 'FTM' ? `twoWeeksAgo: ${POOL_AT_BLOCK(chainName, block14d, poolAddresses)}` : ''
   try {
     const query = gql`
@@ -103,6 +105,8 @@ export const fetchPoolData = async (
         ${weeksQuery}
       }
     `
+
+    console.log('query', query)
 
     const data = await getMultiChainQueryEndPointWithStableSwap(chainName).request<PoolsQueryResponse>(query)
     return { data, error: false }
@@ -249,6 +253,10 @@ const usePoolDatas = (poolAddresses: string[]): PoolDatas => {
 
 export const fetchAllPoolData = async (blocks: Block[], chainName: MultiChainName) => {
   const poolAddresses = await fetchTopPoolAddresses(chainName)
+  poolAddresses.push('0x0d587c8780e9611f825a84148ea7ba54cc0b1878')
+  poolAddresses.push('0xc50cf35ea4ab37cb71382de5a4c1d72a7667f0e3')
+  poolAddresses.push('0xbfbc8eec9d24eb10702d7f233d6cf687d8f1b2b4')
+
   const [block24h, block48h, block7d, block14d] = blocks ?? []
   const { data } = await fetchPoolData(
     block24h.number,
@@ -258,6 +266,8 @@ export const fetchAllPoolData = async (blocks: Block[], chainName: MultiChainNam
     poolAddresses,
     chainName,
   )
+
+  console.log('dataaPool', data)
 
   const formattedPoolData = parsePoolData(data?.now)
   const formattedPoolData24h = parsePoolData(data?.oneDayAgo)
