@@ -17,7 +17,7 @@ const getImageUrlFromToken = (token: Token) => {
     return `/images/${token.chainId}/tokens/${address}.png`
   }
   if (token.symbol === 'WFTM') {
-    return `/images/tokens/${token.symbol.toLowerCase()}.png`
+    return `/images/tokens/${token.symbol}.png`
   }
   return `/images/tokens/${token.symbol}.png`
 }
@@ -27,6 +27,9 @@ export const TokenPairImage: React.FC<React.PropsWithChildren<TokenPairImageProp
   secondaryToken,
   ...props
 }) => {
+  console.log('primaryToken', primaryToken)
+  console.log('secondaryToken', secondaryToken)
+
   return (
     <UIKitTokenPairImage
       primarySrc={getImageUrlFromToken(primaryToken)}

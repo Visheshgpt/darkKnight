@@ -27,7 +27,7 @@ export const FantomTokens = {
   ),
   wbtc: new Token(ChainId.fantomOpera, '0x321162cd933e2be498cd2267a90534a804051b11', 8, 'multiBTC', 'WBTC Token', '#'),
   fusd: new Token(ChainId.fantomOpera, '0xAd84341756Bf337f5a0164515b1f6F993D194E1f', 18, 'FUSD', 'FUSD Token', '#'),
-  fusdt: new Token(ChainId.fantomOpera, '0x049d68029688eAbF473097a2fC38ef61633A3C7A', 6, 'FUSDT', 'Frapped Usdt', '#'),
+  fusdt: new Token(ChainId.fantomOpera, '0x049d68029688eabf473097a2fc38ef61633a3c7a', 6, 'FUSDT', 'Frapped Usdt', '#'),
   dai: new Token(ChainId.fantomOpera, '0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e', 18, 'DAI', 'DAI coin', '#'),
   fatcake: new Token(
     ChainId.fantomOpera,
@@ -62,5 +62,5 @@ export const FantomTokens = {
   fspa: new Token(ChainId.fantomOpera, '0x63aad0448f58ae1b98d75456cfc6f39235e353f6', 18, 'fSPA', 'fSPA', '#'),
   flibero: new Token(ChainId.fantomOpera, '0xC3f069D7439baf6D4D6E9478D9Cc77778E62D147', 18, 'FLIBERO', 'FLIBERO', '#'),
   asnt: new Token(ChainId.fantomOpera, '0x5b3c1f260e09e653290f24f75abc5e466fd42310', 18, 'ASNT', 'ASNT', '#'),
-  bnb: new Token(ChainId.fantomOpera, '0xD67de0e0a0Fd7b15dC8348Bb9BE742F3c5850454', 18, 'BNB', 'BNB', '#'),
+  bnb: new Token(ChainId.fantomOpera, '0xd67de0e0a0fd7b15dc8348bb9be742f3c5850454', 18, 'BNB', 'BNB', '#'),
 }

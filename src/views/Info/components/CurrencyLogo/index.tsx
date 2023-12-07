@@ -26,10 +26,10 @@ export const CurrencyLogo: React.FC<
 > = ({ address, size = '24px', chainName = 'FTM', ...rest }) => {
   const srcs = useMemo(() => {
     const path = `/images/tokens/${address}.png`
-
-    return [path, getTokenLogoURL(new Token(multiChainId[chainName], address, 18, ''))]
+    return [path]
   }, [address, chainName])
 
+  console.log('srcs', srcs)
   return <StyledLogo size={size} srcs={srcs} alt="token logo" {...rest} />
 }
 

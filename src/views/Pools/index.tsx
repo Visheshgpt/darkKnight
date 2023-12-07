@@ -331,14 +331,18 @@ const Pools: React.FC<React.PropsWithChildren> = () => {
           </FilterContainer>
         </PoolControls>
         {/* {showFinishedPools && ( */}
-        {/* <FinishedTextContainer>
-            <Text fontSize={['16px', null, '20px']} color="failure" pr="4px">
-              {t('Looking for v1 KNIGHT raid pool?')}
-            </Text>
-            <FinishedTextLink href="http://v1.knightswap.financial/pools" fontSize={['16px', null, '20px']} color="failure">
-              {t('Go to migration page')}.
-            </FinishedTextLink>
-          </FinishedTextContainer> */}
+        <FinishedTextContainer>
+          <Text fontSize={['16px', null, '20px']} color="failure" pr="4px">
+            {t('Looking for v1 dKNIGHT raid pool?')}
+          </Text>
+          <FinishedTextLink
+            href="http://v1.knightswap.financial/pools"
+            fontSize={['16px', null, '20px']}
+            color="failure"
+          >
+            {t('Go to migration page')}.
+          </FinishedTextLink>
+        </FinishedTextContainer>
         {/* )} */}
         {account && !userDataLoaded && stakedOnly && (
           <Flex justifyContent="center" mb="4px">
