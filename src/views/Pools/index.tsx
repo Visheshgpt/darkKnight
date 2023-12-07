@@ -336,7 +336,7 @@ const Pools: React.FC<React.PropsWithChildren> = () => {
             {t('Looking for v1 dKNIGHT raid pool?')}
           </Text>
           <FinishedTextLink
-            href="http://v1.knightswap.financial/pools"
+            href="https://d2obkr0dz41k1j.cloudfront.net/pools"
             fontSize={['16px', null, '20px']}
             color="failure"
           >
